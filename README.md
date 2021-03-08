@@ -5,10 +5,10 @@ Deployed Link Here
 
 ### Built With
 
-* [React]()
-* [Express]()
-* [Node]()
-* [MongoDB]()
+* React
+* Express
+* Node
+* MongoDB
 
 ## About
 
