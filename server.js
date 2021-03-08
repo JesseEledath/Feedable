@@ -6,7 +6,7 @@ const logger = require('morgan')
 const routes = require('./routes')
 
 const app = express()
-const port = process.ene.PORT || 3000
+const PORT = process.env.PORT || 3000
 
 app.use(cors())
 app.use(bodyParser.json())
