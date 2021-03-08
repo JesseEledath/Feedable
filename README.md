@@ -34,6 +34,15 @@ const Product = new Schema (
     },
     { timestamps: true }
 )
+
+const User = new Schema(
+    {
+        email: { type: String, required: true },
+        password_digest: { type: String, required: true },
+        role: [{ type: String, required: true }]
+    },
+    { timestamps: true }
+)
 ```
 
 ## Contact
