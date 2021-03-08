@@ -9,6 +9,7 @@ Deployed Link Here
 * Express
 * Node
 * MongoDB
+* Mongoose
 
 ## About
 
