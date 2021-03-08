@@ -19,6 +19,8 @@ Here is a [link](https://www.figma.com/proto/L9ygdOIG2IT4Q7dvbrbOUu/Feedable?nod
 
 ## Flow
 ### Component Heirarchy
+Here is a [link](https://whimsical.com/products-app-DpthTmhgh9sPGc3b94er77) to our Heirarchy.
+
 
 ## Schema
 ```
