@@ -21,5 +21,17 @@ Here is a [link](https://www.figma.com/proto/L9ygdOIG2IT4Q7dvbrbOUu/Feedable?nod
 ### Component Heirarchy
 
 ## Schema
+```
+const Product = new Schema (
+    {
+        name: { type: String, required: true },
+        imgURL: { type: String, required: true },
+        description: { type: String, required: true},
+        category: [{ type: String, required: true }],
+        quantity: { type: Number, required: true }
+    },
+    { timestamps: true }
+)
+```
 
 ## Contact
