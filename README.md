@@ -21,7 +21,7 @@ Here is a [link](https://www.figma.com/proto/L9ygdOIG2IT4Q7dvbrbOUu/Feedable?nod
 ### Component Heirarchy
 
 ## Schema
-``
+```
 const Product = new Schema (
     {
         name: { type: String, required: true },
@@ -32,6 +32,6 @@ const Product = new Schema (
     },
     { timestamps: true }
 )
-``
+```
 
 ## Contact
