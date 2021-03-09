@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Slides from "../../components/Carousel/Slides";
+import Slider from "../../components/Carousel/Slider";
 import Filter from "../../components/Filter/Filter";
+import Layout from "../../components/shared/Layout/Layout";
 import { getProducts } from "../../services/crud";
 
-function LandingPage(props) {
+function LandingPage (props) {
   const [allProducts, setAllProducts] = useState([]);
-  // Useeffect for AllProducts ========================
+
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
@@ -13,13 +14,15 @@ function LandingPage(props) {
     };
     fetchProducts();
   }, []);
-  // Rendering =====================================
+  
   return (
-    <div className="landing-page-container">
-      <Slides allProducts={allProducts} />
-      {/* <Filter allProducts={allProducts} /> */}
-      <h1>HELLO</h1>
-    </div>
+    <Layout >
+      <div className="landing-page-container">
+        <Slider products={allProducts} />
+        {/* <Filter allProducts={allProducts} /> */}
+        <h1>HELLO</h1>
+      </div>
+    </Layout>
   );
 }
 
