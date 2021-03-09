@@ -12,7 +12,6 @@ const Product = (props) => {
       </Link>
         <div className="product-name">{product.name}</div>
         <div className="product-description">{product.description}</div>
-        <div className="product-category">{product.category}</div>
         <div className="product-quantity">{product.quantity}</div>
     </>
   )

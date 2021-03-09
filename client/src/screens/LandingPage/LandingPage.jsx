@@ -18,8 +18,6 @@ function LandingPage (props) {
   return (
     <Layout >
       <div className="landing-page-container">
-        <Slider products={allProducts} />
-        {/* <Filter allProducts={allProducts} /> */}
         <h1>HELLO</h1>
       </div>
     </Layout>
