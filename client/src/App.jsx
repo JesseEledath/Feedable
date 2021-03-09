@@ -10,6 +10,7 @@ import SignOut from './screens/SignOut/SignOut';
 import SignUp from './screens/SignUp/SignUp';
 import Navbar from "./components/shared/Nav/Navbar"
 
+
 import './App.css';
 
 const App = () => {
