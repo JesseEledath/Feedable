@@ -29,9 +29,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <Switch>
         <Navbar />
-        <Route exact path="/">
+      <Switch>
+        <Route path="/">
           <LandingPage />
         </Route>
         {/*
