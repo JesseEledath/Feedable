@@ -5,7 +5,7 @@ import "./Slider.css";
 function Slider ({ products }) {
   const [imageCounter, setImageCounter] = useState(0);
   const length = products.length;
-
+  
   // setTimeout(() => {
   //   setImageCounter(imageCounter === length - 1 ? 0 : imageCounter + 1)
   // }, 3000);
