@@ -8,7 +8,7 @@ import ProductDetail from './screens/ProductDetail/ProductDetail';
 import SignIn from './screens/SignIn/SignIn';
 import SignOut from './screens/SignOut/SignOut';
 import SignUp from './screens/SignUp/SignUp';
-import Nav from "./components/shared/Nav/Nav"
+import Navbar from "./components/shared/Nav/Navbar"
 
 import './App.css';
 
@@ -28,7 +28,7 @@ const App = () => {
   return (
     <div className="App">
       <Switch>
-        <Nav />
+        <Navbar />
         {/* <Route exact path="/">
           <LandingPage />
         </Route>
