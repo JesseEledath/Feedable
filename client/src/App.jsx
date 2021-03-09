@@ -22,7 +22,6 @@ const App = () => {
 
 const clearUser = () => setUser(null)
 
-function App() {
   return (
     <div className="App">
       <Switch>
