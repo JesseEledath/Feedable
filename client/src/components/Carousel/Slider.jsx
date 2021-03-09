@@ -4,7 +4,7 @@ import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa'
 
 function Slides(props) {
   const [imageCounter, setImageCounter] = useState(0)
-  const length = props.products.length()
+  const length = props.products.length
 
   return (
     <div className = 'slider-container'>
