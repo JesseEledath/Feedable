@@ -9,11 +9,11 @@ const Product = (props) => {
     <>
       <Link className="product-link" to={`/products/${product._id}`}>
         <img className="product-image" src={product.imgURL} alt={product.name} />
+      </Link>
         <div className="product-name">{product.name}</div>
         <div className="product-description">{product.description}</div>
         <div className="product-category">{product.category}</div>
         <div className="product-quantity">{product.quantity}</div>
-      </Link>
     </>
   )
 }

@@ -12,7 +12,8 @@ export default function Navbar (props) {
             <nav>
                 <Link className="icon icon-link" to="/"><div>Feedable</div></Link>
                 <div className="nav-links">
-                    <Link to>Mission</Link>  
+                    <Link to="/products">Products</Link>  
+                    <Link to="/about">Mission</Link>  
                     <div className="nav-dropdown">
                         <button className="dropbtn">Join Us
                             <i className="fa fa-caret-down"></i>

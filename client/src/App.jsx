@@ -29,7 +29,6 @@ const App = () => {
 
   return (
     <div className="App">
-      <Navbar />
       <Switch>
         <Route exact path="/">
           <LandingPage />
