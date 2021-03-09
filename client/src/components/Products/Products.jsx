@@ -15,6 +15,8 @@ function Products() {
     assignProducts();
   }, [toggleFetch]);
 
+  console.log(products)
+
   return (
     <div className="product-section">
       {products.map((product, index) => (

@@ -1,10 +1,10 @@
-import axios from 'axios'
+import axios from 'axios';
 
 let apiUrl
 
 const apiUrls = {
     production: 'https://feedable-app.herokuapp.com/api',
-    development: 'http://localhost:3000/api'
+    development: 'https://feedable-app.herokuapp.com/api'
 }
 
 if (window.location.hostname === 'localhost') {
