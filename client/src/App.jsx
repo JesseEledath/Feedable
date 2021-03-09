@@ -29,13 +29,12 @@ const App = () => {
 
   return (
     <div className="App">
-        <Navbar />
+      <Navbar />
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <LandingPage />
         </Route>
-        {/*
-        <Route path="/sign-up">
+        {/* <Route path="/sign-up">
           <SignUp />
         </Route>
         <Route path="/sign-in">
@@ -43,11 +42,11 @@ const App = () => {
         </Route>
         <Route path="/sign-out">
           <SignOut />
-        </Route>
+        </Route> */}
         <Route exact path="/products">
           <Home />
         </Route>
-        <Route exact path="/products/:id">
+        {/* <Route exact path="/products/:id">
           <ProductDetail />
         </Route>
         <Route exact path="/cart">
