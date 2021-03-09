@@ -18,6 +18,7 @@ function LandingPage (props) {
   return (
     <Layout >
       <div className="landing-page-container">
+        <Slider products={allProducts} />
         <h1>HELLO</h1>
       </div>
     </Layout>

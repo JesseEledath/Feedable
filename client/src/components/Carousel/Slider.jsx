@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import "./Slider.css";
 
-function Slides({ products }) {
+function Slider ({ products }) {
   const [imageCounter, setImageCounter] = useState(0);
   const length = products.length;
   
@@ -53,4 +53,4 @@ function Slides({ products }) {
   );
 }
 
-export default Slides;
+export default Slider;
