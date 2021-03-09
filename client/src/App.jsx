@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Switch, Route } from "react-router-dom"
-import Cart from './screens/Cart/Cart';
-import Create from './screens/Create/Create';
-import Home from './screens/Home/Home';
-import LandingPage from './screens/LandingPage/LandingPage';
-import ProductDetail from './screens/ProductDetail/ProductDetail';
-import SignIn from './screens/SignIn/SignIn';
-import SignOut from './screens/SignOut/SignOut';
-import SignUp from './screens/SignUp/SignUp';
-import Navbar from "./components/shared/Nav/Navbar"
+import React, { useState, useEffect } from "react";
+import { Switch, Route } from "react-router-dom";
+import Cart from "./screens/Cart/Cart";
+import Create from "./screens/Create/Create";
+import Home from "./screens/Home/Home";
+import LandingPage from "./screens/LandingPage/LandingPage";
+import ProductDetail from "./screens/ProductDetail/ProductDetail";
+import SignIn from "./screens/SignIn/SignIn";
+import SignOut from "./screens/SignOut/SignOut";
+import SignUp from "./screens/SignUp/SignUp";
+import Navbar from "./components/shared/Nav/Navbar";
 
 
 import './App.css';
+
 
 const App = () => {
   // const [user, setUser] = useState(null)
@@ -24,15 +25,16 @@ const App = () => {
   //   fetchUser()
   // }, [])
 
-// const clearUser = () => setUser(null)
+  // const clearUser = () => setUser(null)
 
   return (
     <div className="App">
       <Switch>
         <Navbar />
-        {/* <Route exact path="/">
+        <Route exact path="/">
           <LandingPage />
         </Route>
+        {/*
         <Route path="/sign-up">
           <SignUp />
         </Route>
@@ -57,6 +59,6 @@ const App = () => {
       </Switch>
     </div>
   );
-}
+};
 
 export default App;
