@@ -12,7 +12,7 @@
   margin: 40px auto;
   padding: 30px ;
 }
-input { 
+.sign-in-input{ 
   display: flex;
   flex-direction: column;
   width: 300px; 
@@ -34,7 +34,7 @@ input {
   -ms-transition: box-shadow .5s ease;
   transition: box-shadow .5s ease;
 }
-input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.3); }
+.sign-in-input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.3); }
 
 .sign-in {
   margin-top: 40px;
