@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./SignUp.css";
 import { signUp, signIn } from "../../services/users";
 import { useHistory } from "react-router-dom";
-import { Layout } from "../../components/shared/Layout/Layout"
+import Layout from "../../components/shared/Layout/Layout"
 
 const SignUp = (props) => {
   const history = useHistory();
