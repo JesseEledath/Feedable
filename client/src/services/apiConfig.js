@@ -1,20 +1,32 @@
-import axios from 'axios'
-
-let apiUrl
+import axios from "axios";
+import {Promise} from "mongoose"
+let apiUrl;
 
 const apiUrls = {
-    production: 'placeholder',
-    development: 'http://localhost:3000/api'
-}
+  production: "https://feedable-app.herokuapp.com/api",
+  development: "https://feedable-app.herokuapp.com/api",
+};
 
-if (window.location.hostname === 'localhost') {
-    apiUrl = apiUrls.development
+if (window.location.hostname === "localhost") {
+  apiUrl = apiUrls.development;
 } else {
-    apiUrl = apiUrls.production
+  apiUrl = apiUrls.production;
 }
-
 const api = axios.create({
-    baseURL: apiUrl
-})
+  baseURL: apiUrl,
+});
 
-export default api
+const getToken = () => {
+  return new Promise(resolve => {
+      resolve(`Bearer ${localStorage.getItem('token') || null}`)
+  })
+}
+api.interceptors.request.use(async function (options) {
+  options.headers['Authorization'] = await getToken()
+  return options
+}, function (error) {
+  console.log('Request error: ', error)
+  return Promise.reject(error)
+});
+
+export default api;

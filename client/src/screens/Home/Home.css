@@ -1,0 +1,27 @@
+
+.products-screen {
+    width: 100vw;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.products-box {
+    width: 75%;
+}
+
+.sort-box {
+    width: 20%;
+    background-color: #DAC995;
+}
+
+.search-container {
+    height: 120px;
+}
+
+.products-section {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}

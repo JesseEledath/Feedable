@@ -1,25 +1,69 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import Cart from "./screens/Cart/Cart";
+import Create from "./screens/Create/Create";
+import Home from "./screens/Home/Home";
+import LandingPage from "./screens/LandingPage/LandingPage";
+import ProductDetail from "./screens/ProductDetail/ProductDetail";
+import SignIn from "./screens/SignIn/SignIn";
+import SignOut from "./screens/SignOut/SignOut";
+import SignUp from "./screens/SignUp/SignUp";
+import About from "./screens/About/About"
+
 import './App.css';
 
-function App() {
+const App = () => {
+  const [user, setUser] = useState(null)
+
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     const user = await verifyUser()
+  //     user ? setUser(user) : setUser(null)
+  //   }
+  //   fetchUser()
+  // }, [])
+
+  const clearUser = () => setUser(null)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/">
+          <LandingPage user={user}/>
+        </Route>
+        <Route path="/sign-up">
+
+          <SignUp setUser={setUser}/>
+
+        </Route>
+        <Route path="/sign-in">
+          <SignIn setUser={setUser}/>
+        </Route>
+        <Route path="/sign-out">
+
+          <SignOut setUser={setUser} clearUser={clearUser}/>
+
+        </Route>
+        <Route exact path="/products">
+          <Home user={user}/>
+        </Route>
+        <Route exact path="/products/:id">
+          <ProductDetail user={user}/>
+        </Route>
+
+        <Route exact path="/about">
+          <About />
+        </Route>
+        
+        <Route exact path="/cart">
+          {user ? <Cart user={user} /> : <Redirect to="/sign-up" />}
+        </Route>
+        {/* <Route exact path="/create">
+          {user ? <Create user={user} /> : <Redirect to="/sign-up" />}
+  </Route>*/}
+      </Switch>
     </div>
   );
-}
+};
 
 export default App;
