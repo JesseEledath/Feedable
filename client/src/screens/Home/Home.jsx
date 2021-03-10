@@ -44,7 +44,7 @@ const Home = () => {
 
   const handleSubmit = (event) => event.preventDefault();
 
-  // console.log(queriedProducts);
+  console.log(queriedProducts);
   
   const productsJSX = queriedProducts.map((product, index) => (
     <Product
