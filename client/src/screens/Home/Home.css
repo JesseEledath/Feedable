@@ -6,10 +6,21 @@
 }
 
 .products-box {
-    width: 65%;
+    width: 67%;
 }
 
 .sort-box {
-    width: 25%;
+    width: 27%;
     background-color: #DAC995;
+}
+
+.search-container {
+    height: 75px;
+}
+
+.products-section {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
 }

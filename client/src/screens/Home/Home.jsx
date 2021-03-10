@@ -1,12 +1,12 @@
-import "./Home.css";
-import React, { useState, useEffect } from "react";
-import Products from "../../components/Products/Products";
-import Search from "../../components/Search/Search";
-import Product from "../../components/Product/Product.jsx";
-import Sort from "../../components/Sort/Sort";
-import { getProducts } from "../../services/crud";
-import { AZ, ZA } from "../../utils/sort";
-import Layout from "../../components/shared/Layout/Layout";
+import './Home.css'
+import React, { useState, useEffect } from 'react'
+import Products from '../../components/Products/Products'
+import Search from '../../components/Search/Search'
+import Product from '../../components/Product/Product'
+import Sort from '../../components/Sort/Sort'
+import { getProducts } from '../../services/crud'
+import { AZ, ZA } from "../../utils/sort"
+import Layout from '../../components/shared/Layout/Layout'
 
 const Home = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -44,21 +44,34 @@ const Home = () => {
 
   const handleSubmit = (event) => event.preventDefault();
 
+  // console.log(queriedProducts);
+  
   const productsJSX = queriedProducts.map((product, index) => (
     <Product
       _id={product._id}
       name={product.name}
+      description={product.description}
+      quantity={product.quantity}
       imgURL={product.imgURL}
       key={index}
     />
   ));
+
   return (
     <div>
       <Layout>
         <div className="products-screen">
-          <Search onSubmit={handleSubmit} onChange={handleSearch} />
-          <div className="sort-box">shit</div>
-          <div className="products-box">{productsJSX}</div>
+          <div className="sort-box">
+          {/* <Sort onSubmit={handleSubmit} onChange={handleSort} /> */}
+          </div>
+          <div className="products-box">
+            <div className="search-container">
+              <Search onSubmit={handleSubmit} onChange={handleSearch} />
+            </div>
+            <div className="products-section">
+              {productsJSX}
+            </div>
+          </div>
         </div>
       </Layout>
     </div>
