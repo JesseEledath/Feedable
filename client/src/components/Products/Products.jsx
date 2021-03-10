@@ -4,8 +4,8 @@ import Product from "../Product/Product";
 import "./Products.css";
 
 function Products() {
-  const [products, setProducts] = useState([])
-  const [toggleFetch, setToggleFetch] = useState(false)
+  const [products, setProducts] = useState([]);
+  const [toggleFetch, setToggleFetch] = useState(false);
 
   useEffect(() => {
     const assignProducts = async () => {
@@ -15,7 +15,7 @@ function Products() {
     assignProducts();
   }, [toggleFetch]);
 
-  console.log(products)
+  console.log(products);
 
   return (
     <div className="products-section">

@@ -1,9 +1,7 @@
-import './Product.css';
-import { Link } from 'react-router-dom'
+import "./Product.css";
+import { Link } from "react-router-dom";
 
 const Product = (props) => {
-
-  // let { product } = props
 
   return (
     <div className="product-container">
@@ -16,7 +14,7 @@ const Product = (props) => {
         <div className="product-description">{props.description}</div>
         <div className="product-quantity">{props.quantity}</div>
     </div>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;

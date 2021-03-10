@@ -9,47 +9,51 @@ import { AZ, ZA } from "../../utils/sort"
 import Layout from '../../components/shared/Layout/Layout'
 
 const Home = () => {
-  const [allProducts, setAllProducts] = useState([])
-  const [queriedProducts, setQueriedProducts] = useState([])
-  const [sortType, setSortType] = useState([])
+  const [allProducts, setAllProducts] = useState([]);
+  const [queriedProducts, setQueriedProducts] = useState([]);
+  const [sortType, setSortType] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const products = await getProducts()
-      setAllProducts(products)
-      setQueriedProducts(products)
-    }
-    fetchProducts()
-  }, [])
+      const products = await getProducts();
+      setAllProducts(products);
+      setQueriedProducts(products);
+    };
+    fetchProducts();
+  }, []);
 
-  const handleSort = type => {
-    setSortType(type)
+  const handleSort = (type) => {
+    setSortType(type);
     switch (type) {
       case "name-ascending":
-        setQueriedProducts(AZ(queriedProducts))
-        break
+        setQueriedProducts(AZ(queriedProducts));
+        break;
       case "name-descending":
-        setQueriedProducts(ZA(queriedProducts))
-        break
+        setQueriedProducts(ZA(queriedProducts));
+        break;
       default:
-        break
+        break;
     }
-  }
-  const handleSearch = event => {
-    const newQueriedProducts = allProducts.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))
-    setQueriedProducts(newQueriedProducts, () => handleSort(sortType))
-  }
+  };
+  const handleSearch = (event) => {
+    const newQueriedProducts = allProducts.filter((product) =>
+      product.name.toLowerCase().includes(event.target.value.toLowerCase())
+    );
+    setQueriedProducts(newQueriedProducts, () => handleSort(sortType));
+  };
 
-  const handleSubmit = event => event.preventDefault()
-
-  console.log(queriedProducts);
-
-  const productsJSX = queriedProducts.map((product, index) =>
-    <Product _id={product._id} name={product.name} imgURL={product.imgURL} key={index} />
-  )
+  const handleSubmit = (event) => event.preventDefault();
 
   console.log(queriedProducts);
-
+  
+  const productsJSX = queriedProducts.map((product, index) => (
+    <Product
+      _id={product._id}
+      name={product.name}
+      imgURL={product.imgURL}
+      key={index}
+    />
+  ));
 
   return (
     <div>
@@ -77,8 +81,7 @@ const Home = () => {
         </div>
       </Layout>
     </div>
-  )
-}
-
+  );
+};
 
 export default Home;
