@@ -6,7 +6,7 @@ import Product from '../../components/Product/Product.jsx'
 import Sort from '../../components/Sort/Sort'
 import { getProducts } from '../../services/crud'
 import { AZ, ZA} from "../../utils/sort"
-// import Layout from '../../components/shared/Layout/Layout'
+import Layout from '../../components/shared/Layout/Layout'
 
 const Home = () => {
   const [allProducts, setAllProducts] = useState([])
@@ -47,13 +47,17 @@ const Home = () => {
   )
   return (
     <div>
-      {/* <Layout user={props.user}> */}
-      <Search onSubmit={handleSubmit} onChange={handleSearch} />
-      {/* <Sort onSubmit={handleSubmit} onChange={handleSort} /> */}
-        <div className="products">
-        {productsJSX}
+      <Layout>
+        <div className="products-screen">
+          <Search onSubmit={handleSubmit} onChange={handleSearch} />
+          <div className="sort-box">
+            shit
+          </div>
+          <div className="products-box">
+            {productsJSX}
+          </div>
         </div>
-      {/* </Layout> */}
+      </Layout>
     </div>
   )
 }
