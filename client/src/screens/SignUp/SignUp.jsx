@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import "./SignUp.css";
 import { signUp, signIn } from "../../services/users";
 import { useHistory } from "react-router-dom";
-import Layout from "../../components/shared/Layout/Layout"
+import Layout from "../../components/shared/Layout/Layout";
 
 const SignUp = (props) => {
   const history = useHistory();
 
   const [form, setForm] = useState({
-    username: "",
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
     passwordConfirmation: "",
@@ -25,14 +26,12 @@ const SignUp = (props) => {
   const onSignUp = (event) => {
     event.preventDefault();
     const { setUser } = props;
-
-    signUp(form)
-      .then(() => signIn(form))
-      .then((user) => setUser(user))
-      .then(() => history.push("/"))
-      .catch((error) => {
+    console.log(setUser);
+    signUp(form).then(() => signIn(form)).then((user) => setUser(user)).then(() => history.push("/")).catch((error) => {
         console.error(error);
         setForm({
+          first_name: "",
+          last_name: "",
           email: "",
           password: "",
           passwordConfirmation: "",
@@ -51,24 +50,37 @@ const SignUp = (props) => {
         </button>
       );
     } else {
-      return <button className="sign-up-button" type="submit">Sign Up</button>;
+      return (
+        <button className="sign-up-button" type="submit">
+          Sign Up
+        </button>
+      );
     }
   };
 
-  const { email, username, password, passwordConfirmation } = form;
+  const { email, first_name, last_name, password, passwordConfirmation } = form;
 
   return (
     <Layout>
       <div className="form-sign-up">
         <h3 className="sign-up">Sign Up</h3>
         <form onSubmit={onSignUp}>
-          <label>Username</label>
+          <label>First name</label>
           <input
             required
             type="text"
-            name="username"
-            value={username}
-            placeholder="Enter username"
+            name="first_name"
+            value={first_name}
+            placeholder="Enter first name"
+            onChange={handleChange}
+          />
+          <label>Last name</label>
+          <input
+            required
+            type="text"
+            name="last_name"
+            value={last_name}
+            placeholder="Enter last name"
             onChange={handleChange}
           />
           <label>Email address</label>
