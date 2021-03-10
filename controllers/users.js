@@ -10,16 +10,17 @@ const TOKEN_KEY = "a@GzkrA1oB*J1J8eN";
 
 const signUp = async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const { first_name, email, password, role } = req.body;
     const password_digest = await bcrypt.hash(password, SALT_ROUNDS);
     const user = newUser({
-      username,
+      first_name,
       email,
       password_digest,
+      role,
     });
     await user.save();
     const payload = {
-      username: user.username,
+      first_name: user.first_name,
       email: user.email,
     };
     const token = jwt.sign(payload, TOKEN_KEY);
