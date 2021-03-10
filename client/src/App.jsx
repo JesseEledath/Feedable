@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Cart from "./screens/Cart/Cart";
 import Create from "./screens/Create/Create";
 import Home from "./screens/Home/Home";
@@ -8,14 +8,12 @@ import ProductDetail from "./screens/ProductDetail/ProductDetail";
 import SignIn from "./screens/SignIn/SignIn";
 import SignOut from "./screens/SignOut/SignOut";
 import SignUp from "./screens/SignUp/SignUp";
-import Navbar from "./components/shared/Nav/Navbar";
-
+import About from "./screens/About/About"
 
 import './App.css';
 
-
 const App = () => {
-  // const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null)
 
   // useEffect(() => {
   //   const fetchUser = async () => {
@@ -25,36 +23,44 @@ const App = () => {
   //   fetchUser()
   // }, [])
 
-  // const clearUser = () => setUser(null)
+  const clearUser = () => setUser(null)
 
   return (
     <div className="App">
       <Switch>
         <Route exact path="/">
-          <LandingPage />
+          <LandingPage user={user}/>
         </Route>
         <Route path="/sign-up">
-          <SignUp />
+
+          <SignUp setUser={setUser}/>
+
         </Route>
         <Route path="/sign-in">
-          <SignIn />
+          <SignIn setUser={setUser}/>
         </Route>
         <Route path="/sign-out">
-          <SignOut />
+
+          <SignOut setUser={setUser} clearUser={clearUser}/>
+
         </Route>
         <Route exact path="/products">
-          <Home />
+          <Home user={user}/>
         </Route>
         <Route exact path="/products/:id">
-          <ProductDetail />
+          <ProductDetail user={user}/>
         </Route>
-        {/* 
+
+        <Route exact path="/about">
+          <About />
+        </Route>
+        
         <Route exact path="/cart">
-          <Cart />
+          {user ? <Cart user={user} /> : <Redirect to="/sign-up" />}
         </Route>
-        <Route exact path="/create">
+        {/* <Route exact path="/create">
           {user ? <Create user={user} /> : <Redirect to="/sign-up" />}
-        </Route> */}
+  </Route>*/}
       </Switch>
     </div>
   );

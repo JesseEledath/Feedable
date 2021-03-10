@@ -12,7 +12,7 @@ export default function Navbar(props) {
         </Link>
       </div>
       <nav>
-        <Link className="icon icon-link" to="/products">
+        <Link className="icon icon-link" to="/">
           <div>Feedable</div>
         </Link>
         <div className="nav-links">
@@ -28,7 +28,7 @@ export default function Navbar(props) {
               <Link to="/sign-up">Sign Up</Link>
             </div>
           </div>
-          <Link to>
+          <Link to="/cart">
             <div>Cart</div>
           </Link>
         </div>

@@ -1,0 +1,27 @@
+.search-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-input {
+    width: 70%;
+    font-size: 18px;
+    letter-spacing: 0.1px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin: 40px;
+    border: 3px solid lightgray;
+    outline: none;
+}
+
+.search-input::placeholder {
+    letter-spacing: .3px;
+}
+
+.search-input:focus {
+    border: 3px solid black;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}

@@ -44,12 +44,14 @@ const Home = () => {
 
   const handleSubmit = (event) => event.preventDefault();
 
-  console.log(queriedProducts);
+  // console.log(queriedProducts);
   
   const productsJSX = queriedProducts.map((product, index) => (
     <Product
       _id={product._id}
       name={product.name}
+      description={product.description}
+      quantity={product.quantity}
       imgURL={product.imgURL}
       key={index}
     />
@@ -59,23 +61,15 @@ const Home = () => {
     <div>
       <Layout>
         <div className="products-screen">
-          <Search onSubmit={handleSubmit} onChange={handleSearch} />
           <div className="sort-box">
-            {/* <Sort onSubmit={handleSubmit} onChange={handleSort} /> */}
+          {/* <Sort onSubmit={handleSubmit} onChange={handleSort} /> */}
           </div>
           <div className="products-box">
-            {/* <div className="products-section">
-              <div className="products-container">  
-                <Products />
-                {productsJSX}
-              </div>
-            </div> */}
+            <div className="search-container">
+              <Search onSubmit={handleSubmit} onChange={handleSearch} />
+            </div>
             <div className="products-section">
-              {queriedProducts.map((product, index) => (
-                <div className="products-container" key={index}>
-                  <Product product={product} />
-                </div>
-              ))}
+              {productsJSX}
             </div>
           </div>
         </div>
