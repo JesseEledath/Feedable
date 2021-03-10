@@ -14,7 +14,8 @@ const main = async () => {
       price: "$1",
       category: ["dairy", "fresh_produce"],
       quantity: 5,
-    }, {
+    },
+    {
       name: "Chicken Breast",
       imgURL:
         "https://www.foodiecrush.com/wp-content/uploads/2018/08/Instant-Pot-Chicken-Breasts-foodiecrush.com-006A-683x1024.jpg",
@@ -22,7 +23,8 @@ const main = async () => {
       price: "$1",
       category: ["poultry", "fresh_produce", "meat"],
       quantity: 2,
-    }, {
+    },
+    {
       name: "Organic Chicken Breast",
       imgURL:
         "https://d2d8wwwkmhfcva.cloudfront.net/400x/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_c5b8ff55-e8f4-4636-8df0-583af188af75.jpg",
@@ -30,7 +32,8 @@ const main = async () => {
       price: "$1",
       category: ["organic", "fresh_produce", "meat", "poultry"],
       quantity: 3,
-    }, {
+    },
+    {
       name: "Tilapia Fillets",
       imgURL:
         "https://images-na.ssl-images-amazon.com/images/I/81tgp8HeAcL._SL1500_.jpg",
@@ -39,7 +42,8 @@ const main = async () => {
       price: "$1",
       category: ["meat", "sea_food"],
       quantity: 3,
-    }, {
+    },
+    {
       name: "Atlantic Salmon",
       imgURL:
         "https://images-na.ssl-images-amazon.com/images/I/71zu6ZGuu8L._SL1500_.jpg",
@@ -48,7 +52,8 @@ const main = async () => {
       price: "$1",
       category: ["organic", "meat", "sea_food"],
       quantity: 3,
-    }, {
+    },
+    {
       name: "Cooked Jumbo Shrimp",
       imgURL:
         "https://images-na.ssl-images-amazon.com/images/I/714cQa4bfUL._SL1500_.jpg",
@@ -57,79 +62,8 @@ const main = async () => {
       price: "$1",
       category: ["crayfish", "meat", "sea_food"],
       quantity: 3,
-    }, {
-      name: "Crab Legs",
-      imgURL:
-        "https://images-na.ssl-images-amazon.com/images/I/619vwMKzrnL._SL1000_.jpg",
-      description: "8oz bag of saltwater crab legs.",
-      price: "$1",
-      category: ["shellfish", "meat", "sea_food", "gluten_free"],
-      quantity: 3,
-    }, {
-      name: "Crab Legs",
-      imgURL:
-        "https://images-na.ssl-images-amazon.com/images/I/619vwMKzrnL._SL1000_.jpg",
-      description: "8oz bag of saltwater crab legs.",
-      price: "$1",
-      category: ["shellfish", "meat", "sea_food", "gluten_free"],
-      quantity: 3,
-    }, {
-      name: "Crab Legs",
-      imgURL:
-        "https://images-na.ssl-images-amazon.com/images/I/619vwMKzrnL._SL1000_.jpg",
-      description: "8oz bag of saltwater crab legs.",
-      price: "$1",
-      category: ["shellfish", "meat", "sea_food", "gluten_free"],
-      quantity: 3,
-    }, {
-      name: "Crab Legs",
-      imgURL:
-        "https://images-na.ssl-images-amazon.com/images/I/619vwMKzrnL._SL1000_.jpg",
-      description: "8oz bag of saltwater crab legs.",
-      price: "$1",
-      category: ["shellfish", "meat", "sea_food", "gluten_free"],
-      quantity: 3,
-    }, {
-      name: "Crab Legs",
-      imgURL:
-        "https://images-na.ssl-images-amazon.com/images/I/619vwMKzrnL._SL1000_.jpg",
-      description: "8oz bag of saltwater crab legs.",
-      price: "$1",
-      category: ["shellfish", "meat", "sea_food", "gluten_free"],
-      quantity: 3,
-    }, {
-      name: "Crab Legs",
-      imgURL:
-        "https://images-na.ssl-images-amazon.com/images/I/619vwMKzrnL._SL1000_.jpg",
-      description: "8oz bag of saltwater crab legs.",
-      price: "$1",
-      category: ["shellfish", "meat", "sea_food", "gluten_free"],
-      quantity: 3,
-    }, {
-      name: "Crab Legs",
-      imgURL:
-        "https://images-na.ssl-images-amazon.com/images/I/619vwMKzrnL._SL1000_.jpg",
-      description: "8oz bag of saltwater crab legs.",
-      price: "$1",
-      category: ["shellfish", "meat", "sea_food", "gluten_free"],
-      quantity: 3,
-    }, {
-      name: "Crab Legs",
-      imgURL:
-        "https://images-na.ssl-images-amazon.com/images/I/619vwMKzrnL._SL1000_.jpg",
-      description: "8oz bag of saltwater crab legs.",
-      price: "$1",
-      category: ["shellfish", "meat", "sea_food", "gluten_free"],
-      quantity: 3,
-    }, {
-      name: "Crab Legs",
-      imgURL:
-        "https://images-na.ssl-images-amazon.com/images/I/619vwMKzrnL._SL1000_.jpg",
-      description: "8oz bag of saltwater crab legs.",
-      price: "$1",
-      category: ["shellfish", "meat", "sea_food", "gluten_free"],
-      quantity: 3,
-    }, {
+    },
+    {
       name: "Crab Legs",
       imgURL:
         "https://images-na.ssl-images-amazon.com/images/I/619vwMKzrnL._SL1000_.jpg",
