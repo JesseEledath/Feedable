@@ -8,11 +8,9 @@ import ProductDetail from "./screens/ProductDetail/ProductDetail";
 import SignIn from "./screens/SignIn/SignIn";
 import SignOut from "./screens/SignOut/SignOut";
 import SignUp from "./screens/SignUp/SignUp";
-import Navbar from "./components/shared/Nav/Navbar";
-
+import About from "./screens/About/About"
 
 import './App.css';
-
 
 const App = () => {
   // const [user, setUser] = useState(null)
@@ -47,6 +45,9 @@ const App = () => {
         </Route>
         <Route exact path="/products/:id">
           <ProductDetail />
+        </Route>
+        <Route exact path="/about">
+          <About />
         </Route>
         {/* 
         <Route exact path="/cart">
