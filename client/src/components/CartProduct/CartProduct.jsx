@@ -1,5 +1,5 @@
-import './CartProduct.css';
-import { Link } from 'react-router-dom'
+import "./CartProduct.css";
+import { Link } from "react-router-dom";
 
 const CartProduct = (props) => {
   return (
@@ -10,7 +10,7 @@ const CartProduct = (props) => {
         <div className="cart-prod-quantity">{props.quantity}</div>
       </Link>
     </>
-  )
-}
+  );
+};
 
-export default CartProduct
+export default CartProduct;
