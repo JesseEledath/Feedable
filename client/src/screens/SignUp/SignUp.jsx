@@ -68,6 +68,7 @@ const SignUp = (props) => {
           <label>First name</label>
           <input
             required
+            className="sign-up-input"
             type="text"
             name="first_name"
             value={first_name}
@@ -77,6 +78,7 @@ const SignUp = (props) => {
           <label>Last name</label>
           <input
             required
+            className="sign-up-input"
             type="text"
             name="last_name"
             value={last_name}
