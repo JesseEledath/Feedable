@@ -50,7 +50,8 @@ const SignIn = (props) => {
         </button>
       );
     } else {
-      return <button type="submit">Sign In</button>;
+      return <button className="sign-in-button" type="submit">
+       <span className="button-span">Sign In</span> </button>;
     }
   };
 
@@ -58,9 +59,10 @@ const SignIn = (props) => {
 
   return (
     <div className="form-container">
-      <h3>Sign In</h3>
-      <form onSubmit={onSignIn}>
-        <label>Username</label>
+      <div className="form">
+      <h3 className="sign-in">Sign In</h3>
+      <form onSubmit={onSignIn} className="form-cont">
+        
         <input
           required
           type="text"
@@ -69,7 +71,6 @@ const SignIn = (props) => {
           placeholder="Enter Username"
           onChange={handleChange}
         />
-        <label>Password</label>
         <input
           required
           name="password"
@@ -79,7 +80,8 @@ const SignIn = (props) => {
           onChange={handleChange}
         />
         {renderError()}
-      </form>
+        </form>
+        </div>
     </div>
   );
 };

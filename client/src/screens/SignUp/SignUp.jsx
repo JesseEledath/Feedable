@@ -50,15 +50,15 @@ const SignUp = (props) => {
         </button>
       );
     } else {
-      return <button type="submit">Sign Up</button>;
+      return <button className="sign-up-button" type="submit">Sign Up</button>;
     }
   };
 
   const { email, username, password, passwordConfirmation } = form;
 
   return (
-    <div className="form-container">
-      <h3>Sign Up</h3>
+    <div className="form-sign-up">
+      <h3 className="sign-up">Sign Up</h3>
       <form onSubmit={onSignUp}>
         <label>Username</label>
         <input
