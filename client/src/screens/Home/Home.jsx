@@ -58,7 +58,7 @@ const Home = () => {
   ));
 
   return (
-    <div>
+    <div className="home-screen">
       <Layout>
         <div className="products-screen">
           <div className="sort-box">
