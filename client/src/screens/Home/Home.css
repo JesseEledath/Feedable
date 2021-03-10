@@ -13,3 +13,16 @@
     width: 25%;
     background-color: #DAC995;
 }
+
+.products-container {
+    width: 250px;
+    height: 40vh;
+    padding: 10px 20px;
+}
+
+.products-section {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
