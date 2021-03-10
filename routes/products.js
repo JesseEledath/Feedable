@@ -2,6 +2,7 @@ const { Router } = require("express");
 const controllers = require("../controllers/products");
 const restrict = require("../helper/restrict")
 const router = Router();
+
 router.get("/", controllers.getProducts);
 router.get("/:id", controllers.getProduct);
 router.post("/", restrict, controllers.createProduct);

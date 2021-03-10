@@ -10,3 +10,5 @@ const restrict = (req, res, next) => {
       res.status(403).send('Unauthorized')
   }
 }
+
+module.exports = restrict
