@@ -13,7 +13,6 @@ const Search = (props) => {
         placeholder="Search"
         autoFocus
       />
-      <button type="submit">Submit</button>
     </form>
   );
 };
