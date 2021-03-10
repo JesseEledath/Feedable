@@ -51,41 +51,16 @@ const SignIn = (props) => {
         </button>
       );
     } else {
-      return <button className="sign-in-button" type="submit">
-       <span className="button-span">Sign In</span> </button>;
+      return (
+        <button className="sign-in-button" type="submit">
+        <span className="button-span">Sign In</span> </button>
+      )
     }
   };
 
   const { username, password } = form;
 
   return (
-
-    <div className="form-container">
-      <div className="form">
-      <h3 className="sign-in">Sign In</h3>
-      <form onSubmit={onSignIn} className="form-cont">
-        
-        <input
-          required
-          type="text"
-          name="username"
-          value={username}
-          placeholder="Enter Username"
-          onChange={handleChange}
-        />
-        <input
-          required
-          name="password"
-          value={password}
-          type="password"
-          placeholder="Password"
-          onChange={handleChange}
-        />
-        {renderError()}
-        </form>
-        </div>
-    </div>
-
     <Layout>
       <div className="form-container">
         <h3>Sign In</h3>
@@ -112,7 +87,6 @@ const SignIn = (props) => {
         </form>
       </div>
     </Layout>
-
   );
 };
 
