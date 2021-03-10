@@ -1,0 +1,15 @@
+.products-screen {
+    width: 100vw;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.products-box {
+    width: 65%;
+}
+
+.sort-box {
+    width: 25%;
+    background-color: #DAC995;
+}

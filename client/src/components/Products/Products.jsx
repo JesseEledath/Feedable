@@ -18,9 +18,9 @@ function Products() {
   console.log(products)
 
   return (
-    <div className="product-section">
+    <div className="products-section">
       {products.map((product, index) => (
-        <div className="product" key={index}>
+        <div className="products-container" key={index}>
           <Product setToggleFetch={setToggleFetch} product={product} />
         </div>
       ))}
