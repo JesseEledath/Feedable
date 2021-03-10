@@ -4,7 +4,7 @@ import Filter from "../../components/Filter/Filter";
 import Layout from "../../components/shared/Layout/Layout";
 import { getProducts } from "../../services/crud";
 
-function LandingPage (props) {
+function LandingPage(props) {
   const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
@@ -14,9 +14,9 @@ function LandingPage (props) {
     };
     fetchProducts();
   }, []);
-  
+
   return (
-    <Layout >
+    <Layout>
       <div className="landing-page-container">
         <Slider products={allProducts} />
         <h1>HELLO</h1>

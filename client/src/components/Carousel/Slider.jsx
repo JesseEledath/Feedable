@@ -2,21 +2,21 @@ import React, { useState } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import "./Slider.css";
 
-function Slider ({ products }) {
+function Slider({ products }) {
   const [imageCounter, setImageCounter] = useState(0);
   const length = products.length;
-  
+
   // setTimeout(() => {
   //   setImageCounter(imageCounter === length - 1 ? 0 : imageCounter + 1)
   // }, 3000);
 
   const nextSlide = () => {
-    clearTimeout()
+    clearTimeout();
     setImageCounter(imageCounter === length - 1 ? 0 : imageCounter + 1);
   };
 
   const prevSlide = () => {
-    clearTimeout()
+    clearTimeout();
     setImageCounter(imageCounter === 0 ? length - 1 : imageCounter - 1);
   };
 
@@ -27,10 +27,7 @@ function Slider ({ products }) {
 
   return (
     <div className="slider-container">
-      <FaArrowAltCircleLeft 
-        className="slider-left-arrow" 
-        onClick={prevSlide} 
-        />
+      <FaArrowAltCircleLeft className="slider-left-arrow" onClick={prevSlide} />
       <FaArrowAltCircleRight
         className="slider-right-arrow"
         onClick={nextSlide}
