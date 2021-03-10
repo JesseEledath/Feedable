@@ -6,18 +6,16 @@
 }
 
 .products-box {
-    width: 65%;
+    width: 67%;
 }
 
 .sort-box {
-    width: 25%;
+    width: 27%;
     background-color: #DAC995;
 }
 
-.products-container {
-    width: 250px;
-    height: 40vh;
-    padding: 10px 20px;
+.search-container {
+    height: 75px;
 }
 
 .products-section {
