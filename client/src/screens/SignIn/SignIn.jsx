@@ -62,30 +62,31 @@ const SignIn = (props) => {
 
   return (
     <Layout>
-      <div className="form-container">
-        <h3>Sign In</h3>
-        <form onSubmit={onSignIn}>
-          <label>Username</label>
-          <input
-            required
-            type="text"
-            name="username"
-            value={username}
-            placeholder="Enter Username"
-            onChange={handleChange}
-          />
-          <label>Password</label>
-          <input
-            required
-            name="password"
-            value={password}
-            type="password"
-            placeholder="Password"
-            onChange={handleChange}
-          />
-          {renderError()}
+          <div className="form-container">
+      <div className="form">
+      <h3 className="sign-in">Sign In</h3>
+      <form onSubmit={onSignIn} className="form-cont">
+        
+        <input
+          required
+          type="text"
+          name="username"
+          value={username}
+          placeholder="Enter Username"
+          onChange={handleChange}
+        />
+        <input
+          required
+          name="password"
+          value={password}
+          type="password"
+          placeholder="Password"
+          onChange={handleChange}
+        />
+        {renderError()}
         </form>
-      </div>
+        </div>
+    </div>
     </Layout>
   );
 };
