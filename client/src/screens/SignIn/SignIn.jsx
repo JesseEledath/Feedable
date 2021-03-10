@@ -69,6 +69,7 @@ const SignIn = (props) => {
         
         <input
           required
+          className="sign-in-input"
           type="text"
           name="username"
           value={username}
@@ -76,7 +77,8 @@ const SignIn = (props) => {
           onChange={handleChange}
         />
         <input
-          required
+              required
+              className="sign-in-input"
           name="password"
           value={password}
           type="password"
