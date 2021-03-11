@@ -9,7 +9,7 @@ const Create = (props) => {
     name: '',
     imgURL: '',
     description: '',
-    category: [],
+    category: [''],
     quantity: '',
     price: ''
   });
