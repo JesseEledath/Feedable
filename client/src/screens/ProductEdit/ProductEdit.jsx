@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Redirect, useParams } from "react-router"
 import Layout from "../../components/shared/Layout/Layout"
 import { getProduct, updateProduct } from "../../services/crud"
@@ -10,7 +10,7 @@ export default function ProductEdit (props) {
         imageURL: '',
         description: '',
         price: '',
-        category: [''],
+        category: '',
         quantitiy:'',
     })
 
@@ -22,6 +22,7 @@ export default function ProductEdit (props) {
             const product = await getProduct(id)
             setProduct(product)
         }
+        fetchProduct()
     }, [id])
 
     const handleChange = (e) => {
@@ -34,13 +35,12 @@ export default function ProductEdit (props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        let { id } = props.match.params
         const updated = await updateProduct(id, product)
         setUpdated(updated)
     }
 
     if (isUpdated) {
-        return <Redirect to={`/products/${props.match.params.id}`} />
+        return <Redirect to={`/products/${id}`} />
     }
 
     return (
@@ -80,7 +80,7 @@ export default function ProductEdit (props) {
                     <input
                         className="input-category"
                         placeholder='Category'
-                        value={product.price}
+                        value={product.category}
                         name='category'
                         required
                         onChange={handleChange}

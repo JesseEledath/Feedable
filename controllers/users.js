@@ -18,11 +18,14 @@ const signUp = async (req, res) => {
       password_digest,
       role,
     });
+
     await user.save();
+
     const payload = {
       first_name: user.first_name,
       email: user.email,
     };
+
     const token = jwt.sign(payload, TOKEN_KEY);
     res.status(201).json({ token });
   } catch (error) {
@@ -32,12 +35,12 @@ const signUp = async (req, res) => {
 
 const signIn = async (req, res) => {
   try {
-    const { username, password } = req.body;
-    const user = await User.findOne({ username: username });
+    const { email, password } = req.body;
+    const user = await User.findOne({ email: email });
     if (await bcrypt.compare(password, user.password_digest)) {
       const payload = {
-        username: user.username,
         email: user.email,
+        first_name: user.first_name,
       };
       const token = jwt.sign(payload, TOKEN_KEY);
       res.status(201).json({ token });

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Slider from "../../components/Carousel/Slider";
-import Filter from "../../components/Filter/Filter";
 import Layout from "../../components/shared/Layout/Layout";
 import { getProducts } from "../../services/crud";
 
@@ -14,9 +13,9 @@ function LandingPage(props) {
     };
     fetchProducts();
   }, []);
-
+  console.log("Landing Page", props.user)
   return (
-    <Layout>
+    <Layout user={props.user}>
       <div className="landing-page-container">
         <Slider products={allProducts} />
         <h1>HELLO</h1>

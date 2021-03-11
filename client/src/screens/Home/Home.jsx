@@ -1,25 +1,26 @@
 import './Home.css'
 import React, { useState, useEffect } from 'react'
-import Products from '../../components/Products/Products'
+import Filter from '../../components/Filter/Filter'
 import Search from '../../components/Search/Search'
-import Product from '../../components/Product/Product'
 import Sort from '../../components/Sort/Sort'
+import Product from '../../components/Product/Product'
 import { getProducts } from '../../services/crud'
+import { useCart } from "react-use-cart"
 import { AZ, ZA } from "../../utils/sort"
 import Layout from '../../components/shared/Layout/Layout'
 
-const Home = () => {
+const Home = (props) => {
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
-  const [cartProducts, setCartProducts] = useState([])
+
+  const { addItem } = useCart()
 
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
       setAllProducts(products);
       setQueriedProducts(products);
-      console.log(products);
     };
     fetchProducts();
   }, []);
@@ -46,22 +47,25 @@ const Home = () => {
 
   const handleSubmit = (event) => event.preventDefault();
 
-  console.log(queriedProducts);
-  
+  // console.log(queriedProducts);
+
   const productsJSX = queriedProducts.map((product, index) => (
-    <Product
-      _id={product._id}
-      name={product.name}
-      description={product.description}
-      quantity={product.quantity}
-      imgURL={product.imgURL}
-      key={index}
-    />
+    <div className="product-cart-container" key={product._id}>
+      <Product
+        _id={product._id}
+        name={product.name}
+        description={product.description}
+        quantity={product.quantity}
+        imgURL={product.imgURL}
+        key={product._id}
+      />
+      <button className="addtocart" onClick={() => addItem({ ...product, id: product._id })}>Add to cart</button>
+    </div>
   ));
 
   return (
     <div className="home-screen">
-      <Layout>
+      <Layout user={props.user}>
         <div className="products-screen">
           <div className="sort-box">
           {/* <Sort onSubmit={handleSubmit} onChange={handleSort} /> */}
@@ -69,6 +73,8 @@ const Home = () => {
           <div className="products-box">
             <div className="search-container">
               <Search onSubmit={handleSubmit} onChange={handleSearch} />
+              <Sort onSubmit={handleSubmit} onChange={handleSort} />
+              {/* <Filter onSubmit={handleSubmit} onChange={handleFilter} /> */}
             </div>
             <div className="products-section">
               {productsJSX}
