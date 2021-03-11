@@ -12,7 +12,7 @@ const signUp = async (req, res) => {
   try {
     const { first_name, email, password, role } = req.body;
     const password_digest = await bcrypt.hash(password, SALT_ROUNDS);
-    const user = newUser({
+    const user = new User({
       first_name,
       email,
       password_digest,
