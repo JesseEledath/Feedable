@@ -33,7 +33,7 @@ const alwaysOptions = (
   </>
 )
 
-export default function Navbar({user}) {
+export default function Navbar({ user }) {
   return (
     <header>
       <div className="logo-container">
