@@ -9,19 +9,20 @@ import SignIn from "./screens/SignIn/SignIn";
 import SignOut from "./screens/SignOut/SignOut";
 import SignUp from "./screens/SignUp/SignUp";
 import About from "./screens/About/About"
+import {verifyUser} from './services/users'
 
 import './App.css';
 
 const App = () => {
   const [user, setUser] = useState(null)
 
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     const user = await verifyUser()
-  //     user ? setUser(user) : setUser(null)
-  //   }
-  //   fetchUser()
-  // }, [])
+  useEffect(() => {
+    const fetchUser = async () => {
+      const user = await verifyUser()
+      user ? setUser(user) : setUser(null)
+    }
+    fetchUser()
+  }, [])
 
   const clearUser = () => setUser(null)
 

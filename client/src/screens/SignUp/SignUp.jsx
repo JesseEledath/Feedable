@@ -9,7 +9,6 @@ const SignUp = (props) => {
 
   const [form, setForm] = useState({
     first_name: "",
-    last_name: "",
     email: "",
     password: "",
     passwordConfirmation: "",
@@ -27,22 +26,25 @@ const SignUp = (props) => {
     event.preventDefault();
     const { setUser } = props;
     console.log(setUser);
-    signUp(form).then(() => signIn(form)).then((user) => setUser(user)).then(() => history.push("/")).catch((error) => {
+    signUp(form)
+      .then(() => signIn(form))
+      .then((user) => setUser(user))
+      .then(() => history.push("/"))
+      .catch((error) => {
         console.error(error);
         setForm({
           first_name: "",
-          last_name: "",
           email: "",
           password: "",
           passwordConfirmation: "",
           isError: true,
-          errorMsg: "Sign Up Details Invalid",
+          errorMsg: console.log(error),
         });
       });
   };
 
   const renderError = () => {
-    const toggleForm = form.isError ? "danger" : "";
+    const toggleForm = form.isError ? "danger" : "submitted";
     if (form.isError) {
       return (
         <button type="submit" className={toggleForm}>
@@ -58,7 +60,7 @@ const SignUp = (props) => {
     }
   };
 
-  const { email, first_name, last_name, password, passwordConfirmation } = form;
+  const { email, first_name, password, passwordConfirmation, role } = form;
 
   return (
     <Layout>
@@ -68,21 +70,14 @@ const SignUp = (props) => {
           <label>First name</label>
           <input
             required
+            className="sign-up-input"
             type="text"
             name="first_name"
             value={first_name}
             placeholder="Enter first name"
             onChange={handleChange}
           />
-          <label>Last name</label>
-          <input
-            required
-            type="text"
-            name="last_name"
-            value={last_name}
-            placeholder="Enter last name"
-            onChange={handleChange}
-          />
+
           <label>Email address</label>
           <input
             required
@@ -90,6 +85,15 @@ const SignUp = (props) => {
             name="email"
             value={email}
             placeholder="Enter email"
+            onChange={handleChange}
+          />
+          <label>Role</label>
+          <input
+            required
+            type="text"
+            name="role"
+            value={role}
+            placeholder="What is your role?"
             onChange={handleChange}
           />
           <label>Password</label>
