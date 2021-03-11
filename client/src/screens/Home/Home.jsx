@@ -8,7 +8,7 @@ import { getProducts } from '../../services/crud'
 import { AZ, ZA } from "../../utils/sort"
 import Layout from '../../components/shared/Layout/Layout'
 
-const Home = () => {
+const Home = (props) => {
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
@@ -61,7 +61,7 @@ const Home = () => {
 
   return (
     <div className="home-screen">
-      <Layout>
+      <Layout user={props.user}>
         <div className="products-screen">
           <div className="sort-box">
           {/* <Sort onSubmit={handleSubmit} onChange={handleSort} /> */}
