@@ -35,13 +35,12 @@ export default function ProductEdit (props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        let { id } = props.match.params
         const updated = await updateProduct(id, product)
         setUpdated(updated)
     }
 
     if (isUpdated) {
-        return <Redirect to={`/products/${props.match.params.id}`} />
+        return <Redirect to={`/products/${id}`} />
     }
 
     return (
