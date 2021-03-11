@@ -7,7 +7,7 @@ import { createProduct } from "../../services/crud";
 const Create = (props) => {
   const [product, setProduct] = useState({
     name: '',
-    imageURL: '',
+    imgURL: '',
     description: '',
     category: '',
     quantity: '',
@@ -49,7 +49,7 @@ const Create = (props) => {
           type="text"
           placeholder="Image Link"
           value={product.imgURL}
-          name="imageURL"
+          name="imgURL"
           required
           autoFocus
           onChange={handleChange}
