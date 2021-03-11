@@ -15,7 +15,7 @@ export default function Cart (props) {
     console.log(products);
 
     return (
-        <Layout>
+        <Layout user={props.user}>
             <div className="cart-screen">
                 sup
             </div>
