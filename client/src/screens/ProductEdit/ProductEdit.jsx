@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Redirect, useParams } from "react-router"
 import Layout from "../../components/shared/Layout/Layout"
 import { getProduct, updateProduct } from "../../services/crud"
@@ -10,7 +10,7 @@ export default function ProductEdit (props) {
         imageURL: '',
         description: '',
         price: '',
-        category: [''],
+        category: '',
         quantitiy:'',
     })
 

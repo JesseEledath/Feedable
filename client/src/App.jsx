@@ -67,10 +67,9 @@ const App = () => {
         </Route>
 
 
-        <Route exact path="/products/create">
+        <Route exact path="/create">
           <Create />
         </Route>
-
 
       </Switch>
     </div>
