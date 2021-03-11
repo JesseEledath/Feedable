@@ -53,7 +53,7 @@ const App = () => {
           <ProductDetail user={user}/>
         </Route>
 
-        <Route>
+        <Route exact path="/products/:id/edit">
           <ProductEdit user={user}/>
         </Route>
 

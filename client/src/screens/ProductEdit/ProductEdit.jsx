@@ -22,6 +22,7 @@ export default function ProductEdit (props) {
             const product = await getProduct(id)
             setProduct(product)
         }
+        fetchProduct()
     }, [id])
 
     const handleChange = (e) => {
@@ -80,7 +81,7 @@ export default function ProductEdit (props) {
                     <input
                         className="input-category"
                         placeholder='Category'
-                        value={product.price}
+                        value={product.category}
                         name='category'
                         required
                         onChange={handleChange}
