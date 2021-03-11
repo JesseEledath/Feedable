@@ -58,19 +58,19 @@ const App = () => {
         </Route>
 
         <Route exact path="/about">
-          <About />
+          <About user={user}/>
         </Route>
         
         <Route exact path="/cart">
           {/* {user ? <Cart user={user} /> : <Redirect to="/sign-up" />} */}
-          <Cart />
+          <Cart user={user}/>
         </Route>
 
 
 
         <Route exact path="/create">
 
-          <Create />
+          <Create user={user}/>
         </Route>
 
       </Switch>

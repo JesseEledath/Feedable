@@ -32,7 +32,7 @@ const Create = (props) => {
     return <Redirect to={`/products`} />;
   }
   return (
-    <Layout>
+    <Layout user={props.user}>
       <form className="create-form" onSubmit={handleSubmit}>
         <input
           className="create-name"
