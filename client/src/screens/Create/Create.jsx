@@ -67,9 +67,9 @@ const Create = (props) => {
         <input
           className="create-name"
           type="text"
-          placeholder="product Name"
+          placeholder="catagory"
           value={product.category}
-          name="name"
+          name="category"
           required
           autoFocus
           onChange={handleChange}
