@@ -37,7 +37,7 @@ const Create = (props) => {
         <input
           className="create-name"
           type="text"
-          placeholder="product Name"
+          placeholder="Product Name"
           value={product.name}
           name="name"
           required
@@ -57,7 +57,7 @@ const Create = (props) => {
         <textarea
           className="create-description"
           rows={10}
-          placeholder="Desciption"
+          placeholder="Description"
           value={product.description}
           name="description"
           required
@@ -67,7 +67,7 @@ const Create = (props) => {
         <input
           className="create-name"
           type="text"
-          placeholder="catagory"
+          placeholder="Category"
           value={product.category}
           name="category"
           required
