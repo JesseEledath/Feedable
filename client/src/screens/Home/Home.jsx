@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Search from '../../components/Search/Search'
 import Product from '../../components/Product/Product'
 import { getProducts } from '../../services/crud'
+import { useCart } from "react-use-cart"
 import { AZ, ZA } from "../../utils/sort"
 import Layout from '../../components/shared/Layout/Layout'
 
@@ -10,7 +11,9 @@ const Home = (props) => {
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
-  const [cart, setCart] = useState([])
+  // const [cart, setCart] = useState([])
+
+  const { addItem } = useCart()
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -45,23 +48,26 @@ const Home = (props) => {
 
   console.log(queriedProducts);
 
-  const addToCart = (el) => {
-    setCart([...cart, el])
-  }
+  // const addToCart = (el) => {
+  //   setCart([...cart, el])
+  // }
   
   const productsJSX = queriedProducts.map((product, index) => (
-    <Product
-      _id={product._id}
-      name={product.name}
-      description={product.description}
-      quantity={product.quantity}
-      imgURL={product.imgURL}
-      key={index}
-      addToCart={addToCart}
-    />
+    <div className="product-cart-container" key={product._id}>
+      <Product
+        _id={product._id}
+        name={product.name}
+        description={product.description}
+        quantity={product.quantity}
+        imgURL={product.imgURL}
+        key={product._id}
+        // addToCart={addToCart}
+      />
+      <button className="addtocart" onClick={() => addItem(product)}>Add to cart</button>
+    </div>
   ));
 
-  console.log(cart);
+  // console.log(cart);
 
   // store cart state in local storage 
   // call localStorage.getItem('cart') in the cart screen
