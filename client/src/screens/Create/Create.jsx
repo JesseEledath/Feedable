@@ -9,7 +9,7 @@ const Create = (props) => {
     name: '',
     imageURL: '',
     description: '',
-    category: '',
+    category: [],
     quantity: '',
     price: ''
   });
@@ -64,7 +64,7 @@ const Create = (props) => {
           autoFocus
           onChange={handleChange}
         />
-        <input
+        <select
           className="create-name"
           type="text"
           placeholder="catagory"
@@ -73,7 +73,13 @@ const Create = (props) => {
           required
           autoFocus
           onChange={handleChange}
-        />
+        >
+          <option value="choose">Choose Category</option>
+          <option value="meat">Meat</option>
+          <option value="dairy">Dairy</option>
+          <option value="fruit">Fruit</option>
+          <option value="polutry">Polutry</option>
+          </select>
         <input
           className="create-quantity"
           type="number"
