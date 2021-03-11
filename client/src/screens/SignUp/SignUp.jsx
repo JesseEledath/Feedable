@@ -26,7 +26,11 @@ const SignUp = (props) => {
     event.preventDefault();
     const { setUser } = props;
     console.log(setUser);
-    signUp(form).then(() => signIn(form)).then((user) => setUser(user)).then(() => history.push("/")).catch((error) => {
+    signUp(form)
+      .then(() => signIn(form))
+      .then((user) => setUser(user))
+      .then(() => history.push("/"))
+      .catch((error) => {
         console.error(error);
         setForm({
           first_name: "",
@@ -40,7 +44,7 @@ const SignUp = (props) => {
   };
 
   const renderError = () => {
-    const toggleForm = form.isError ? "danger" : "";
+    const toggleForm = form.isError ? "danger" : "submitted";
     if (form.isError) {
       return (
         <button type="submit" className={toggleForm}>
