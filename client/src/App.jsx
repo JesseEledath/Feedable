@@ -26,7 +26,7 @@ const App = () => {
   }, [])
 
   const clearUser = () => setUser(null)
-  console.log("App", user)
+  // console.log("App", user)
   return (
     <div className="App">
       <Switch>

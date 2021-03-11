@@ -11,18 +11,13 @@ export default function Cart (props) {
             setProducts(res)
         }
         fetchProducts()
-        console.log(products);
     }, [])
-
-    const listProducts = products.map(product => (
-        <div key={product._id}></div>
-    ))
-    // console.log(localStorage);
+    console.log(products);
 
     return (
         <Layout>
             <div className="cart-screen">
-                
+                sup
             </div>
         </Layout>
     )

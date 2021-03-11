@@ -34,7 +34,7 @@ const alwaysOptions = (
 )
 
 export default function Navbar({user}) {
-  console.log(user)
+  // console.log(user)
   return (
     <header>
       <div className="logo-container">
