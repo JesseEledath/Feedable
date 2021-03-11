@@ -17,6 +17,7 @@ export default function Navbar(props) {
         </Link>
         <div className="nav-links">
           <Link to="/products">Products</Link>
+          <Link to="/products/create">Add Product</Link>
           <Link to="/about">Mission</Link>
           <div className="nav-dropdown">
             <button className="dropbtn">
