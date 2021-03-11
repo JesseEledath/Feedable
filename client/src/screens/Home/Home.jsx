@@ -12,12 +12,14 @@ const Home = () => {
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
+  const [cartProducts, setCartProducts] = useState([])
 
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
       setAllProducts(products);
       setQueriedProducts(products);
+      console.log(products);
     };
     fetchProducts();
   }, []);
