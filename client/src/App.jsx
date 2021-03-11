@@ -67,7 +67,9 @@ const App = () => {
         </Route>
 
 
+
         <Route exact path="/create">
+
           <Create />
         </Route>
 
