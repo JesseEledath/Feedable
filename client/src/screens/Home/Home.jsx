@@ -1,9 +1,7 @@
 import './Home.css'
 import React, { useState, useEffect } from 'react'
-import Products from '../../components/Products/Products'
 import Search from '../../components/Search/Search'
 import Product from '../../components/Product/Product'
-import Sort from '../../components/Sort/Sort'
 import { getProducts } from '../../services/crud'
 import { AZ, ZA } from "../../utils/sort"
 import Layout from '../../components/shared/Layout/Layout'
@@ -12,14 +10,12 @@ const Home = (props) => {
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
-  const [cartProducts, setCartProducts] = useState([])
 
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
       setAllProducts(products);
       setQueriedProducts(products);
-      console.log(products);
     };
     fetchProducts();
   }, []);

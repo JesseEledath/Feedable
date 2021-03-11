@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Slider from "../../components/Carousel/Slider";
-import Filter from "../../components/Filter/Filter";
 import Layout from "../../components/shared/Layout/Layout";
 import { getProducts } from "../../services/crud";
 

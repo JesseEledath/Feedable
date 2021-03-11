@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Cart from "./screens/Cart/Cart";
 import Create from "./screens/Create/Create";
 import Home from "./screens/Home/Home";
