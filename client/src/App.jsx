@@ -59,9 +59,9 @@ const App = () => {
         <Route exact path="/cart">
           {user ? <Cart user={user} /> : <Redirect to="/sign-up" />}
         </Route>
-        {/* <Route exact path="/create">
+        <Route exact path="/create">
           {user ? <Create user={user} /> : <Redirect to="/sign-up" />}
-  </Route>*/}
+  </Route>
       </Switch>
     </div>
   );
