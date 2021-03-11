@@ -5,7 +5,6 @@ import Search from '../../components/Search/Search'
 import Sort from '../../components/Sort/Sort'
 import Product from '../../components/Product/Product'
 import { getProducts } from '../../services/crud'
-import { useCart } from "react-use-cart"
 import { AZ, ZA } from "../../utils/sort"
 import Layout from '../../components/shared/Layout/Layout'
 
@@ -13,8 +12,8 @@ const Home = (props) => {
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
-
-  const { addItem } = useCart()
+  const [filterType, setFilterType] = useState([]);
+  const [cart, setCart] = useState([])
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -24,6 +23,11 @@ const Home = (props) => {
     };
     fetchProducts();
   }, []);
+
+  // const handleFilter = (filter) => {
+  //   setFilterType(filter);
+  //   switch
+  // }
 
   const handleSort = (type) => {
     setSortType(type);
@@ -38,6 +42,7 @@ const Home = (props) => {
         break;
     }
   };
+
   const handleSearch = (event) => {
     const newQueriedProducts = allProducts.filter((product) =>
       product.name.toLowerCase().includes(event.target.value.toLowerCase())
@@ -49,19 +54,27 @@ const Home = (props) => {
 
   // console.log(queriedProducts);
 
+  const addToCart = (el) => {
+    setCart([...cart, el])
+  }
+  
   const productsJSX = queriedProducts.map((product, index) => (
-    <div className="product-cart-container" key={product._id}>
-      <Product
-        _id={product._id}
-        name={product.name}
-        description={product.description}
-        quantity={product.quantity}
-        imgURL={product.imgURL}
-        key={product._id}
-      />
-      <button className="addtocart" onClick={() => addItem({ ...product, id: product._id })}>Add to cart</button>
-    </div>
+    <Product
+      _id={product._id}
+      name={product.name}
+      description={product.description}
+      quantity={product.quantity}
+      imgURL={product.imgURL}
+      key={index}
+      addToCart={addToCart}
+    />
   ));
+
+  // console.log(cart);
+
+  // store cart state in local storage 
+  // call localStorage.getItem('cart') in the cart screen
+  // map through the cart array to getProduct(id)
 
   return (
     <div className="home-screen">
