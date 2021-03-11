@@ -6,12 +6,12 @@ import { createProduct } from "../../services/crud";
 
 const Create = (props) => {
   const [product, setProduct] = useState({
-    name: "",
-    imageURL: "",
-    description: "",
-    category: "",
-    quantity: "",
-    price: "",
+    name: '',
+    imageURL: '',
+    description: '',
+    category: '',
+    quantity: '',
+    price: ''
   });
 
   const [isCreated, setCreated] = useState(false);
@@ -48,7 +48,7 @@ const Create = (props) => {
           className="create-img"
           type="text"
           placeholder="Image Link"
-          value={product.imageURL}
+          value={product.imgURL}
           name="imageURL"
           required
           autoFocus
