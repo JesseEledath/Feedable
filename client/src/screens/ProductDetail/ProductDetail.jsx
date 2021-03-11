@@ -21,6 +21,10 @@ const ProductDetail = (props) => {
     fetchProduct();
   }, [id]);
 
+  const handleDelete = () => {
+    deleteProduct(product._id)
+      .then(history.push("/"))
+  }
 
   const authenticatedOptions = (
     <>
@@ -33,11 +37,6 @@ const ProductDetail = (props) => {
       <button className="details-addtocart" onClick={() => addItem({ ...product, id: product._id })}>Add to cart</button>
     </>
   )
-
-  const handleDelete = () => {
-    deleteProduct(product._id)
-      // .then(history.push("/"))
-  }
 
   if (!isLoaded) {
     return <h1>Loading...</h1>;
