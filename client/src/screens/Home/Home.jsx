@@ -1,6 +1,7 @@
 import './Home.css'
 import React, { useState, useEffect } from 'react'
 import Search from '../../components/Search/Search'
+import Sort from '../../components/Sort/Sort'
 import Product from '../../components/Product/Product'
 import { getProducts } from '../../services/crud'
 import { AZ, ZA } from "../../utils/sort"
@@ -43,7 +44,7 @@ const Home = (props) => {
 
   const handleSubmit = (event) => event.preventDefault();
 
-  console.log(queriedProducts);
+  // console.log(queriedProducts);
 
   const addToCart = (el) => {
     setCart([...cart, el])
@@ -61,7 +62,7 @@ const Home = (props) => {
     />
   ));
 
-  console.log(cart);
+  // console.log(cart);
 
   // store cart state in local storage 
   // call localStorage.getItem('cart') in the cart screen
@@ -77,6 +78,7 @@ const Home = (props) => {
           <div className="products-box">
             <div className="search-container">
               <Search onSubmit={handleSubmit} onChange={handleSearch} />
+              <Sort onSubmit={handleSubmit} onChange={handleSort} />
             </div>
             <div className="products-section">
               {productsJSX}
