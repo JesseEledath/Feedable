@@ -40,7 +40,7 @@ const ProductDetail = (props) => {
 
   const handleDelete = () => {
     deleteProduct(product._id)
-      .then(history.push("/"))
+      // .then(history.push("/"))
   }
 
   return (
