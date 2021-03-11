@@ -76,9 +76,11 @@ const Create = (props) => {
         >
           <option value="choose">Choose Category</option>
           <option value="meat">Meat</option>
+          <option value="poultry">Poultry</option>
+          <option value="sea_food">Seafood</option>
           <option value="dairy">Dairy</option>
           <option value="fruit">Fruit</option>
-          <option value="poultry">Poultry</option>
+          <option value="Produce">Produce</option>
           </select>
         <input
           className="create-quantity"
