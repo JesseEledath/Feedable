@@ -5,6 +5,7 @@ import Create from "./screens/Create/Create";
 import Home from "./screens/Home/Home";
 import LandingPage from "./screens/LandingPage/LandingPage";
 import ProductDetail from "./screens/ProductDetail/ProductDetail";
+import ProductEdit from "./screens/ProductEdit/ProductEdit"
 import SignIn from "./screens/SignIn/SignIn";
 import SignOut from "./screens/SignOut/SignOut";
 import SignUp from "./screens/SignUp/SignUp";
@@ -50,6 +51,10 @@ const App = () => {
         </Route>
         <Route exact path="/products/:id">
           <ProductDetail user={user}/>
+        </Route>
+
+        <Route>
+          <ProductEdit user={user}/>
         </Route>
 
         <Route exact path="/about">

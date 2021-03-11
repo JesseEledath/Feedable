@@ -14,15 +14,12 @@ const Home = () => {
   const [sortType, setSortType] = useState([]);
   const [cartProducts, setCartProducts] = useState([])
 
-  const addCartProducts = (item) => {
-    setCartProducts(allProducts.find(id))
-  } 
-
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
       setAllProducts(products);
       setQueriedProducts(products);
+      console.log(products);
     };
     fetchProducts();
   }, []);
