@@ -56,7 +56,8 @@ const App = () => {
         </Route>
         
         <Route exact path="/cart">
-          {user ? <Cart user={user} /> : <Redirect to="/sign-up" />}
+          {/* {user ? <Cart user={user} /> : <Redirect to="/sign-up" />} */}
+          <Cart />
         </Route>
         {/* <Route exact path="/create">
           {user ? <Create user={user} /> : <Redirect to="/sign-up" />}
