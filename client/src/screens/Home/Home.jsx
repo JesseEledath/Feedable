@@ -1,5 +1,6 @@
 import './Home.css'
 import React, { useState, useEffect } from 'react'
+import Filter from '../../components/Filter/Filter'
 import Search from '../../components/Search/Search'
 import Sort from '../../components/Sort/Sort'
 import Product from '../../components/Product/Product'
@@ -79,6 +80,7 @@ const Home = (props) => {
             <div className="search-container">
               <Search onSubmit={handleSubmit} onChange={handleSearch} />
               <Sort onSubmit={handleSubmit} onChange={handleSort} />
+              {/* <Filter onSubmit={handleSubmit} onChange={handleFilter} /> */}
             </div>
             <div className="products-section">
               {productsJSX}

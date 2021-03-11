@@ -9,9 +9,13 @@ const Filter = (props) => {
     <form className="filter-container" onSubmit={props.handleSubmit}>
       <label htmlFor="filter">Category:</label>
         <select className="filter" onChange={handleChange}>
-          <option className="option" value="name-ascending">&nbsp; Alphabetically, A-Z &nbsp;</option>
-        <option value="name-descending">&nbsp; Alphabetically, Z-A &nbsp;</option>
-      </select>
+          <option className="option" value="meat">&nbsp; Meat &nbsp;</option>
+          <option value="poultry">&nbsp; Poultry &nbsp;</option>
+          <option value="sea_food">&nbsp; Seafood &nbsp;</option>
+          <option value="dairy">&nbsp; Dairy &nbsp;</option>
+          <option value="fruit">&nbsp; Fruit &nbsp;</option>
+          <option value="produce">&nbsp; Produce &nbsp;</option>
+        </select>
     </form>
   );
 };
