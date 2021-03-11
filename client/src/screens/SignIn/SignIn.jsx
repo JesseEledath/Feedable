@@ -73,11 +73,7 @@ const SignIn = (props) => {
           type="text"
           name="email"
           value={email}
-<<<<<<< HEAD
-          placeholder="Enter Email"
-=======
           placeholder="Email"
->>>>>>> 6e978515d6244cb73905ae92623dd4589a2de064
           onChange={handleChange}
         />
         <input
