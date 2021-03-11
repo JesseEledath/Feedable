@@ -29,19 +29,18 @@ const ProductDetail = (props) => {
           Edit
         </Link>
       </button>
-      <button className="delete-button" onClick={() => deleteProduct(product._id)}>Delete</button>
+      <button className="delete-button" onClick={handleDelete}>Delete</button>
       <button className="details-addtocart" onClick={() => addItem({ ...product, id: product._id })}>Add to cart</button>
     </>
   )
 
-
-  if (!isLoaded) {
-    return <h1>Loading...</h1>;
-  }
-
   const handleDelete = () => {
     deleteProduct(product._id)
       .then(history.push("/"))
+  }
+
+  if (!isLoaded) {
+    return <h1>Loading...</h1>;
   }
 
   return (
