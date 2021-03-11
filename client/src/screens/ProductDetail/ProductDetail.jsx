@@ -3,13 +3,14 @@ import "./ProductDetail.css";
 import Layout from "../../components/shared/Layout/Layout";
 import { getProduct, deleteProduct } from "../../services/crud";
 import { useCart } from "react-use-cart"
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 
 const ProductDetail = (props) => {
   const [product, setProduct] = useState("");
   const [isLoaded, setLoaded] = useState(false);
   const { id } = useParams();
   const { addItem } = useCart()
+  const history = useHistory();
 
   useEffect(() => {
     const fetchProduct = async () => {
