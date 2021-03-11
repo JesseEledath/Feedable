@@ -38,6 +38,11 @@ const ProductDetail = (props) => {
     return <h1>Loading...</h1>;
   }
 
+  const handleDelete = () => {
+    deleteProduct(product._id)
+      .then(history.push("/"))
+  }
+
   return (
     <Layout user={props.user}>
       <div className="product-detail">

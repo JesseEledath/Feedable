@@ -1,6 +1,7 @@
 import './Home.css'
 import React, { useState, useEffect } from 'react'
 import Search from '../../components/Search/Search'
+import Sort from '../../components/Sort/Sort'
 import Product from '../../components/Product/Product'
 import { getProducts } from '../../services/crud'
 import { useCart } from "react-use-cart"
@@ -45,7 +46,7 @@ const Home = (props) => {
 
   const handleSubmit = (event) => event.preventDefault();
 
-  console.log(queriedProducts);
+  // console.log(queriedProducts);
 
   const productsJSX = queriedProducts.map((product, index) => (
     <div className="product-cart-container" key={product._id}>
@@ -71,6 +72,7 @@ const Home = (props) => {
           <div className="products-box">
             <div className="search-container">
               <Search onSubmit={handleSubmit} onChange={handleSearch} />
+              <Sort onSubmit={handleSubmit} onChange={handleSort} />
             </div>
             <div className="products-section">
               {productsJSX}
