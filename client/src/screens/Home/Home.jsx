@@ -10,6 +10,7 @@ const Home = (props) => {
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
+  const [cart, setCart] = useState([])
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -43,6 +44,10 @@ const Home = (props) => {
   const handleSubmit = (event) => event.preventDefault();
 
   console.log(queriedProducts);
+
+  const addToCart = (el) => {
+    setCart([...cart, el])
+  }
   
   const productsJSX = queriedProducts.map((product, index) => (
     <Product
@@ -52,8 +57,15 @@ const Home = (props) => {
       quantity={product.quantity}
       imgURL={product.imgURL}
       key={index}
+      addToCart={addToCart}
     />
   ));
+
+  console.log(cart);
+
+  // store cart state in local storage 
+  // call localStorage.getItem('cart') in the cart screen
+  // map through the cart array to getProduct(id)
 
   return (
     <div className="home-screen">
