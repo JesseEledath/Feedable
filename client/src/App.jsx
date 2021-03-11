@@ -65,8 +65,6 @@ const App = () => {
           {/* {user ? <Cart user={user} /> : <Redirect to="/sign-up" />} */}
           <Cart />
         </Route>
-
-
         <Route exact path="/products/create">
           <Create />
         </Route>

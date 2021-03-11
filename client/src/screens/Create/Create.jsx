@@ -1,35 +1,35 @@
-import React, { useState } from 'react'
-import './Create.css'
-import Layout from '../../components/shared/Layout/Layout'
-import { Redirect } from 'react-router-dom'
-import { createProduct } from '../../services/crud'
+import React, { useState } from "react";
+import "./Create.css";
+import Layout from "../../components/shared/Layout/Layout";
+import { Redirect } from "react-router-dom";
+import { createProduct } from "../../services/crud";
 
-const ProductCreate = (props) => {
+const Create = (props) => {
   const [product, setProduct] = useState({
-    name: '',
-    imageURL: '',
-    description: '',
-    category: '',
-    quantity: '',
-    price: ''
-  })
+    name: "",
+    imageURL: "",
+    description: "",
+    category: "",
+    quantity: "",
+    price: "",
+  });
 
-  const [isCreated, setCreated] = useState(false)
+  const [isCreated, setCreated] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setProduct({
       ...product,
-      [name]: value
-    })
-  }
+      [name]: value,
+    });
+  };
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    const created = await createProduct(product)
-    setCreated({created})
-  }
+    e.preventDefault();
+    const created = await createProduct(product);
+    setCreated({ created });
+  };
   if (isCreated) {
-    return <Redirect to={`/products`} />
+    return <Redirect to={`/products`} />;
   }
   return (
     <Layout>
@@ -54,9 +54,9 @@ const ProductCreate = (props) => {
           autoFocus
           onChange={handleChange}
         />
-        <input
-          className="create-descr"
-          type="text"
+        <textarea
+          className="create-description"
+          rows={10}
           placeholder="Desciption"
           value={product.description}
           name="description"
@@ -74,7 +74,7 @@ const ProductCreate = (props) => {
           autoFocus
           onChange={handleChange}
         />
-         <input
+        <input
           className="create-quantity"
           type="number"
           placeholder="Quantity"
@@ -84,7 +84,7 @@ const ProductCreate = (props) => {
           autoFocus
           onChange={handleChange}
         />
-         <input
+        <input
           className="create-price"
           type="number"
           placeholder="Price"
@@ -94,11 +94,12 @@ const ProductCreate = (props) => {
           autoFocus
           onChange={handleChange}
         />
-        <button type='submit' className="create-button">Submit</button>
-        </form>
-
+        <button type="submit" className="create-button">
+          Submit
+        </button>
+      </form>
     </Layout>
-  )
-}
+  );
+};
 
-export default ProductCreate;
+export default Create;
