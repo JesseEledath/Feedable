@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
+import { CartProvider } from 'react-use-cart'
 import Cart from "./screens/Cart/Cart";
 import Create from "./screens/Create/Create";
 import Home from "./screens/Home/Home";
@@ -25,28 +26,37 @@ const App = () => {
     fetchUser();
   }, []);
 
-  const clearUser = () => setUser(null);
-  // console.log("App", user)
+  const clearUser = () => setUser(null)
+
   return (
     <div className="App">
       <Switch>
         <Route exact path="/">
           <LandingPage user={user} />
         </Route>
+    
         <Route path="/sign-up">
-          <SignUp setUser={setUser} />
+          <SignUp setUser={setUser}/>
         </Route>
+
         <Route path="/sign-in">
           <SignIn setUser={setUser} />
         </Route>
+
         <Route path="/sign-out">
-          <SignOut setUser={setUser} clearUser={clearUser} />
+          <SignOut setUser={setUser} clearUser={clearUser}/>
         </Route>
+
         <Route exact path="/products">
-          <Home user={user} />
+          <CartProvider>
+            <Home user={user}/> 
+          </CartProvider>
         </Route>
+
         <Route exact path="/products/:id">
-          <ProductDetail user={user} />
+          <CartProvider>
+            <ProductDetail user={user}/>
+          </CartProvider>
         </Route>
 
         <Route exact path="/products/:id/edit">
@@ -58,15 +68,13 @@ const App = () => {
         </Route>
 
         <Route exact path="/cart">
-          {/* {user ? <Cart user={user} /> : <Redirect to="/sign-up" />} */}
-          <Cart user={user}/>
+          <CartProvider>
+            <Cart user={user}/>
+          </CartProvider>
         </Route>
 
         <Route exact path="/create">
-
-
           <Create user={user}/>
-
         </Route>
       </Switch>
     </div>

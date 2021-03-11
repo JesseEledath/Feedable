@@ -13,7 +13,6 @@ const Product = (props) => {
         <div className="product-name">{props.name}</div>
         <div className="product-description">{props.description}</div>
         <div className="product-quantity">{props.quantity}</div>
-        <button className="addtocart" onClick={() => props.addToCart(props._id)}>Add to cart</button>
     </div>
   );
 };

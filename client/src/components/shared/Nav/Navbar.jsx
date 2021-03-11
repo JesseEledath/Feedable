@@ -34,7 +34,6 @@ const alwaysOptions = (
 )
 
 export default function Navbar({user}) {
-  // console.log(user)
   return (
     <header>
       <div className="logo-container">
@@ -46,7 +45,9 @@ export default function Navbar({user}) {
         <Link className="icon icon-link" to="/">
           <div>Feedable</div>
         </Link>
-          {user && <div className="link-welcome">Welcome, {user.email}</div>}
+        <div className="nav-greeting">
+          {user && <div className="link-welcome">Welcome, {user.first_name}</div>}
+        </div>
         <div className="nav-links">
           {alwaysOptions}
           {user ? authenticatedOptions : unauthenticatedOptions}
