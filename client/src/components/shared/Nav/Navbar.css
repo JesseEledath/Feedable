@@ -36,6 +36,10 @@ nav a {
   color: #cbb26a;
 }
 
+.link-welcome {
+  color: #cbb26a;
+}
+
 .nav-links {
   display: flex;
   flex-flow: row nowrap;
