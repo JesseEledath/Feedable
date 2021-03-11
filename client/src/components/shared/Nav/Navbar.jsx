@@ -3,6 +3,35 @@ import logo from "./Assets/feedable-logo.png";
 
 import "./Navbar.css";
 
+const authenticatedOptions = (
+  <>
+    <Link to="/create">Add Product</Link>
+    <Link to="/sign-out">Sign Out</Link>
+    <Link to="/cart">
+      <div>Cart</div>
+    </Link>
+  </>
+)
+
+const unauthenticatedOptions = (
+  <div className="nav-dropdown">
+    <button className="dropbtn">
+      Join Us
+      <i className="fa fa-caret-down"></i>
+    </button>
+    <div className="dropdown-content">
+      <Link to="/sign-in">Sign In</Link>
+      <Link to="/sign-up">Sign Up</Link>
+    </div>
+  </div>
+)
+
+const alwaysOptions = (
+  <>
+    <Link to="/products">Products</Link>
+    <Link to="/about">Mission</Link>
+  </>
+)
 
 export default function Navbar({user}) {
   console.log(user)
@@ -19,22 +48,8 @@ export default function Navbar({user}) {
         </Link>
           {user && <div className="link-welcome">Welcome, {user.email}</div>}
         <div className="nav-links">
-          <Link to="/products">Products</Link>
-          <Link to="/create">Add Product</Link>
-          <Link to="/about">Mission</Link>
-          <div className="nav-dropdown">
-            <button className="dropbtn">
-              Join Us
-              <i className="fa fa-caret-down"></i>
-            </button>
-            <div className="dropdown-content">
-              <Link to="/sign-in">Sign In</Link>
-              <Link to="/sign-up">Sign Up</Link>
-            </div>
-          </div>
-          <Link to="/cart">
-            <div>Cart</div>
-          </Link>
+          {alwaysOptions}
+          {user ? authenticatedOptions : unauthenticatedOptions}
         </div>
       </nav>
     </header>
