@@ -10,7 +10,7 @@ const ProductDetail = (props) => {
   const [isLoaded, setLoaded] = useState(false);
   const { id } = useParams();
   const { addItem } = useCart()
-  const history = useHistory();
+  const history = useHistory()
 
   useEffect(() => {
     const fetchProduct = async () => {
