@@ -25,7 +25,7 @@ const ProductDetail = (props) => {
     <Layout>
       <div className="product-detail">
         <img
-          clasName="product-detail-image"
+          className="product-detail-image"
           src={product.imgURL}
           alt={product.name}
         />
