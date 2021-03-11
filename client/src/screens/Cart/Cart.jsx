@@ -1,19 +1,7 @@
-import { useEffect, useState } from "react";
 import Layout from "../../components/shared/Layout/Layout"
-import { getProducts } from "../../services/crud";
 import { useCart } from 'react-use-cart'
 
 export default function Cart (props) {
-    // const [products, setProducts] = useState([])
-
-    // useEffect(() => {
-    //     const fetchProducts = async () => {
-    //         const res = await getProducts()
-    //         setProducts(res)
-    //     }
-    //     fetchProducts()
-    // }, [])
-    // console.log(products);
 
     const {
         isEmpty,
@@ -21,7 +9,8 @@ export default function Cart (props) {
         totalItems,
         items,
         updateItemQuantity,
-        removeItem
+        removeItem,
+        cartTotal
     } = useCart()
 
     if (isEmpty) return (
@@ -30,16 +19,17 @@ export default function Cart (props) {
         </Layout>
     )
 
-
     return (
         <Layout user={props.user}>
             <div className="cart-screen">
                 <h1>Cart ({totalUniqueItems})</h1>
                 <h1>Cart ({totalItems})</h1>
-                <ul>
+                <div>
                     {items.map((item) => (
-                        <li key={item._id}>
-                            {item.quantity} x {item.name} &mdash;
+                        <div key={item._id}>
+                            <div>{item.name}</div>
+                            <div>{item.quantity}</div>
+                            <div>Price: ${item.price}</div>
                             <button onClick={() => updateItemQuantity(item._id, item.quantity - 1)}>
                                 -
                             </button>
@@ -47,9 +37,12 @@ export default function Cart (props) {
                                 +
                             </button>
                             <button onClick={() => removeItem(item._id)}>&times;</button>
-                        </li>
+                        </div>
                     ))}
-                </ul>
+                </div>
+                <div>
+                    Total: ${cartTotal}
+                </div>
             </div>
         </Layout>
     )

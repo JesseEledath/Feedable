@@ -11,7 +11,6 @@ const Home = (props) => {
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
-  // const [cart, setCart] = useState([])
 
   const { addItem } = useCart()
 
@@ -48,10 +47,6 @@ const Home = (props) => {
 
   console.log(queriedProducts);
 
-  // const addToCart = (el) => {
-  //   setCart([...cart, el])
-  // }
-  
   const productsJSX = queriedProducts.map((product, index) => (
     <div className="product-cart-container" key={product._id}>
       <Product
@@ -61,17 +56,10 @@ const Home = (props) => {
         quantity={product.quantity}
         imgURL={product.imgURL}
         key={product._id}
-        // addToCart={addToCart}
       />
-      <button className="addtocart" onClick={() => addItem(product)}>Add to cart</button>
+      <button className="addtocart" onClick={() => addItem({ ...product, id: product._id })}>Add to cart</button>
     </div>
   ));
-
-  // console.log(cart);
-
-  // store cart state in local storage 
-  // call localStorage.getItem('cart') in the cart screen
-  // map through the cart array to getProduct(id)
 
   return (
     <div className="home-screen">

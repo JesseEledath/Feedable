@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
-
 import { CartProvider } from 'react-use-cart'
-
 import Cart from "./screens/Cart/Cart";
 import Create from "./screens/Create/Create";
 import Home from "./screens/Home/Home";
@@ -29,7 +27,6 @@ const App = () => {
   }, [])
 
   const clearUser = () => setUser(null)
-  // console.log("App", user)
   return (
     <div className="App">
       <Switch>
@@ -56,7 +53,9 @@ const App = () => {
         </Route>
 
         <Route exact path="/products/:id">
-          <ProductDetail user={user}/>
+          <CartProvider>
+            <ProductDetail user={user}/>
+          </CartProvider>
         </Route>
 
         <Route exact path="/products/:id/edit">
@@ -71,7 +70,6 @@ const App = () => {
           <CartProvider>
             <Cart user={user}/>
           </CartProvider>
-          {/* {user ? <Cart user={user} /> : <Redirect to="/sign-up" />} */}
         </Route>
 
         <Route exact path="/create">
