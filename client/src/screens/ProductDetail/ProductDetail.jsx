@@ -22,7 +22,7 @@ const ProductDetail = (props) => {
   }
 
   return (
-    <Layout>
+    <Layout user={props.user}>
       <div className="product-detail">
         <img
           clasName="product-detail-image"

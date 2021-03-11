@@ -14,9 +14,9 @@ function LandingPage(props) {
     };
     fetchProducts();
   }, []);
-
+  console.log("Landing Page", props.user)
   return (
-    <Layout>
+    <Layout user={props.user}>
       <div className="landing-page-container">
         <Slider products={allProducts} />
         <h1>HELLO</h1>

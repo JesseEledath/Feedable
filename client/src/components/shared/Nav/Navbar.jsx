@@ -3,7 +3,9 @@ import logo from "./Assets/feedable-logo.png";
 
 import "./Navbar.css";
 
-export default function Navbar(props) {
+
+export default function Navbar({user}) {
+  console.log(user)
   return (
     <header>
       <div className="logo-container">
@@ -15,6 +17,7 @@ export default function Navbar(props) {
         <Link className="icon icon-link" to="/">
           <div>Feedable</div>
         </Link>
+          {user && <div className="link-welcome">Welcome, {user.email}</div>}
         <div className="nav-links">
           <Link to="/products">Products</Link>
           <Link to="/products/create">Add Product</Link>
