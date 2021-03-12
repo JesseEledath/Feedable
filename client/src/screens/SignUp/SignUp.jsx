@@ -67,14 +67,14 @@ const SignUp = (props) => {
       <div className="form-sign-up">
         <h3 className="sign-up">Sign Up</h3>
         <form onSubmit={onSignUp}>
-          <label>First name</label>
+          <label>Full name</label>
           <input
             required
             className="sign-up-input"
             type="text"
             name="full_name"
             value={full_name}
-            placeholder="Enter first name"
+            placeholder="Enter Full Name"
             onChange={handleChange}
           />
           <label>Email address</label>
