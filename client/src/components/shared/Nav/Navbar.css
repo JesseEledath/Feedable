@@ -1,13 +1,17 @@
 header {
   background-color: rgba(35, 39, 46, 1);
   height: 8vh;
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  position: fixed;
+  z-index: 1;
 }
-.icon-link{
-margin-right: 10px;
-padding-right: 10px;
+
+.icon-link {
+  margin-right: 10px;
+  padding-right: 10px;
 }
 .logo-container {
   max-width: 15% ;
@@ -95,7 +99,7 @@ nav a {
 .nav-dropdown:hover .dropdown-content {
   display: block;
 }
-.cart-icon{
+.fa-cart-plus{
   color: #cbb26a;
   font-size: 20px;
 }

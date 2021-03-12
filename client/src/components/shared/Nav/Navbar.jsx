@@ -1,18 +1,15 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { allUsers } from "../../../services/users";
 import logo from "./Assets/feedable-logo.png";
 
 import "./Navbar.css";
 
 export default function Navbar({ user }) {
   
-
   const authenticatedOptions = (
     <>
       <Link to="/sign-out">Sign Out</Link>
       <Link to="/cart">
-        <div>Cart</div>
+        <div><i className="fas fa-cart-plus"></i></div>
       </Link>
     </>
   )
@@ -49,7 +46,6 @@ export default function Navbar({ user }) {
   const alwaysOptions = (
     <>
       <Link to="/products">Products</Link>
-      <Link to="/about">Mission</Link>
     </>
   )
 

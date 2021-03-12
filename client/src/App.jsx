@@ -10,7 +10,6 @@ import ProductEdit from "./screens/ProductEdit/ProductEdit";
 import SignIn from "./screens/SignIn/SignIn";
 import SignOut from "./screens/SignOut/SignOut";
 import SignUp from "./screens/SignUp/SignUp";
-import About from "./screens/About/About";
 import { verifyUser } from "./services/users";
 
 import "./App.css";
@@ -64,10 +63,6 @@ const App = () => {
 
         <Route exact path="/products/:id/edit">
           <ProductEdit user={user} />
-        </Route>
-
-        <Route exact path="/about">
-          <About user={user}/>
         </Route>
 
         <Route exact path="/cart">

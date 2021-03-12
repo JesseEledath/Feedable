@@ -1,0 +1,6 @@
+.landing-screen {
+    min-height: 92vh;
+    margin-top: 8vh;
+    display: flex;
+    flex-flow: column;
+}

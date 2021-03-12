@@ -20,7 +20,7 @@ export default function AllUsers ({ user }) {
 
     return (
         <Layout user={user}>
-            <div className="allusers-screen">
+            <div className="screen">
                 <div className="filter-container">
                     <Sort />
 

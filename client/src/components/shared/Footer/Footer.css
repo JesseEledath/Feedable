@@ -1,24 +1,41 @@
 footer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex: 1;
-  padding: 20px;
+  height: 105px;
   background-color: rgba(35, 39, 46, 1);
-  height: 8vh;
-  flex-direction: row;
-}
-.footer-logo {
-  height: 45px;
-  width: 45px;
-  background-color: #cbb26a;
-  margin: 0 10px;
+  padding: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
 }
 footer a {
   display: flex;
+  font-size: 18px;
   text-decoration: none;
-  font-weight: 1em;
-  flex-direction: column;
+  flex-direction: row;
   color: #cbb26a;
   padding: 3px;
+  letter-spacing: 3px;
+  
+}
+.link {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  margin: 5px;
+}
+a:hover{
+  color: dodgerblue;
+}
+.fa-github, .fa-linkedin {
+  margin: 5px auto;
+  color: #cbb26a;
+}
+.fa-github:hover , .fa-linkedin:hover{
+  color: dodgerblue;
 }

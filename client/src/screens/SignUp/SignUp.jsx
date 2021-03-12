@@ -64,52 +64,53 @@ const SignUp = (props) => {
 
   return (
     <Layout>
-      <div className="form-sign-up">
-        <h3 className="sign-up">Sign Up</h3>
-        <form onSubmit={onSignUp}>
-          <label>Full name</label>
-          <input
-            required
-            className="sign-up-input"
-            type="text"
-            name="full_name"
-            value={full_name}
-            placeholder="Enter Full Name"
-            onChange={handleChange}
-          />
-          <label>Email address</label>
-          <input
-            required
-            className="sign-up-input"
-            type="email"
-            name="email"
-            value={email}
-            placeholder="Enter email"
-            onChange={handleChange}
-          />
-
-          <label>Password</label>
-          <input
-            required
-            className="sign-up-input"
-            name="password"
-            value={password}
-            type="password"
-            placeholder="Password"
-            onChange={handleChange}
-          />
-          <label>Password Confirmation</label>
-          <input
-            required
-            className="sign-up-input"
-            name="passwordConfirmation"
-            value={passwordConfirmation}
-            type="password"
-            placeholder="Confirm Password"
-            onChange={handleChange}
-          />
-          {renderError()}
-        </form>
+      <div className="screen">
+        <div className="form-sign-up">
+          <h3 className="sign-up">Sign Up</h3>
+          <form onSubmit={onSignUp}>
+            <label>Full name</label>
+            <input
+              required
+              className="sign-up-input"
+              type="text"
+              name="full_name"
+              value={full_name}
+              placeholder="Enter Full Name"
+              onChange={handleChange}
+            />
+            <label>Email address</label>
+            <input
+              required
+              className="sign-up-input"
+              type="email"
+              name="email"
+              value={email}
+              placeholder="Enter email"
+              onChange={handleChange}
+            />
+            <label>Password</label>
+            <input
+              required
+              className="sign-up-input"
+              name="password"
+              value={password}
+              type="password"
+              placeholder="Password"
+              onChange={handleChange}
+            />
+            <label>Password Confirmation</label>
+            <input
+              required
+              className="sign-up-input"
+              name="passwordConfirmation"
+              value={passwordConfirmation}
+              type="password"
+              placeholder="Confirm Password"
+              onChange={handleChange}
+            />
+            {renderError()}
+          </form>
+        </div>
       </div>
     </Layout>
   );
