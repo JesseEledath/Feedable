@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { allUsers } from "../../../services/users";
 import logo from "./Assets/feedable-logo.png";
 
 import "./Navbar.css";
@@ -49,7 +47,7 @@ export default function Navbar({ user }) {
   const alwaysOptions = (
     <>
       <Link to="/products">Products</Link>
-      <Link to="/about">Mission</Link>
+      <a>Mission</a>
     </>
   )
 
