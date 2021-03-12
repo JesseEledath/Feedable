@@ -44,18 +44,20 @@ const ProductDetail = (props) => {
 
   return (
     <Layout user={props.user}>
-      <div className="product-detail">
-        <img
-          className="product-detail-image"
-          src={product.imgURL}
-          alt={product.name}
-        />
-        <div className="detail">
-          <div className="name">{product.name}</div>
-          <div className="description">{product.description}</div>
-          <div className="product-quantity">{product.quantity}</div>
-          <div className="button-container">
-            {props.user ? authenticatedOptions : null}
+      <div className="screen">
+        <div className="product-detail">
+          <img
+            className="product-detail-image"
+            src={product.imgURL}
+            alt={product.name}
+          />
+          <div className="detail">
+            <div className="name">{product.name}</div>
+            <div className="description">{product.description}</div>
+            <div className="product-quantity">{product.quantity}</div>
+            <div className="button-container">
+              {props.user ? authenticatedOptions : null}
+            </div>
           </div>
         </div>
       </div>

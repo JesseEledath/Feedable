@@ -1,6 +1,6 @@
-
-.products-screen {
-    width: 100vw;
+.home-screen {
+    min-height: 92vh;
+    margin-top: 8vh;
     display: flex;
     flex-flow: row;
     justify-content: center;
@@ -27,7 +27,7 @@
     margin-top: 50px;
 }
 .add-class{
-  font-size: 25px;
-  color: #0b132b;
+    font-size: 25px;
+    color: #0b132b;
 
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./SignIn.css";
 import { signIn } from "../../services/users";
 import { useHistory } from "react-router-dom";
-import Layout from "../../components/shared/Layout/Layout"
+import Layout from "../../components/shared/Layout/Layout";
 
 const SignIn = (props) => {
   const history = useHistory();
@@ -53,8 +53,9 @@ const SignIn = (props) => {
     } else {
       return (
         <button className="sign-in-button" type="submit">
-        <span className="button-span">Sign In</span> </button>
-      )
+          <span className="button-span">Sign In</span>{" "}
+        </button>
+      );
     }
   };
 
@@ -62,33 +63,32 @@ const SignIn = (props) => {
 
   return (
     <Layout>
-          <div className="form-container">
-      <div className="form">
-      <h3 className="sign-in">Sign In</h3>
-      <form onSubmit={onSignIn} className="form-cont">
-        
-        <input
-          required
-          className="sign-in-input"
-          type="text"
-          name="email"
-          value={email}
-          placeholder="Email"
-          onChange={handleChange}
-        />
-        <input
-          required
-          className="sign-in-input"
-          type="password"
-          name="password"
-          value={password}
-          placeholder="Password"
-          onChange={handleChange}
-        />
-        {renderError()}
-        </form>
+      <div className="screen">
+        <div className="form">
+          <h3 className="sign-in">Sign In</h3>
+          <form onSubmit={onSignIn} className="form-cont">
+            <input
+              required
+              className="sign-in-input"
+              type="text"
+              name="email"
+              value={email}
+              placeholder="Email"
+              onChange={handleChange}
+            />
+            <input
+              required
+              className="sign-in-input"
+              type="password"
+              name="password"
+              value={password}
+              placeholder="Password"
+              onChange={handleChange}
+            />
+            {renderError()}
+          </form>
         </div>
-    </div>
+      </div>
     </Layout>
   );
 };

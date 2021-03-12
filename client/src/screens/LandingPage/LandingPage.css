@@ -1,3 +1,6 @@
-.landing-page-screen {
-    height: 100vh;
+.landing-screen {
+    min-height: 92vh;
+    margin-top: 8vh;
+    display: flex;
+    flex-flow: column;
 }
