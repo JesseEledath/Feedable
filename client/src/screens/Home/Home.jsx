@@ -87,7 +87,8 @@ const Home = (props) => {
         imgURL={product.imgURL}
         key={product._id}
       />
-      <button className="addtocart" onClick={() => addItem({ ...product, id: product._id })}>Add to cart</button>
+      <button className="addtocart" onClick={() => addItem({ ...product, id: product._id })}><i class="fas fa-plus-square add-class"></i></button>
+      
     </div>
   ));
 
