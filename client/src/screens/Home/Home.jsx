@@ -13,7 +13,6 @@ const Home = (props) => {
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
-  const [filterType, setFilterType] = useState([]);
 
   const { addItem } = useCart()
 
@@ -26,31 +25,12 @@ const Home = (props) => {
     fetchProducts();
   }, []);
 
-  // const handleFilter = (filtered) => {
-  //   setFilterType(filtered);
-  //   switch (filtered) {
-  //     case "meat":
-  //       setQueriedProducts(REPLACE(queriedProducts));
-  //       break;
-  //     case "poultry":
-  //       setQueriedProducts(REPLACE(queriedProducts));
-  //       break;
-  //     case "sea_food":
-  //       setQueriedProducts(REPLACE(queriedProducts));
-  //       break;
-  //     case "dairy":
-  //       setQueriedProducts(REPLACE(queriedProducts));
-  //       break;
-  //     case "fruit":
-  //       setQueriedProducts(REPLACE(queriedProducts));
-  //       break;
-  //     case "produce":
-  //       setQueriedProducts(REPLACE(queriedProducts));
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // };
+  const handleFilter = (event) => {
+    const filteredResult = queriedProducts.filter(product =>
+      product.category.includes(event.target.case))
+    console.log(filteredResult)
+    // console.log(product)
+  }
 
     const handleSort = (type) => {
       setSortType(type);
@@ -97,13 +77,12 @@ const Home = (props) => {
       <Layout user={props.user}>
         <div className="products-screen">
           <div className="sort-box">
-          {/* <Sort onSubmit={handleSubmit} onChange={handleSort} /> */}
+            <Filter onSubmit={handleSubmit} onChange={handleFilter} queriedProducts={queriedProducts} />
           </div>
           <div className="products-box">
             <div className="search-container">
               <Search onSubmit={handleSubmit} onChange={handleSearch} />
               <Sort onSubmit={handleSubmit} onChange={handleSort} />
-              {/* <Filter onSubmit={handleSubmit} onChange={handleFilter} /> */}
             </div>
             <div className="products-section">
               {productsJSX}
