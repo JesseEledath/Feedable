@@ -4,7 +4,7 @@ let apiUrl;
 
 const apiUrls = {
   production: "https://feedable-app.herokuapp.com/api",
-  development: "https://feedable-app.herokuapp.com/api"
+  development: "http://localhost:3000/api"
 };
 
 if (window.location.hostname === "localhost") {
