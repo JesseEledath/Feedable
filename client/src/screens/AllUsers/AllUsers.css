@@ -1,0 +1,26 @@
+.allusers-screen {
+    height: 100vh;
+}
+
+.filter-container, .users-container {
+    width: 90%;
+    background-color: gray;
+    border: 2px solid black;
+    margin: 0 auto;
+}
+
+.filter-container {
+    height: 20vh;
+}
+
+.users-container {
+    height: 80vh;
+}
+
+.user-box {
+    height: 60px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}

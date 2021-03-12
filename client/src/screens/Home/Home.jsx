@@ -52,19 +52,19 @@ const Home = (props) => {
   //   }
   // };
 
-  const handleSort = (type) => {
-    setSortType(type);
-    switch (type) {
-      case "name-ascending":
-        setQueriedProducts(AZ(queriedProducts));
-        break;
-      case "name-descending":
-        setQueriedProducts(ZA(queriedProducts));
-        break;
-      default:
-        break;
+    const handleSort = (type) => {
+      setSortType(type);
+      switch (type) {
+        case "name-ascending":
+          setQueriedProducts(AZ(queriedProducts));
+          break;
+        case "name-descending":
+          setQueriedProducts(ZA(queriedProducts));
+          break;
+        default:
+          break;
+      }
     }
-  };
 
   const handleSearch = (event) => {
     const newQueriedProducts = allProducts.filter((product) =>
