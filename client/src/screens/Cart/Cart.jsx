@@ -1,49 +1,75 @@
-import Layout from "../../components/shared/Layout/Layout"
-import { useCart } from 'react-use-cart'
+import Layout from "../../components/shared/Layout/Layout";
+import { useCart } from "react-use-cart";
+import { useParams, useHistory } from "react-router-dom";
+import "./Cart.css";
 
-export default function Cart (props) {
+export default function Cart(props) {
+  const history = useHistory();
+  const {
+    isEmpty,
+    totalUniqueItems,
+    totalItems,
+    items,
+    updateItemQuantity,
+    removeItem,
+    cartTotal,
+    emptyCart,
+  } = useCart();
 
-    const {
-        isEmpty,
-        totalUniqueItems,
-        totalItems,
-        items,
-        updateItemQuantity,
-        removeItem,
-        cartTotal
-    } = useCart()
-
-    if (isEmpty) return (
-        <Layout user={props.user}>
-            <div className='cart-screen'>Your Cart is Empty</div>
-        </Layout>
-    )
-
+  if (isEmpty)
     return (
-        <Layout user={props.user}>
-            <div className="cart-screen">
-                <h1>Cart ({totalUniqueItems})</h1>
-                <h1>Cart ({totalItems})</h1>
-                <div>
-                    {items.map((item) => (
-                        <div key={item._id}>
-                            <div>{item.name}</div>
-                            <div>{item.quantity}</div>
-                            <div>Price: ${item.price}</div>
-                            <button onClick={() => updateItemQuantity(item._id, item.quantity - 1)}>
-                                -
-                            </button>
-                            <button onClick={() => updateItemQuantity(item._id, item.quantity + 1)}>
-                                +
-                            </button>
-                            <button onClick={() => removeItem(item._id)}>&times;</button>
-                        </div>
-                    ))}
-                </div>
-                <div>
-                    Total: ${cartTotal}
-                </div>
+      <Layout user={props.user}>
+        <div className="cart-screen">Your Cart is Empty</div>
+      </Layout>
+    );
+
+  return (
+    <Layout user={props.user}>
+      <div className="cart-screen">
+        <h1 className="unique-items">Unique items ({totalUniqueItems})</h1>
+        <h1 className="total-items">Total items ({totalItems})</h1>
+        <div>
+          {items.map((item) => (
+            <div className="cart-container" key={item._id}>
+              <div className="img-cart-cont">
+                <img className="cart-img" src={item.imgURL} alt="" />
+              </div>
+              <div className="cart-name">{item.name}</div>
+              <div className="cart-quantity">{item.quantity}</div>
+              <div className="cart-item-price">Price: ${item.price}</div>
+
+              <button
+                className="add-cart-button"
+                onClick={() => updateItemQuantity(item._id, item.quantity + 1)}
+              >
+                <i class="fas fa-plus-square"></i>
+              </button>
+              <button
+                className="subtruct-cart-button"
+                onClick={() => updateItemQuantity(item._id, item.quantity - 1)}
+              >
+                <i class="fas fa-minus-square"></i>
+              </button>
+              <button
+                className="remove-cart-button"
+                onClick={() => removeItem(item._id)}
+              >
+                <i class="fas fa-times"></i>
+              </button>
             </div>
-        </Layout>
-    )
+          ))}
+        </div>
+        <div className="total-price">
+          Total: ${cartTotal}
+          <button
+            className="checkout-button"
+            onClick={() => history.goBack()}
+            onClick={() => emptyCart()}
+          >
+            Checkout
+          </button>
+        </div>
+      </div>
+    </Layout>
+  );
 }

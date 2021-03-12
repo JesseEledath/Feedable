@@ -33,41 +33,46 @@ const Create = (props) => {
   }
   return (
     <Layout user={props.user}>
+      <div className="form-container">
       <form className="create-form" onSubmit={handleSubmit}>
-        <input
+        
+          <label>Product Name</label>
+          <input
           className="create-name"
           type="text"
-          placeholder="Product Name"
+          
           value={product.name}
           name="name"
           required
           autoFocus
           onChange={handleChange}
-        />
+          />
+          <label>Image Link</label>
         <input
           className="create-img"
           type="text"
-          placeholder="Image Link"
+          
           value={product.imgURL}
           name="imgURL"
           required
           autoFocus
           onChange={handleChange}
-        />
+          />
+          <label>Description</label>
         <textarea
           className="create-description"
-          rows={10}
-          placeholder="Description"
+          
           value={product.description}
           name="description"
           required
           autoFocus
           onChange={handleChange}
-        />
+          />
+          <label>Category</label>
         <select
-          className="create-name"
+          className="create-category"
           type="text"
-          placeholder="Category"
+          
           value={product.category}
           name="category"
           required
@@ -82,20 +87,22 @@ const Create = (props) => {
           <option value="fruit">Fruit</option>
           <option value="Produce">Produce</option>
           </select>
+          <label>Quantity</label>
         <input
           className="create-quantity"
           type="number"
-          placeholder="Quantity"
+          
           value={product.quantity}
           name="quantity"
           required
           autoFocus
           onChange={handleChange}
-        />
+          />
+          <label>Price</label>
         <input
           className="create-price"
           type="number"
-          placeholder="Price"
+          
           value={product.price}
           name="price"
           required
@@ -103,9 +110,14 @@ const Create = (props) => {
           onChange={handleChange}
         />
         <button type="submit" className="create-button">
-          Submit
+        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+            Submit
         </button>
-      </form>
+        </form>
+        </div>
     </Layout>
   );
 };

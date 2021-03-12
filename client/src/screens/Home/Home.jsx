@@ -13,6 +13,7 @@ const Home = (props) => {
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
+  const [filterType, setFilterType] = useState([]);
 
   const { addItem } = useCart()
 
@@ -25,19 +26,46 @@ const Home = (props) => {
     fetchProducts();
   }, []);
 
-  const handleSort = (type) => {
-    setSortType(type);
-    switch (type) {
-      case "name-ascending":
-        setQueriedProducts(AZ(queriedProducts));
-        break;
-      case "name-descending":
-        setQueriedProducts(ZA(queriedProducts));
-        break;
-      default:
-        break;
+  // const handleFilter = (filtered) => {
+  //   setFilterType(filtered);
+  //   switch (filtered) {
+  //     case "meat":
+  //       setQueriedProducts(REPLACE(queriedProducts));
+  //       break;
+  //     case "poultry":
+  //       setQueriedProducts(REPLACE(queriedProducts));
+  //       break;
+  //     case "sea_food":
+  //       setQueriedProducts(REPLACE(queriedProducts));
+  //       break;
+  //     case "dairy":
+  //       setQueriedProducts(REPLACE(queriedProducts));
+  //       break;
+  //     case "fruit":
+  //       setQueriedProducts(REPLACE(queriedProducts));
+  //       break;
+  //     case "produce":
+  //       setQueriedProducts(REPLACE(queriedProducts));
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // };
+
+    const handleSort = (type) => {
+      setSortType(type);
+      switch (type) {
+        case "name-ascending":
+          setQueriedProducts(AZ(queriedProducts));
+          break;
+        case "name-descending":
+          setQueriedProducts(ZA(queriedProducts));
+          break;
+        default:
+          break;
+      }
     }
-  };
+
   const handleSearch = (event) => {
     const newQueriedProducts = allProducts.filter((product) =>
       product.name.toLowerCase().includes(event.target.value.toLowerCase())
@@ -59,7 +87,8 @@ const Home = (props) => {
         imgURL={product.imgURL}
         key={product._id}
       />
-      <button className="addtocart" onClick={() => addItem({ ...product, id: product._id })}>Add to cart</button>
+      <button className="addtocart" onClick={() => addItem({ ...product, id: product._id })}><i class="fas fa-plus-square add-class"></i></button>
+      
     </div>
   ));
 

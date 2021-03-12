@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { CartProvider } from 'react-use-cart'
 import Cart from "./screens/Cart/Cart";
 import Create from "./screens/Create/Create";
@@ -14,6 +14,7 @@ import About from "./screens/About/About";
 import { verifyUser } from "./services/users";
 
 import "./App.css";
+import AllUsers from "./screens/AllUsers/AllUsers";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -27,6 +28,8 @@ const App = () => {
   }, []);
 
   const clearUser = () => setUser(null)
+
+  // console.log(user.role);
 
   return (
     <div className="App">
@@ -73,8 +76,12 @@ const App = () => {
           </CartProvider>
         </Route>
 
+        <Route exact path="/allusers">
+          {user?.role === "Admin" ? <AllUsers user={user}/> : <Redirect to="/products"/> }
+        </Route>
+
         <Route exact path="/create">
-          <Create user={user}/>
+          {user?.role === "Admin" ? <Create user={user}/> : <Redirect to="/products"/> }
         </Route>
       </Switch>
     </div>
