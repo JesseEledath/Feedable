@@ -1,22 +1,27 @@
+import Checkbox from "../Checkbox/Checkbox"
 import "./Filter.css";
 
-const Filter = (props) => {
-  const handleChange = (event) => {
-    props.onChange(event.target.value);
-  };
+const filterList = [
+  { name: 'Meat', case: 'meat' },
+  { name: 'Poultry', case: 'poultry' },
+  { name: 'Seafood', case: 'sea_food' },
+  { name: 'Dairy', case: 'dairy' },
+  { name: 'Fruit', case: 'fruit' },
+  { name: 'Produce', case: 'produce' }
+];
 
+const Filter = (props) => {
   return (
-    <form className="filter-container" onSubmit={props.handleSubmit}>
-      <label htmlFor="filter">Category:</label>
-        <select className="filter" onChange={handleChange}>
-          <option className="option" value="meat">&nbsp; Meat &nbsp;</option>
-          <option value="poultry">&nbsp; Poultry &nbsp;</option>
-          <option value="sea_food">&nbsp; Seafood &nbsp;</option>
-          <option value="dairy">&nbsp; Dairy &nbsp;</option>
-          <option value="fruit">&nbsp; Fruit &nbsp;</option>
-          <option value="produce">&nbsp; Produce &nbsp;</option>
-        </select>
-    </form>
+    <>
+    <div> Filter </div>
+      {/* <input type="checkbox"  value="checkedall" /> Check / Uncheck All */}
+        <>
+        {filterList.map((item, index) => {
+          return (<Checkbox item={item} key={index} onChange={props.onChange} queriedProducts={props.queriedProducts}/>)
+          })
+        }
+        </>
+    </>
   );
 };
 

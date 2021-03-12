@@ -99,7 +99,7 @@ nav a {
 .nav-dropdown:hover .dropdown-content {
   display: block;
 }
-.cart-icon{
+.fa-cart-plus{
   color: #cbb26a;
   font-size: 20px;
 }
