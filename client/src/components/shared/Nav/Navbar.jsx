@@ -49,7 +49,6 @@ export default function Navbar({ user }) {
   const alwaysOptions = (
     <>
       <Link to="/products">Products</Link>
-      <Link to="/about">Mission</Link>
     </>
   )
 
