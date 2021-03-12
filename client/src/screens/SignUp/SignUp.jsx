@@ -87,6 +87,7 @@ const SignUp = (props) => {
             placeholder="Enter email"
             onChange={handleChange}
           />
+
           <label>Password</label>
           <input
             required
