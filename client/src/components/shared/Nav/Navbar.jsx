@@ -8,7 +8,7 @@ const authenticatedOptions = (
     <Link to="/create">Add Product</Link>
     <Link to="/sign-out">Sign Out</Link>
     <Link to="/cart">
-      <div>Cart</div>
+      <div className="cart-icon"><i class="fas fa-cart-plus"></i></div>
     </Link>
   </>
 )

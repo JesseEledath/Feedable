@@ -1,7 +1,7 @@
 
 .form-sign-up{
   width: 550px;
-  height: 850px;
+  height: 800px;
   font-family: 'Open Sans', sans-serif;
   background: #0b132b;
   margin: 70px auto;
@@ -15,7 +15,7 @@ label {
   display: flex;
   flex-direction: column;
   width: 300px; 
-  margin: 35px auto;
+  margin: 20px auto;
   background: rgba(0,0,0,0.3);
   border: none;
   outline: none;
@@ -58,7 +58,7 @@ label {
   z-index: 0;
   transition: 1s;
 }
-.sign-up-button::before, .sign-in-button::after {
+.sign-up-button::before, .sign-up-button::after {
   position: absolute;
   background: #092756;
   z-index: -1;
