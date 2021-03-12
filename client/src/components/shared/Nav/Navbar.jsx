@@ -68,7 +68,7 @@ export default function Navbar({ user }) {
         </div>
         <div className="nav-links">
           {alwaysOptions}
-          {user ? (user.role.includes("Admin") ? adminAuthenticatedOptions : authenticatedOptions) : unauthenticatedOptions}
+          {user ? (user.role === "Admin" ? adminAuthenticatedOptions : authenticatedOptions) : unauthenticatedOptions}
         </div>
       </nav>
     </header>
