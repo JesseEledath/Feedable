@@ -7,6 +7,7 @@ import "./Navbar.css";
 
 export default function Navbar({ user }) {
   
+
   const authenticatedOptions = (
     <>
       <Link to="/sign-out">Sign Out</Link>
