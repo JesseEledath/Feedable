@@ -30,7 +30,6 @@ const Home = (props) => {
       product.category.includes(event.target.case)
     );
     console.log(filteredResult);
-    // console.log(product)
   };
 
   const handleSort = (type) => {
@@ -56,14 +55,11 @@ const Home = (props) => {
 
   const handleSubmit = (event) => event.preventDefault();
 
-  // console.log(queriedProducts);
-
   const productsJSX = queriedProducts.map((product, index) => (
     <div className="product-cart-container" key={product._id}>
       <Product
         _id={product._id}
         name={product.name}
-        description={product.description}
         quantity={product.quantity}
         imgURL={product.imgURL}
         key={product._id}

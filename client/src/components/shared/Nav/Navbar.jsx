@@ -9,7 +9,7 @@ export default function Navbar({ user }) {
     <>
       <Link to="/sign-out">Sign Out</Link>
       <Link to="/cart">
-        <div><i class="fas fa-cart-plus"></i></div>
+        <div><i className="fas fa-cart-plus"></i></div>
       </Link>
     </>
   )
