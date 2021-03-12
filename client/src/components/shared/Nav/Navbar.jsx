@@ -1,39 +1,69 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { allUsers } from "../../../services/users";
 import logo from "./Assets/feedable-logo.png";
 
 import "./Navbar.css";
 
-const authenticatedOptions = (
-  <>
-    <Link to="/create">Add Product</Link>
-    <Link to="/sign-out">Sign Out</Link>
-    <Link to="/cart">
-      <div>Cart</div>
-    </Link>
-  </>
-)
-
-const unauthenticatedOptions = (
-  <div className="nav-dropdown">
-    <button className="dropbtn">
-      Join Us
-      <i className="fa fa-caret-down"></i>
-    </button>
-    <div className="dropdown-content">
-      <Link to="/sign-in">Sign In</Link>
-      <Link to="/sign-up">Sign Up</Link>
-    </div>
-  </div>
-)
-
-const alwaysOptions = (
-  <>
-    <Link to="/products">Products</Link>
-    <Link to="/about">Mission</Link>
-  </>
-)
-
 export default function Navbar({ user }) {
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const users = await allUsers()
+      setUsers(users)
+    }
+    fetchUsers()
+  }, [])
+
+  console.log(user);
+  console.log(users);
+  
+  const authenticatedOptions = (
+    <>
+      <Link to="/sign-out">Sign Out</Link>
+      <Link to="/cart">
+        <div>Cart</div>
+      </Link>
+    </>
+  )
+
+  const adminAuthenticatedOptions = (
+    <>
+      <div className="nav-dropdown">
+        <button className="dropbtn">
+          Admin
+          <i className="fa fa-caret-down"></i>
+        </button>
+        <div className="dropdown-content">
+          <Link to="/create">Add Product</Link>
+          <Link to="/users/allusers">All Users</Link>
+        </div>
+      </div>
+      {authenticatedOptions}
+    </>
+  )
+  
+  const unauthenticatedOptions = (
+    <div className="nav-dropdown">
+      <button className="dropbtn">
+        Join Us
+        <i className="fa fa-caret-down"></i>
+      </button>
+      <div className="dropdown-content">
+        <Link to="/sign-in">Sign In</Link>
+        <Link to="/sign-up">Sign Up</Link>
+      </div>
+    </div>
+  )
+  
+  const alwaysOptions = (
+    <>
+      <Link to="/products">Products</Link>
+      <Link to="/about">Mission</Link>
+    </>
+  )
+
   return (
     <header>
       <div className="logo-container">
@@ -50,7 +80,7 @@ export default function Navbar({ user }) {
         </div>
         <div className="nav-links">
           {alwaysOptions}
-          {user ? authenticatedOptions : unauthenticatedOptions}
+          {user ? (user.role.includes("Admin") ? adminAuthenticatedOptions : authenticatedOptions) : unauthenticatedOptions}
         </div>
       </nav>
     </header>

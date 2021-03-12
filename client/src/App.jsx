@@ -14,6 +14,7 @@ import About from "./screens/About/About";
 import { verifyUser } from "./services/users";
 
 import "./App.css";
+import AllUsers from "./screens/AllUsers/AllUsers";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -71,6 +72,10 @@ const App = () => {
           <CartProvider>
             <Cart user={user}/>
           </CartProvider>
+        </Route>
+
+        <Route>
+          <AllUsers user={user}/>
         </Route>
 
         <Route exact path="/create">
