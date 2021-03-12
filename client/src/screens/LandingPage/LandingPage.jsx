@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "../../components/Carousel/Slider";
 import Layout from "../../components/shared/Layout/Layout";
 import { getProducts } from "../../services/crud";
+import './LandingPage.css'
 
 function LandingPage(props) {
   const [allProducts, setAllProducts] = useState([]);
@@ -13,10 +14,10 @@ function LandingPage(props) {
     };
     fetchProducts();
   }, []);
-  // console.log("Landing Page", props.user)
+
   return (
     <Layout user={props.user}>
-      <div className="landing-page-container">
+      <div className="landing-page-screen">
         <Slider products={allProducts} />
         <h1>HELLO</h1>
       </div>
