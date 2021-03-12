@@ -60,7 +60,7 @@ export default function Navbar({ user }) {
         </Link>
       </div>
       <nav>
-        <Link className="icon icon-link" to="/">
+        <Link className="icon-link" to="/">
           <div>Feedable</div>
         </Link>
         <div className="nav-greeting">
