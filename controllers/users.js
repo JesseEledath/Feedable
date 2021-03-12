@@ -22,10 +22,10 @@ const getUsers = async (req, res) => {
 
 const signUp = async (req, res) => {
   try {
-    const { first_name, email, password, role } = req.body;
+    const { full_name, email, password, role } = req.body;
     const password_digest = await bcrypt.hash(password, SALT_ROUNDS);
     const user = new User({
-      first_name,
+      full_name,
       email,
       password_digest,
       role,
@@ -34,7 +34,7 @@ const signUp = async (req, res) => {
     await user.save();
 
     const payload = {
-      first_name: user.first_name,
+      full_name: user.full_name,
       email: user.email,
       role: user.role,
       _id: user._id
@@ -54,7 +54,7 @@ const signIn = async (req, res) => {
     if (await bcrypt.compare(password, user.password_digest)) {
       const payload = {
         email: user.email,
-        first_name: user.first_name,
+        full_name: user.full_name,
         role: user.role,
         _id: user._id
       };

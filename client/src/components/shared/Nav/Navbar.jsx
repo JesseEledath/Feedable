@@ -6,19 +6,7 @@ import logo from "./Assets/feedable-logo.png";
 import "./Navbar.css";
 
 export default function Navbar({ user }) {
-  const [users, setUsers] = useState([])
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      const users = await allUsers()
-      setUsers(users)
-    }
-    fetchUsers()
-  }, [])
-
-  console.log(user);
-  console.log(users);
-  
   const authenticatedOptions = (
     <>
       <Link to="/sign-out">Sign Out</Link>
@@ -37,7 +25,7 @@ export default function Navbar({ user }) {
         </button>
         <div className="dropdown-content">
           <Link to="/create">Add Product</Link>
-          <Link to="/users/allusers">All Users</Link>
+          <Link to="/allusers">All Users</Link>
         </div>
       </div>
       {authenticatedOptions}
@@ -76,7 +64,7 @@ export default function Navbar({ user }) {
           <div>Feedable</div>
         </Link>
         <div className="nav-greeting">
-          {user && <div className="link-welcome">Welcome, {user.first_name}</div>}
+          {user && <div className="link-welcome">Welcome, {user.full_name}</div>}
         </div>
         <div className="nav-links">
           {alwaysOptions}
