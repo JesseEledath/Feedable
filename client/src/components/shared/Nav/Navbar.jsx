@@ -5,9 +5,8 @@ import logo from "./Assets/feedable-logo.png";
 
 import "./Navbar.css";
 
-
 export default function Navbar({ user }) {
-
+  
 
   const authenticatedOptions = (
     <>
