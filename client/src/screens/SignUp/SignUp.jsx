@@ -88,7 +88,6 @@ const SignUp = (props) => {
             onChange={handleChange}
           />
 
-
           <label>Password</label>
           <input
             required
