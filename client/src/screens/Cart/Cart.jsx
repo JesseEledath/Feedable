@@ -19,13 +19,13 @@ export default function Cart(props) {
   if (isEmpty)
     return (
       <Layout user={props.user}>
-        <div className="cart-screen">Your Cart is Empty</div>
+        <div className="screen">Your Cart is Empty</div>
       </Layout>
     );
 
   return (
     <Layout user={props.user}>
-      <div className="cart-screen">
+      <div className="screen">
         <h1 className="unique-items">Unique items ({totalUniqueItems})</h1>
         <h1 className="total-items">Total items ({totalItems})</h1>
         <div>
@@ -42,19 +42,19 @@ export default function Cart(props) {
                 className="add-cart-button"
                 onClick={() => updateItemQuantity(item._id, item.quantity + 1)}
               >
-                <i class="fas fa-plus-square"></i>
+                <i className="fas fa-plus-square"></i>
               </button>
               <button
                 className="subtruct-cart-button"
                 onClick={() => updateItemQuantity(item._id, item.quantity - 1)}
               >
-                <i class="fas fa-minus-square"></i>
+                <i className="fas fa-minus-square"></i>
               </button>
               <button
                 className="remove-cart-button"
                 onClick={() => removeItem(item._id)}
               >
-                <i class="fas fa-times"></i>
+                <i className="fas fa-times"></i>
               </button>
             </div>
           ))}

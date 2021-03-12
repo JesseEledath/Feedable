@@ -2,3 +2,7 @@
   text-align: center;
 }
 
+.screen {
+  min-height: 92vh;
+  margin-top: 8vh;
+}

@@ -5,12 +5,11 @@ import "./Navbar.css";
 
 export default function Navbar({ user }) {
   
-
   const authenticatedOptions = (
     <>
       <Link to="/sign-out">Sign Out</Link>
       <Link to="/cart">
-        <div><i class="fas fa-cart-plus"></i></div>
+        <div><i className="fas fa-cart-plus"></i></div>
       </Link>
     </>
   )
@@ -47,7 +46,6 @@ export default function Navbar({ user }) {
   const alwaysOptions = (
     <>
       <Link to="/products">Products</Link>
-      <a>Mission</a>
     </>
   )
 
