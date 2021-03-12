@@ -8,12 +8,24 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 const SALT_ROUNDS = 11;
 const TOKEN_KEY = "a@GzkrA1oB*J1J8eN";
 
+const getUsers = async (req, res) => {
+  try {
+    const users = await User.find()
+    if (users) {
+      return res.json(users)
+    }
+    res.status(404).json({ message: 'Product not found' })
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+}
+
 const signUp = async (req, res) => {
   try {
-    const { first_name, email, password, role } = req.body;
+    const { full_name, email, password, role } = req.body;
     const password_digest = await bcrypt.hash(password, SALT_ROUNDS);
     const user = new User({
-      first_name,
+      full_name,
       email,
       password_digest,
       role,
@@ -22,8 +34,10 @@ const signUp = async (req, res) => {
     await user.save();
 
     const payload = {
-      first_name: user.first_name,
+      full_name: user.full_name,
       email: user.email,
+      role: user.role,
+      _id: user._id
     };
 
     const token = jwt.sign(payload, TOKEN_KEY);
@@ -40,7 +54,9 @@ const signIn = async (req, res) => {
     if (await bcrypt.compare(password, user.password_digest)) {
       const payload = {
         email: user.email,
-        first_name: user.first_name,
+        full_name: user.full_name,
+        role: user.role,
+        _id: user._id
       };
       const token = jwt.sign(payload, TOKEN_KEY);
       res.status(201).json({ token });
@@ -67,6 +83,7 @@ const verify = async (req, res) => {
 const changePassword = async (req, res) => {};
 
 module.exports = {
+  getUsers,
   signUp,
   signIn,
   verify,
