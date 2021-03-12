@@ -8,7 +8,7 @@ const SignUp = (props) => {
   const history = useHistory();
 
   const [form, setForm] = useState({
-    first_name: "",
+    full_name: "",
     email: "",
     password: "",
     passwordConfirmation: "",
@@ -33,7 +33,7 @@ const SignUp = (props) => {
       .catch((error) => {
         console.error(error);
         setForm({
-          first_name: "",
+          full_name: "",
           email: "",
           password: "",
           passwordConfirmation: "",
@@ -60,7 +60,7 @@ const SignUp = (props) => {
     }
   };
 
-  const { email, first_name, password, passwordConfirmation, role } = form;
+  const { email, full_name, password, passwordConfirmation } = form;
 
   return (
     <Layout>
@@ -72,12 +72,11 @@ const SignUp = (props) => {
             required
             className="sign-up-input"
             type="text"
-            name="first_name"
-            value={first_name}
+            name="full_name"
+            value={full_name}
             placeholder="Enter first name"
             onChange={handleChange}
           />
-
           <label>Email address</label>
           <input
             required
@@ -88,16 +87,7 @@ const SignUp = (props) => {
             placeholder="Enter email"
             onChange={handleChange}
           />
-          <label>Role</label>
-          <input
-            required
-            className="sign-up-input"
-            type="text"
-            name="role"
-            value={role}
-            placeholder="What is your role?"
-            onChange={handleChange}
-          />
+
           <label>Password</label>
           <input
             required
