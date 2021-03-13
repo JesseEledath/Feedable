@@ -44,59 +44,61 @@ export default function ProductEdit (props) {
     }
 
     return (
-        <Layout>   
-            <div className="product-edit-screen">
-                <div className="edit-image-container">
-                    <img className="edit-product-image" src={product.imgURL} alt={product.name} />
-                    <form onSubmit={handleSubmit}>
+        <Layout user={props.user}>   
+            <div className="screen">
+                <div className="content">
+                    <div className="edit-image-container">
+                        <img className="edit-product-image" src={product.imgURL} alt={product.name} />
+                        <form onSubmit={handleSubmit}>
+                            <input
+                                className="edit-input-image-link"
+                                placeholder='Image Link'
+                                value={product.imgURL}
+                                name='imgURL'
+                                required
+                                onChange={handleChange}
+                            />
+                        </form>
+                    </div>
+                    <form className="edit-form" onSubmit={handleSubmit}>
                         <input
-                            className="edit-input-image-link"
-                            placeholder='Image Link'
-                            value={product.imgURL}
-                            name='imgURL'
+                            className="input-name"
+                            placeholder='Name'
+                            value={product.name}
+                            name='name'
+                            required
+                            autoFocus
+                            onChange={handleChange}
+                        />
+                        <input
+                            className="input-price"
+                            placeholder='Price'
+                            value={product.price}
+                            name='price'
                             required
                             onChange={handleChange}
                         />
+                        <input
+                            className="input-category"
+                            placeholder='Category'
+                            value={product.category}
+                            name='category'
+                            required
+                            onChange={handleChange}
+                        />
+                        <textarea
+                            className="textarea-description"
+                            rows={10}
+                            cols={78}
+                            placeholder='Description'
+                            value={product.description}
+                            name='description'
+                            required
+                            onChange={handleChange}
+                        />
+                        <button type='submit' className="edit-save-button">Save</button>
                     </form>
                 </div>
-                <form className="edit-form" onSubmit={handleSubmit}>
-                    <input
-                        className="input-name"
-                        placeholder='Name'
-                        value={product.name}
-                        name='name'
-                        required
-                        autoFocus
-                        onChange={handleChange}
-                    />
-                    <input
-                        className="input-price"
-                        placeholder='Price'
-                        value={product.price}
-                        name='price'
-                        required
-                        onChange={handleChange}
-                    />
-                    <input
-                        className="input-category"
-                        placeholder='Category'
-                        value={product.category}
-                        name='category'
-                        required
-                        onChange={handleChange}
-                    />
-                    <textarea
-                        className="textarea-description"
-                        rows={10}
-                        cols={78}
-                        placeholder='Description'
-                        value={product.description}
-                        name='description'
-                        required
-                        onChange={handleChange}
-                    />
-                    <button type='submit' className="edit-save-button">Save</button>
-                </form>
             </div>
         </Layout>
     )

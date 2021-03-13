@@ -1,14 +1,13 @@
 footer {
-  height: 105px;
+  height: 360px;
   background-color: rgba(35, 39, 46, 1);
-  padding: 10px auto;
+  padding: 2vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-size: 24px;
   color: #fff;
-  position: fixed;
   bottom: 0;
   width: 100%;
   
@@ -29,7 +28,7 @@ footer a {
   text-decoration: none;
   margin: 5px;
 }
-a:hover{
+.link a:hover{
   color: dodgerblue;
 }
 .fa-github, .fa-linkedin {

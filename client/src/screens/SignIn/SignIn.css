@@ -4,9 +4,10 @@
   height: 650px;
   font-family: 'Open Sans', sans-serif;
   background: #0b132b;
-  margin: 70px auto;
+  margin-bottom: 85px;
   border-radius: 15px;
   border: 1px solid #cbb26a;
+  padding: 10px;
 }
 .form-cont{
   margin: 40px auto;
