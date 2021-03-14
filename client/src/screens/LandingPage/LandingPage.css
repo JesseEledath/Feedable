@@ -3,11 +3,15 @@
     margin-top: 8vh;
     display: flex;
     flex-flow: column;
+    
 }
 
 .sliders-container {
     height: 65vh;
-    background-color: lightgray;
+    background-image: linear-gradient(to top, #312911, #50461f, #6f652d, #8f873d, #afab4e);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
