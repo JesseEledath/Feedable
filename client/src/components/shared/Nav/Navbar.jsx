@@ -58,7 +58,7 @@ export default function Navbar({ user }) {
       </div>
       <nav>
         <Link className="icon-link" to="/">
-          <div>Feedable</div>
+          <div>FEEDABLE</div>
         </Link>
         <div className="nav-greeting">
           {user && <div className="link-welcome">Welcome, {user.full_name}</div>}

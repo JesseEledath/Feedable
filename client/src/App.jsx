@@ -29,15 +29,11 @@ const App = () => {
 
   const clearUser = () => setUser(null)
 
-  // console.log(user.role);
-
   useEffect(() => {
     setTimeout((toggleLoad) => {
       setToggleLoad(true)
     }, 500);
   })
-
-  
 
   return (
     <div className="App">

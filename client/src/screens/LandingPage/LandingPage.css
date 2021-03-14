@@ -4,3 +4,25 @@
     display: flex;
     flex-flow: column;
 }
+
+.sliders-container {
+    height: 65vh;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.category-container {
+    height: 27vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgreen;
+}
+
+.category-container a {
+    text-decoration: none;
+    color: black;
+}

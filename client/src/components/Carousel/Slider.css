@@ -1,20 +1,23 @@
 .slider-container {
+  background-color: lightgreen;
+  border: 3px solid black;
   position: relative;
-  height: 80vh;
+  max-height: 100%;
+  width: 40vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .slider-image {
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 40vw;
+  max-height: 400px;
 }
 
 .slider-left-arrow {
   position: absolute;
   top: 50%;
-  left: 30%;
+  left: 0;
   font-size: 3rem;
   color: black;
   z-index: 5;
@@ -25,7 +28,7 @@
 .slider-right-arrow {
   position: absolute;
   top: 50%;
-  right: 30%;
+  right: 0;
   font-size: 3rem;
   color: black;
   z-index: 5;

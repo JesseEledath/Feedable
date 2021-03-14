@@ -1,12 +1,13 @@
 header {
   background-color: rgba(35, 39, 46, 1);
   height: 8vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   position: fixed;
   z-index: 1;
+  font-family: 'Nova Slim', cursive;
 }
 
 .icon-link {

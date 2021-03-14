@@ -1,10 +1,8 @@
-
+import { Link } from "react-router-dom"
+import "./CategoryButton.css"
 
 export default function CategoryButton (props) {
     return (
-        <div>
-            hello
-            <div>{props.category}</div>
-        </div>
+        <div className="category-button">{props.category}</div>
     )
 }

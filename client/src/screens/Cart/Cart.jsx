@@ -60,7 +60,7 @@ export default function Cart(props) {
           ))}
         </div>
         <div className="total-price">
-          Total: ${cartTotal}
+          Total: ${cartTotal.toFixed(2)}
           <button
             className="checkout-button"
             onClick={() => history.goBack()}
