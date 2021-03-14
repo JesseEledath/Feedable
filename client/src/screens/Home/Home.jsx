@@ -29,7 +29,7 @@ const Home = (props) => {
     const filteredResult = queriedProducts.filter((product) =>
       product.category.includes(event.target.case)
     );
-    console.log(filteredResult);
+
   };
 
   const handleSort = (type) => {

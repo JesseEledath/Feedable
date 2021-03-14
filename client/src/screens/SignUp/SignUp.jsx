@@ -25,7 +25,7 @@ const SignUp = (props) => {
   const onSignUp = (event) => {
     event.preventDefault();
     const { setUser } = props;
-    console.log(setUser);
+
     signUp(form)
       .then(() => signIn(form))
       .then((user) => setUser(user))

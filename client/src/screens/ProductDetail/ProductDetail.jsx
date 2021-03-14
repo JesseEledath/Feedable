@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import "./ProductDetail.css";
 import Layout from "../../components/shared/Layout/Layout";
 import { getProduct, deleteProduct } from "../../services/crud";
-import { useCart } from "react-use-cart"
+import { useCart } from "react-use-cart";
 import { useParams, Link, useHistory } from "react-router-dom";
 
 const ProductDetail = (props) => {
   const [product, setProduct] = useState("");
   const [isLoaded, setLoaded] = useState(false);
   const { id } = useParams();
-  const { addItem } = useCart()
-  const history = useHistory()
+  const { addItem } = useCart();
+  const history = useHistory();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -22,9 +22,8 @@ const ProductDetail = (props) => {
   }, [id]);
 
   const handleDelete = () => {
-    deleteProduct(product._id)
-      .then(history.push("/"))
-  }
+    deleteProduct(product._id).then(history.push("/"));
+  };
 
   const authenticatedOptions = (
     <>
@@ -33,10 +32,17 @@ const ProductDetail = (props) => {
           Edit
         </Link>
       </button>
-      <button className="delete-button" onClick={handleDelete}>Delete</button>
-      <button className="details-addtocart" onClick={() => addItem({ ...product, id: product._id })}>Add to cart</button>
+      <button className="delete-button" onClick={handleDelete}>
+        Delete
+      </button>
+      <button
+        className="details-addtocart"
+        onClick={() => addItem({ ...product, id: product._id })}
+      >
+        Add to cart
+      </button>
     </>
-  )
+  );
 
   if (!isLoaded) {
     return <h1>Loading...</h1>;

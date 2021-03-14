@@ -1,13 +1,13 @@
-import Checkbox from "../Checkbox/Checkbox"
+import Checkbox from "../Checkbox/Checkbox";
 import "./Filter.css";
 
 const filterList = [
-  { name: 'Meat', case: 'meat' },
-  { name: 'Poultry', case: 'poultry' },
-  { name: 'Seafood', case: 'sea_food' },
-  { name: 'Dairy', case: 'dairy' },
-  { name: 'Fruit', case: 'fruit' },
-  { name: 'Produce', case: 'produce' }
+  { name: "Meat", case: "meat" },
+  { name: "Poultry", case: "poultry" },
+  { name: "Seafood", case: "sea_food" },
+  { name: "Dairy", case: "dairy" },
+  { name: "Fruit", case: "fruit" },
+  { name: "Produce", case: "produce" },
 ];
 
 // filterList = []
@@ -20,14 +20,20 @@ const filterList = [
 const Filter = (props) => {
   return (
     <>
-    <div> Filter </div>
+      <div> Filter </div>
       {/* <input type="checkbox"  value="checkedall" /> Check / Uncheck All */}
-        <>
+      <>
         {filterList.map((item, index) => {
-          return (<Checkbox item={item} key={index} onChange={props.onChange} queriedProducts={props.queriedProducts}/>)
-          })
-        }
-        </>
+          return (
+            <Checkbox
+              item={item}
+              key={index}
+              onChange={props.onChange}
+              queriedProducts={props.queriedProducts}
+            />
+          );
+        })}
+      </>
     </>
   );
 };
