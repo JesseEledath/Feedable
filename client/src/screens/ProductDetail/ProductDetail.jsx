@@ -54,7 +54,8 @@ const ProductDetail = (props) => {
           <div className="detail">
             <div className="name">{product.name}</div>
             <div className="description">{product.description}</div>
-            <div className="product-quantity">{product.quantity}</div>
+            <div className="product-quantity">Qty {product.quantity}</div>
+            <div className="price">${product.price}</div>
             <div className="button-container">
               {props.user ? authenticatedOptions : null}
             </div>

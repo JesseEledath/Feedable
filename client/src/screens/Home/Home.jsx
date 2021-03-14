@@ -60,7 +60,7 @@ const Home = (props) => {
       <Product
         _id={product._id}
         name={product.name}
-        quantity={product.quantity}
+        price={product.price}
         imgURL={product.imgURL}
         key={product._id}
       />
