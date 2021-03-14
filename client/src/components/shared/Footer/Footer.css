@@ -1,8 +1,6 @@
 footer {
-
   height: 360px;
-  background-color: 
-rgba(35, 39, 46, 1);
+  background-color: rgba(35, 39, 46, 1);
   padding: 2vh;
 
   display: flex;
@@ -14,7 +12,6 @@ rgba(35, 39, 46, 1);
 
   bottom: 0;
   width: 100%;
-  
 }
 footer a {
   display: flex;
@@ -24,7 +21,6 @@ footer a {
   color: #cbb26a;
   padding: 3px;
   letter-spacing: 3px;
-  
 }
 .link {
   display: flex;
@@ -33,15 +29,15 @@ footer a {
   margin: 5px;
 }
 
-.link a:hover{
-
-
+.link a:hover {
   color: dodgerblue;
 }
-.fa-github, .fa-linkedin {
+.fa-github,
+.fa-linkedin {
   margin: 5px auto;
   color: #cbb26a;
 }
-.fa-github:hover , .fa-linkedin:hover{
+.fa-github:hover,
+.fa-linkedin:hover {
   color: dodgerblue;
 }

@@ -17,8 +17,7 @@ const main = async () => {
     },
     {
       name: "Ready Chicken Breast Strips, 22 oz (Frozen)",
-      imgURL:
-        "https://m.media-amazon.com/images/I/41w9X1L+CQL.jpg",
+      imgURL: "https://m.media-amazon.com/images/I/41w9X1L+CQL.jpg",
       description: "One 22 oz. package of Fully Cooked Chicken Breast Strips",
       price: 7.99,
       category: ["poultry", "meat"],
@@ -58,7 +57,7 @@ const main = async () => {
         "https://images-na.ssl-images-amazon.com/images/I/71zu6ZGuu8L._SL1500_.jpg",
       description:
         "MOWI Essential Farmed Atlantic Salmon is fresh and never frozen. Try it baked, broiled, pan-fried, or grilled. Two 6oz, skin-on portions per package. Perfect meal for two. Packed with protein and vitamin D. Only 350 calories per serving.",
-      price: 7.50,
+      price: 7.5,
       category: ["sea_food"],
       quantity: 3,
     },
@@ -68,7 +67,7 @@ const main = async () => {
         "https://images-na.ssl-images-amazon.com/images/I/714cQa4bfUL._SL1500_.jpg",
       description:
         "12oz bag of cooked, peeled, and deveined colossal shrimp with tails.",
-      price: 7.20,
+      price: 7.2,
       category: ["sea_food"],
       quantity: 3,
     },
@@ -77,7 +76,7 @@ const main = async () => {
       imgURL:
         "https://images-na.ssl-images-amazon.com/images/I/619vwMKzrnL._SL1000_.jpg",
       description: "8oz bag of saltwater crab legs.",
-      price: 5.80,
+      price: 5.8,
       category: ["sea_food"],
       quantity: 3,
     },
