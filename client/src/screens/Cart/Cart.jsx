@@ -16,9 +16,9 @@ export default function Cart(props) {
   } = useCart();
 
   const checkoutBtn = () => {
-    emptyCart()
+    emptyCart();
     history.goBack();
-  }
+  };
 
   if (isEmpty)
     return (
@@ -43,13 +43,17 @@ export default function Cart(props) {
                 <div className="cart-buttons-container">
                   <button
                     className="add-cart-button"
-                    onClick={() => updateItemQuantity(item._id, item.quantity + 1)}
+                    onClick={() =>
+                      updateItemQuantity(item._id, item.quantity + 1)
+                    }
                   >
                     <i className="fas fa-plus-square"></i>
                   </button>
                   <button
                     className="subtruct-cart-button"
-                    onClick={() => updateItemQuantity(item._id, item.quantity - 1)}
+                    onClick={() =>
+                      updateItemQuantity(item._id, item.quantity - 1)
+                    }
                   >
                     <i className="fas fa-minus-square"></i>
                   </button>
@@ -71,21 +75,20 @@ export default function Cart(props) {
               </div>
               {items.map((item, i) => (
                 <div className="checkout-items-prices">
-                  <div key={i} className="checkout-item-price">${item.price} x {item.quantity} </div>
-                  <div className="checkout-items-eachtotal">${item.price * item.quantity}</div>
+                  <div key={i} className="checkout-item-price">
+                    ${item.price} x {item.quantity}{" "}
+                  </div>
+                  <div className="checkout-items-eachtotal">
+                    ${item.price * item.quantity}
+                  </div>
                 </div>
               ))}
             </div>
             <div className="total-price-container">
-              <div className="total-price">
-                Total: ${cartTotal.toFixed(2)}
-              </div>
+              <div className="total-price">Total: ${cartTotal.toFixed(2)}</div>
             </div>
-            <button
-              className="checkout-button"
-              onClick={() => checkoutBtn()}
-            >
-            Checkout
+            <button className="checkout-button" onClick={() => checkoutBtn()}>
+              Checkout
             </button>
           </div>
         </div>
