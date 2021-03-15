@@ -1,17 +1,18 @@
-.slider-container {
+.small-slider-container {
   background-color: lightgreen;
   border: 3px solid black;
   position: relative;
-  max-height: 100%;
+  min-height: 47%;
   width: 40vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px;
 }
 
-.slider-image {
+.small-slider-image {
   max-width: 40vw;
-  max-height: 400px;
+  max-height: 230px;
 }
 
 .slider-left-arrow {

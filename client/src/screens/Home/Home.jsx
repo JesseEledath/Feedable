@@ -29,7 +29,7 @@ const Home = (props) => {
     const filteredResult = queriedProducts.filter((product) =>
       product.category.includes(event.target.case)
     );
-    console.log(filteredResult);
+
   };
 
   const handleSort = (type) => {
@@ -60,7 +60,7 @@ const Home = (props) => {
       <Product
         _id={product._id}
         name={product.name}
-        quantity={product.quantity}
+        price={product.price}
         imgURL={product.imgURL}
         key={product._id}
       />

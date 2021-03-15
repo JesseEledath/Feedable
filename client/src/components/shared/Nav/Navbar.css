@@ -1,12 +1,13 @@
 header {
   background-color: rgba(35, 39, 46, 1);
   height: 8vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   position: fixed;
   z-index: 1;
+  font-family: "Nova Slim", cursive;
 }
 
 .icon-link {
@@ -14,7 +15,7 @@ header {
   padding-right: 10px;
 }
 .logo-container {
-  max-width: 15% ;
+  max-width: 15%;
 }
 
 .logo {
@@ -99,7 +100,7 @@ nav a {
 .nav-dropdown:hover .dropdown-content {
   display: block;
 }
-.fa-cart-plus{
+.fa-cart-plus {
   color: #cbb26a;
   font-size: 20px;
 }

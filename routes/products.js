@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const controllers = require("../controllers/products");
-const restrict = require("../helper/restrict")
+const restrict = require("../helper/restrict");
 const router = Router();
 
 router.get("/", controllers.getProducts);

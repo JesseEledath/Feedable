@@ -1,7 +1,6 @@
 import "./Checkbox.css";
 
 const Checkbox = (props) => {
-  // console.log(props)
   return (
     <>
       <input
@@ -10,7 +9,8 @@ const Checkbox = (props) => {
         onChange={(e) => props.onChange(e)}
         type="checkbox"
         // checked={props.isChecked}
-        value={props.item.name} />
+        value={props.item.name}
+      />
       {props.item.name}
     </>
   );
