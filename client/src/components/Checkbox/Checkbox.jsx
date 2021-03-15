@@ -13,7 +13,7 @@ const Checkbox = (props) => {
 
   return (
     <div>
-      <label for={props.item.name}>{props.item.name}</label>
+      <label htmlFor={props.item.name}>{props.item.name}</label>
       <input
         id={props.item.name}
         name={props.item.name}

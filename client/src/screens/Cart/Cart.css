@@ -1,11 +1,56 @@
+.cart-content-container {
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.cart-items-container {
+  width: 70%;
+}
+
+.checkout-container {
+  width: 29%;
+  display: flex;
+  flex-flow: column wrap;
+  background-color: #676867;
+}
+
+.checkout-items-price-container {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+}
+
+.checkout-items-prices {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  padding: 5px 0;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  border-bottom: #CFCEC9 3px solid;
+}
+
+.total-title-container {
+  width: 70%;
+  align-self: center;
+}
+.item-total-title {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .cart-container {
   margin: 2px auto;
   display: flex;
   flex-direction: row;
   padding: 5px;
-  background: #f2f2f2;
+  background: #9B9B98;
   align-items: center;
+  justify-content: space-between;
   border: 1px solid #092756;
+  color: white;
 }
 
 .cart-img {
@@ -15,25 +60,27 @@
   border-radius: 12px;
 }
 .cart-name {
-  margin: 10px;
-  padding: 10px;
-  color: #cbb26a;
-  font-size: 16px;
   font-weight: bold;
 }
-.cart-quantity {
+
+.cart-quantity, .cart-name {
   margin: 10px;
   padding: 10px;
-  color: #cbb26a;
   font-size: 16px;
 }
+
 .cart-item-price {
   margin: 10px;
   padding: 10px;
-  color: #cbb26a;
   font-size: 18px;
   font-weight: bold;
 }
+
+.cart-buttons-container {
+  display: flex;
+  flex-flow: row;
+}
+
 .add-cart-button,
 .subtruct-cart-button,
 .remove-cart-button {
@@ -41,6 +88,7 @@
   height: 50px;
   margin: 10px;
   border: 1px solid #fff;
+  border-radius: 20px;
   color: #558b2f;
   font-family: "Cinzel", serif;
   cursor: pointer;
@@ -99,17 +147,25 @@
   color: #fff;
 }
 
+.total-price-container {
+  display: flex;
+  width: 80%;
+  justify-content: flex-end;
+  align-self: center;
+}
+
 .total-price {
   margin: 10px;
   padding: 10px;
   font-size: 20px;
 }
+
 .checkout-button {
   width: 150px;
   height: 50px;
   margin: 15px auto;
   border: 1px solid #fff;
-  color: #cbb26a;
+  color: white;
   font-family: "Cinzel", serif;
   font-size: 23px;
   cursor: pointer;
@@ -121,13 +177,15 @@
   z-index: 0;
   transition: 1s;
 }
+
 .checkout-button::before {
   position: absolute;
-  background: #092756;
+  background: #23272E;
   z-index: -1;
   transition: 1s;
   content: "";
 }
+
 .checkout-button::before {
   height: 50px;
   width: 150px;
@@ -137,6 +195,7 @@
   width: 150px;
   height: 30px;
 }
+
 .checkout-button:hover::before {
   width: 0px;
   background: #092756;
