@@ -17,6 +17,7 @@ import AllUsers from "./screens/AllUsers/AllUsers";
 
 const App = () => {
   const [user, setUser] = useState(null);
+  const [toggleLoad, setToggleLoad] =useState(false)
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -28,10 +29,16 @@ const App = () => {
 
   const clearUser = () => setUser(null)
 
-  // console.log(user.role);
+  useEffect(() => {
+    setTimeout((toggleLoad) => {
+      setToggleLoad(true)
+    }, 500);
+  })
 
   return (
     <div className="App">
+      {!toggleLoad ? <div>Loading...</div> 
+      : 
       <Switch>
         <Route exact path="/">
           <LandingPage user={user} />
@@ -79,6 +86,7 @@ const App = () => {
           {user?.role === "Admin" ? <Create user={user}/> : <Redirect to="/products"/> }
         </Route>
       </Switch>
+      }
     </div>
   );
 };

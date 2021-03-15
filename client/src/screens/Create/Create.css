@@ -23,12 +23,14 @@
   /* background-image: linear-gradient(to right top, #cbb26a, #bd795c, #914c5c, #512f53, #051937); */
   box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0.5);
 }
+
 .create-name,
 .create-img,
 .create-price,
 .create-quantity,
 .create-description,
 .create-category {
+
   margin: 15px auto;
   font-size: 18px;
   padding: 15px auto;
