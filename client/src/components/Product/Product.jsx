@@ -2,7 +2,6 @@ import "./Product.css";
 import { Link } from "react-router-dom";
 
 const Product = (props) => {
-  console.log(props);
   return (
     <div className="product-container">
       <div className="product-image-container">
