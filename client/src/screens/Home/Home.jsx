@@ -13,8 +13,6 @@ const Home = (props) => {
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [filtered, setFiltered] = useState([]);
 
   const { addItem } = useCart();
 
@@ -22,68 +20,26 @@ const Home = (props) => {
     const fetchProducts = async () => {
       const products = await getProducts();
       setAllProducts(products);
-      setQueriedProducts(products);
     };
     fetchProducts();
   }, []);
 
   const handleFilter = (event) => {
-
-    const filteredResult = allProducts.filter(product =>
-      event.target.checked ? product.category.includes(event.target.value) : true)
-    setQueriedProducts(filteredResult)
-    // console.log("filteredResult", filteredResult)
-    // console.log(event.target.checked)
-  }
-
-  // const handleFilter = (event) => {
-
-  //   const filterSet = allProducts.filter(product =>
-  //     product.category.includes(event.target.value))
-  //   // setQueriedProducts(filterSet)
-  //   console.log("filterSet", filterSet)
-    
-  //   filterSet.forEach(filterElement => {
-  //     if (queriedProducts.includes(filterElement)) {
-  //       const filterIndex = queriedProducts.indexOf(filterElement);
-  //       const newFilter = [...queriedProducts]
-  //       newFilter.splice(filterIndex, 1);
-  //       setQueriedProducts(newFilter)
-  //     } else {
-  //       setQueriedProducts([...queriedProducts, filterElement])
-  //     }
-  //   });
-  // }
-
-  // const handleFilter = (event) => {
-  //   console.log("before", categories)
-
-  //   const checkedBox = event.target.type === "checkbox" && event.target.checked
-  //   console.log("checkedBox", checkedBox)
-  //   if (checkedBox) {
-  //     setCategories([...categories, event.target.value])
-  //   }
-  //   console.log("checked categories", categories)
-  //   if (categories.includes(event.target.checked)) {
-  //     const filterIndex = categories.indexOf(event.target.value);
-  //     const newFilter = [...categories]
-  //     newFilter.splice(filterIndex, 1);
-  //     setCategories(newFilter)
-  //     console.log("if", categories)
-  //     console.log("if value", event.target.value)
-  //   } else {
-  //   setCategories([...categories, event.target.value])
-  //     console.log("else", categories)
-  //     console.log("else value", event.target.value)
-  //   }
-  //   console.log("checked", event.target.checked)
-  //   // extract the category from the click and...
-  //   // ...if it isn't already in the activeFilter array...
-  //   // ...then store it in the activeFilter array
-  //   // ...else if it is already in the activeFilter, remove it
-  //   // Compare the categories in allProducts to the activeFilter array,
-  //   // return products with categories that match any category in the active filter array
-  //   }
+    if (event.target.checked) {
+      const filteredResult = allProducts.filter((product) =>
+        event.target.checked
+          ? product.category.includes(event.target.value)
+          : false
+      );
+      const filteredArr = Array.from(new Set([...filteredResult, ...queriedProducts]))
+      setQueriedProducts(filteredArr);
+    } else {
+      const filteredResult= queriedProducts.filter(product => {
+        return !product.category.includes(event.target.value) 
+      })
+      setQueriedProducts(filteredResult)
+    }
+  };
 
   const handleSort = (type) => {
     setSortType(type);
@@ -96,7 +52,6 @@ const Home = (props) => {
         break;
       default:
         break;
-
     }
   };
 
@@ -128,6 +83,25 @@ const Home = (props) => {
     </div>
   ));
 
+  const allProductsJSX = allProducts.map((product, index) => (
+    <div className="product-cart-container" key={product._id}>
+      <Product
+        _id={product._id}
+        name={product.name}
+        description={product.description}
+        price={product.price}
+        imgURL={product.imgURL}
+        key={product._id}
+      />
+      <button
+        className="addtocart"
+        onClick={() => addItem({ ...product, id: product._id })}
+      >
+        +
+      </button>
+    </div>
+  ));
+
   return (
     <Layout user={props.user}>
       <div className="home-screen">
@@ -141,12 +115,11 @@ const Home = (props) => {
         </div>
         <div className="products-box">
           <div className="filter-box">
-              <Filter
-                onSubmit={handleSubmit}
-                onChange={handleFilter}
-                />
+            <Filter onSubmit={handleSubmit} onChange={handleFilter} />
           </div>
-          <div className="products-section">{productsJSX}</div>
+          <div className="products-section">
+            {queriedProducts.length ? productsJSX : allProductsJSX}
+          </div>
         </div>
       </div>
     </Layout>
