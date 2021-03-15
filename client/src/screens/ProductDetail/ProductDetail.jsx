@@ -22,7 +22,7 @@ const ProductDetail = (props) => {
   }, [id]);
 
   const handleDelete = () => {
-    deleteProduct(product._id).then(history.push("/"));
+    deleteProduct(product._id).then(history.push("/products"));
   };
 
   const authenticatedOptions = (
@@ -47,7 +47,6 @@ const ProductDetail = (props) => {
       </button>
     </>
   );
- 
   if (!isLoaded) {
     return <h1>Loading...</h1>;
   }
