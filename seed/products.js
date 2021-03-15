@@ -17,7 +17,8 @@ const main = async () => {
     },
     {
       name: "Ready Chicken Breast Strips, 22 oz (Frozen)",
-      imgURL: "https://m.media-amazon.com/images/I/41w9X1L+CQL.jpg",
+      imgURL:
+      "https://images-na.ssl-images-amazon.com/images/I/81QcJsFkTFL.jpg",
       description: "One 22 oz. package of Fully Cooked Chicken Breast Strips",
       price: 7.99,
       category: ["poultry", "meat"],
@@ -25,8 +26,7 @@ const main = async () => {
     },
     {
       name: "Applewood Smoked Bacon",
-      imgURL:
-        "https://images-na.ssl-images-amazon.com/images/I/81QcJsFkTFL.jpg",
+      imgURL: "https://m.media-amazon.com/images/I/41w9X1L+CQL.jpg",
       description: "Thick sliced bacon",
       price: 4.99,
       category: ["meat"],
