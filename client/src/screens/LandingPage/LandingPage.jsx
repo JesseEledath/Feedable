@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Slider from "../../components/Carousel/Slider";
+import SmallSlider from "../../components/Carousel/SmallSlider";
 import Layout from "../../components/shared/Layout/Layout";
+import CategoryButton from "../../components/CategoryButton/CategoryButton";
 import { getProducts } from "../../services/crud";
+import "./LandingPage.css";
+import { Link } from "react-router-dom";
 
 function LandingPage(props) {
   const [allProducts, setAllProducts] = useState([]);
+  const categoryArr = ["Dairy", "Meat", "Poultry", "Sea Food"];
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -13,12 +18,24 @@ function LandingPage(props) {
     };
     fetchProducts();
   }, []);
-  // console.log("Landing Page", props.user)
+
   return (
     <Layout user={props.user}>
-      <div className="landing-page-container">
-        <Slider products={allProducts} />
-        <h1>HELLO</h1>
+      <div className="landing-screen">
+        <div className="sliders-container">
+          <Slider products={allProducts} />
+          <div className="sliders-column-container">
+            <SmallSlider products={allProducts} />
+            <SmallSlider products={allProducts} />
+          </div>
+        </div>
+        <div className="category-container">
+          {categoryArr.map((category, i) => (
+            <Link to="/products">
+              <CategoryButton key={i} category={category} />
+            </Link>
+          ))}
+        </div>
       </div>
     </Layout>
   );

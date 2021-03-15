@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Checkbox.css";
 
 const Checkbox = (props) => {
+
   const [isChecked, setIsChecked] = useState(false)
 
   const handleChange = (event) => {
@@ -9,6 +10,7 @@ const Checkbox = (props) => {
     setIsChecked(!isChecked)
   }
   
+
   return (
     <div>
       <label for={props.item.name}>{props.item.name}</label>
@@ -18,10 +20,12 @@ const Checkbox = (props) => {
         key={props.index}
         onChange={handleChange}
         type="checkbox"
+
         checked={isChecked}
         value={props.item.case} />
       
     </div>
+
   );
 };
 

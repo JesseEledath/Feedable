@@ -1,45 +1,66 @@
-
-.form-container {
-  /* box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5); */
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
 }
 .create-form {
   display: flex;
   flex-direction: column;
-  width: 800px;
-  height: 450px;
-  margin: 20px auto;
-  padding: 30px 0;
-  color: white;
-  background: rgba(20, 40, 40, .8);
-  transition: .2s;
-  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+  border-radius: 25px;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  margin-bottom: 15px;
+  font-weight: 300px;
+  height: 500px;
+  width: 650px;
+  transition: 0.2s;
+  background: #0b132b;
+  background: -webkit-linear-gradient(
+    360deg,
+    #cbb26a 10%,
+    #051937 120%,
+    #083023 360%
+  );
+  background: linear-gradient(360deg, #224e4d 10%, #051937 120%, #cbb26a 360%);
+  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0.5);
 }
- input , .create-description, .create-category{
+
+.create-name,
+.create-img,
+.create-price,
+.create-quantity,
+.create-description,
+.create-category {
   margin: 15px auto;
-  font-size: 16px;
-  padding: 10px auto;
+  font-size: 18px;
+  padding: 15px auto;
   width: 450px;
   border: 1px solid rgba(10, 180, 180, 1);
   border-top: none;
   border-left: none;
   border-right: none;
-  background: rgba(20, 20, 20, .2);
-  color: white;
+  background: rgba(20, 20, 20, 0.2);
+  color: #cbb26a;
   outline: none;
 }
+
 .create-button {
+  width: 150px;
   border: 1px solid rgba(10, 180, 180, 1);
-  background: rgba(20, 20, 20, .6);
-  font-size: 18px;
-  color: white;
-  margin : 20px auto;
-  padding: 10px 40px;
+  color: #cbb26a;
+  background: rgba(20, 20, 20, 0.6);
+  font-size: 20px;
   cursor: pointer;
-  transition: .4s;
-  /* width: 85px; */
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
-.create-button:hover{
-  background: rgba(20, 20, 20, .8);
-    padding: 10px 60px;
+.create-button:hover {
+  background: rgba(20, 20, 20, 0.8);
+  color: #cbb26a;
 }

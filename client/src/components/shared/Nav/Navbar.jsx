@@ -1,21 +1,19 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { allUsers } from "../../../services/users";
 import logo from "./Assets/feedable-logo.png";
 
 import "./Navbar.css";
 
 export default function Navbar({ user }) {
-  
-
   const authenticatedOptions = (
     <>
       <Link to="/sign-out">Sign Out</Link>
       <Link to="/cart">
-        <div><i class="fas fa-cart-plus"></i></div>
+        <div>
+          <i className="fas fa-cart-plus"></i>
+        </div>
       </Link>
     </>
-  )
+  );
 
   const adminAuthenticatedOptions = (
     <>
@@ -31,8 +29,8 @@ export default function Navbar({ user }) {
       </div>
       {authenticatedOptions}
     </>
-  )
-  
+  );
+
   const unauthenticatedOptions = (
     <div className="nav-dropdown">
       <button className="dropbtn">
@@ -44,14 +42,13 @@ export default function Navbar({ user }) {
         <Link to="/sign-up">Sign Up</Link>
       </div>
     </div>
-  )
-  
+  );
+
   const alwaysOptions = (
     <>
       <Link to="/products">Products</Link>
-      <Link to="/about">Mission</Link>
     </>
-  )
+  );
 
   return (
     <header>
@@ -62,14 +59,20 @@ export default function Navbar({ user }) {
       </div>
       <nav>
         <Link className="icon-link" to="/">
-          <div>Feedable</div>
+          <div>FEEDABLE</div>
         </Link>
         <div className="nav-greeting">
-          {user && <div className="link-welcome">Welcome, {user.full_name}</div>}
+          {user && (
+            <div className="link-welcome">Welcome, {user.full_name}</div>
+          )}
         </div>
         <div className="nav-links">
           {alwaysOptions}
-          {user ? (user.role === "Admin" ? adminAuthenticatedOptions : authenticatedOptions) : unauthenticatedOptions}
+          {user
+            ? user.role === "Admin"
+              ? adminAuthenticatedOptions
+              : authenticatedOptions
+            : unauthenticatedOptions}
         </div>
       </nav>
     </header>

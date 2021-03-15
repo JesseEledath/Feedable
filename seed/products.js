@@ -7,21 +7,29 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 const main = async () => {
   const products = [
     {
-      name: "Milk",
+      name: "Horizon Organic Milk",
       imgURL:
-        "https://static.toiimg.com/photo/msid-70139351/70139351.jpg?792974",
-      description: "1 gallon jug of whole milk.",
-      price: 1,
-      category: ["dairy", "fresh_produce"],
+        "https://images-na.ssl-images-amazon.com/images/I/81GC22%2BG0jL.jpg",
+      description: "Milk with DHA Omega-3, Half Gallon",
+      price: 6.99,
+      category: ["dairy"],
       quantity: 5,
     },
     {
-      name: "Chicken Breast",
+      name: "Ready Chicken Breast Strips, 22 oz (Frozen)",
       imgURL:
-        "https://www.foodiecrush.com/wp-content/uploads/2018/08/Instant-Pot-Chicken-Breasts-foodiecrush.com-006A-683x1024.jpg",
-      description: "Chicken breast.",
-      price: 1,
-      category: ["poultry", "fresh_produce", "meat"],
+      "https://images-na.ssl-images-amazon.com/images/I/81QcJsFkTFL.jpg",
+      description: "One 22 oz. package of Fully Cooked Chicken Breast Strips",
+      price: 7.99,
+      category: ["poultry", "meat"],
+      quantity: 2,
+    },
+    {
+      name: "Applewood Smoked Bacon",
+      imgURL: "https://m.media-amazon.com/images/I/41w9X1L+CQL.jpg",
+      description: "Thick sliced bacon",
+      price: 4.99,
+      category: ["meat"],
       quantity: 2,
     },
     {
@@ -29,8 +37,8 @@ const main = async () => {
       imgURL:
         "https://d2d8wwwkmhfcva.cloudfront.net/400x/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_c5b8ff55-e8f4-4636-8df0-583af188af75.jpg",
       description: "Fresh, farm grown organic chicken breast.",
-      price: 1,
-      category: ["organic", "fresh_produce", "meat", "poultry"],
+      price: 6.99,
+      category: ["poultry", "meat"],
       quantity: 3,
     },
     {
@@ -39,8 +47,8 @@ const main = async () => {
         "https://images-na.ssl-images-amazon.com/images/I/81tgp8HeAcL._SL1500_.jpg",
       description:
         "2 servings of fresh, farm raised Tilapia fillets, 12oz. Only 160 calories per serving.",
-      price: 1,
-      category: ["meat", "sea_food"],
+      price: 6.99,
+      category: ["sea_food"],
       quantity: 3,
     },
     {
@@ -49,8 +57,8 @@ const main = async () => {
         "https://images-na.ssl-images-amazon.com/images/I/71zu6ZGuu8L._SL1500_.jpg",
       description:
         "MOWI Essential Farmed Atlantic Salmon is fresh and never frozen. Try it baked, broiled, pan-fried, or grilled. Two 6oz, skin-on portions per package. Perfect meal for two. Packed with protein and vitamin D. Only 350 calories per serving.",
-      price: 1,
-      category: ["organic", "meat", "sea_food"],
+      price: 7.5,
+      category: ["sea_food"],
       quantity: 3,
     },
     {
@@ -59,8 +67,8 @@ const main = async () => {
         "https://images-na.ssl-images-amazon.com/images/I/714cQa4bfUL._SL1500_.jpg",
       description:
         "12oz bag of cooked, peeled, and deveined colossal shrimp with tails.",
-      price: 1,
-      category: ["crayfish", "meat", "sea_food"],
+      price: 7.2,
+      category: ["sea_food"],
       quantity: 3,
     },
     {
@@ -68,8 +76,8 @@ const main = async () => {
       imgURL:
         "https://images-na.ssl-images-amazon.com/images/I/619vwMKzrnL._SL1000_.jpg",
       description: "8oz bag of saltwater crab legs.",
-      price: 1,
-      category: ["shellfish", "meat", "sea_food", "gluten_free"],
+      price: 5.8,
+      category: ["sea_food"],
       quantity: 3,
     },
   ];
