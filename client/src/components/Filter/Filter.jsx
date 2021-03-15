@@ -12,13 +12,6 @@ const filterList = [
 
 ];
 
-// filterList = []
-// props.queriedProducts.category.map((x) => {
-//  if (!filterList.includes(x)) {
-//    filterList.push(x)
-//  }
-// })
-
 const Filter = (props) => {
   return (
     <>
