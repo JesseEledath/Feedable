@@ -20,26 +20,35 @@ const Home = (props) => {
     const fetchProducts = async () => {
       const products = await getProducts();
       setAllProducts(products);
-      setQueriedProducts(products);
     };
     fetchProducts();
   }, []);
 
   const handleFilter = (event) => {
-    const filteredResult = queriedProducts.filter((product) =>
-      product.category.includes(event.target.case)
-    );
-
+    if (event.target.checked) {
+      const filteredResult = allProducts.filter((product) =>
+        event.target.checked
+          ? product.category.includes(event.target.value)
+          : false
+      );
+      const filteredArr = Array.from(new Set([...filteredResult, ...queriedProducts]))
+      setQueriedProducts(filteredArr);
+    } else {
+      const filteredResult= queriedProducts.filter(product => {
+        return !product.category.includes(event.target.value) 
+      })
+      setQueriedProducts(filteredResult)
+    }
   };
 
   const handleSort = (type) => {
     setSortType(type);
     switch (type) {
       case "name-ascending":
-        setQueriedProducts(AZ(queriedProducts));
+        setQueriedProducts(AZ(allProducts));
         break;
       case "name-descending":
-        setQueriedProducts(ZA(queriedProducts));
+        setQueriedProducts(ZA(allProducts));
         break;
       default:
         break;
@@ -60,6 +69,7 @@ const Home = (props) => {
       <Product
         _id={product._id}
         name={product.name}
+        description={product.description}
         price={product.price}
         imgURL={product.imgURL}
         key={product._id}
@@ -68,7 +78,26 @@ const Home = (props) => {
         className="addtocart"
         onClick={() => addItem({ ...product, id: product._id })}
       >
-        <i className="fas fa-plus-square add-class"></i>
+        +
+      </button>
+    </div>
+  ));
+
+  const allProductsJSX = allProducts.map((product, index) => (
+    <div className="product-cart-container" key={product._id}>
+      <Product
+        _id={product._id}
+        name={product.name}
+        description={product.description}
+        price={product.price}
+        imgURL={product.imgURL}
+        key={product._id}
+      />
+      <button
+        className="addtocart"
+        onClick={() => addItem({ ...product, id: product._id })}
+      >
+        +
       </button>
     </div>
   ));
@@ -76,19 +105,21 @@ const Home = (props) => {
   return (
     <Layout user={props.user}>
       <div className="home-screen">
-        <div className="sort-box">
-          <Filter
-            onSubmit={handleSubmit}
-            onChange={handleFilter}
-            queriedProducts={queriedProducts}
-          />
-        </div>
-        <div className="products-box">
-          <div className="search-container">
-            <Search onSubmit={handleSubmit} onChange={handleSearch} />
+        <div className="query-section">
+          <div className="sort-box">
             <Sort onSubmit={handleSubmit} onChange={handleSort} />
           </div>
-          <div className="products-section">{productsJSX}</div>
+          <div className="search-box">
+            <Search onSubmit={handleSubmit} onChange={handleSearch} />
+          </div>
+        </div>
+        <div className="products-box">
+          <div className="filter-box">
+            <Filter onSubmit={handleSubmit} onChange={handleFilter} />
+          </div>
+          <div className="products-section">
+            {queriedProducts.length ? productsJSX : allProductsJSX}
+          </div>
         </div>
       </div>
     </Layout>

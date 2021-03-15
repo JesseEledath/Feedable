@@ -32,7 +32,7 @@ const App = () => {
   useEffect(() => {
     setTimeout((toggleLoad) => {
       setToggleLoad(true);
-    }, 500);
+    }, 1500);
   });
 
   return (

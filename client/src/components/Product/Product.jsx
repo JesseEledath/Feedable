@@ -11,7 +11,6 @@ const Product = (props) => {
       </div>
       <div className="product-text">
         <div className="product-name">{props.name}</div>
-        <div className="product-description">{props.description}</div>
         <div className="product-price">${props.price}</div>
       </div>
     </div>

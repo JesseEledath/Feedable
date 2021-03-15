@@ -22,10 +22,20 @@ const ProductDetail = (props) => {
   }, [id]);
 
   const handleDelete = () => {
-    deleteProduct(product._id).then(history.push("/"));
+    deleteProduct(product._id).then(history.push("/products"));
   };
 
   const authenticatedOptions = (
+    < >
+      <button
+        className="details-addtocart"
+        onClick={() => addItem({ ...product, id: product._id })}
+      >
+        Add to cart
+      </button>
+    </>
+  );
+  const adminAuthenticatedOptions = (
     <>
       <button className="edit-button">
         <Link className="edit-link" to={`/products/${product._id}/edit`}>
@@ -35,15 +45,8 @@ const ProductDetail = (props) => {
       <button className="delete-button" onClick={handleDelete}>
         Delete
       </button>
-      <button
-        className="details-addtocart"
-        onClick={() => addItem({ ...product, id: product._id })}
-      >
-        Add to cart
-      </button>
     </>
   );
-
   if (!isLoaded) {
     return <h1>Loading...</h1>;
   }
@@ -58,12 +61,13 @@ const ProductDetail = (props) => {
             alt={product.name}
           />
           <div className="detail">
-            <div className="name">{product.name}</div>
-            <div className="description">{product.description}</div>
+            <div className="detail-name">{product.name}</div>
+            <div className="detail-description">{product.description}</div>
             <div className="product-quantity">Qty {product.quantity}</div>
-            <div className="price">${product.price}</div>
+            <div className="detail-price">${product.price}</div>
             <div className="button-container">
-              {props.user ? authenticatedOptions : null}
+              {props.user ? props.user.role=== "Admin" ? adminAuthenticatedOptions : authenticatedOptions : null}
+              
             </div>
           </div>
         </div>

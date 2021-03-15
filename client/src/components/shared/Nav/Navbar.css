@@ -1,5 +1,6 @@
 header {
   background-color: rgba(35, 39, 46, 1);
+  color: white;
   height: 8vh;
   width: 100vw;
   display: flex;
@@ -8,12 +9,21 @@ header {
   position: fixed;
   z-index: 1;
   font-family: "Nova Slim", cursive;
+  font-size: 20px;
+}
+
+header a, .dropbtn {
+  color: white;
 }
 
 .icon-link {
+  font-weight: 600;
+  letter-spacing: .3rem;
   margin-right: 10px;
   padding-right: 10px;
+  font-size: 27px;
 }
+
 .logo-container {
   max-width: 15%;
 }
@@ -41,11 +51,6 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #cbb26a;
-}
-
-.link-welcome {
-  color: #cbb26a;
 }
 
 .nav-links {
@@ -64,10 +69,9 @@ nav a {
 }
 
 .nav-dropdown .dropbtn {
-  font-size: 16px;
+  font-size: 20px;
   border: none;
   outline: none;
-  color: #cbb26a;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
@@ -84,7 +88,6 @@ nav a {
 }
 .dropdown-content a {
   float: none;
-  color: #cbb26a;
   background-color: rgba(35, 39, 46, 1);
   padding: 12px 16px;
   text-decoration: none;
@@ -93,7 +96,7 @@ nav a {
 }
 
 .dropdown-content a:hover {
-  background-color: #cbb26a;
+  background-color: lightgray;
   color: rgba(35, 39, 46, 1);
 }
 
@@ -101,6 +104,5 @@ nav a {
   display: block;
 }
 .fa-cart-plus {
-  color: #cbb26a;
   font-size: 20px;
 }
