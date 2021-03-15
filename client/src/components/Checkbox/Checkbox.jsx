@@ -7,9 +7,8 @@ const Checkbox = (props) => {
 
   const handleChange = (event) => {
     props.onChange(event)
-    setIsChecked(!isChecked)
+    setIsChecked((curr) => !curr)
   }
-  
 
   return (
     <div>
@@ -20,12 +19,10 @@ const Checkbox = (props) => {
         key={props.index}
         onChange={handleChange}
         type="checkbox"
-
         checked={isChecked}
-        value={props.item.case} />
-      
+        value={props.item.case} 
+      />
     </div>
-
   );
 };
 
