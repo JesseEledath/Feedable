@@ -7,7 +7,7 @@
   border-radius: 15px;
   border: 1px solid #cbb26a;
 }
-label {
+.form-sign-up label {
   color: #cbb26a;
 }
 .sign-up-input {

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Layout from "../../components/shared/Layout/Layout";
-import Sort from "../../components/Sort/Sort";
 import { allUsers } from "../../services/users";
 import "./AllUsers.css";
 
@@ -18,9 +17,6 @@ export default function AllUsers({ user }) {
   return (
     <Layout user={user}>
       <div className="screen">
-        <div className="filter-container">
-          <Sort />
-        </div>
         <div className="users-container">
           {users.map((user, i) => {
             const userCreated = new Date(user.createdAt).toDateString();

@@ -2,6 +2,7 @@ import "./Product.css";
 import { Link } from "react-router-dom";
 
 const Product = (props) => {
+  console.log(props);
   return (
     <div className="product-container">
       <div className="product-image-container">
@@ -11,7 +12,6 @@ const Product = (props) => {
       </div>
       <div className="product-text">
         <div className="product-name">{props.name}</div>
-        <div className="product-description">{props.description}</div>
         <div className="product-price">${props.price}</div>
       </div>
     </div>
