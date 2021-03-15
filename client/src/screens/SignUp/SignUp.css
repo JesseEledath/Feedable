@@ -6,6 +6,7 @@
   margin-bottom: 85px;
   border-radius: 15px;
   border: 1px solid #cbb26a;
+  padding: 15px;
 }
 label {
   color: #cbb26a;
@@ -97,4 +98,80 @@ label {
 
 .sign-up-button:hover {
   background: #092756;
+}
+
+/* media query for mobile screen */
+@media (min-width: 320px) and (max-width: 767px){
+  .form-sign-up {
+    width: 350px;
+    height: 500px;
+    margin-bottom: 45px;
+    border-radius: 15px;
+    padding: 10px;
+  }
+  .sign-up-input {
+    width: 250px;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 13px;
+  }
+  label{
+    font-size: 13px;
+  }
+  .sign-up {
+    font-size: 18px;
+  }
+  .sign-up-button {
+    width: 90px;
+    height: 50px;
+    padding: 20px;
+    font-size: 14px;
+    margin: 35px auto;
+  }
+  .sign-up-button::before {
+    height: 50px;
+    width: 90px;
+  }
+  
+  .sign-up-button::after {
+    width: 90px;
+    height: 30px;
+  }
+}
+/* media query for ipad size and bigger screen */
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .form-sign-up{
+    width: 450px;
+    height: 650px;
+    padding: 15px;
+    margin: 65px auto;
+  }
+  .sign-up-input {
+    width: 290px;
+    margin: 15px auto;
+    padding: 13px;
+    font-size: 17px;
+    
+  }
+  label{
+    font-size: 17px;
+  }
+  .sign-up-button{
+    width: 120px;
+    height: 50px;
+    padding: 20px;
+    font-size: 18px;
+    margin: 37px auto;
+    
+  }
+  
+  .sign-up-button::before {
+    height: 50px;
+    width: 90px;
+  }
+  .sign-up-button::after {
+    width: 120px;
+    height: 50px;
+  }
 }

@@ -102,3 +102,89 @@
 .sign-in-button:hover {
   background: #092756;
 }
+/* media for mobile size */
+@media (min-width: 320px) and (max-width: 767px) {
+
+  .form-cont{
+    margin: 15px auto;
+    padding: 15px;
+  }
+  .form{
+    width: 310px;
+    height: 400px;
+    font-size: 16px;
+    padding: 10px;
+    margin: 10px auto;
+  }
+  .sign-in{
+    margin-top: 12px;
+  padding: 10px auto;
+  font-size: 16px;
+  }
+  .sign-in-input{
+    width: 200px;
+    margin: 28px auto;
+    font-size: 16px;
+    padding: 18px;
+  }
+  .sign-in-button{
+    width: 90px;
+    height: 50px;
+    padding: 20px;
+    font-size: 16px;
+    margin: 35px auto;
+    
+  }
+  
+  .sign-in-button::before {
+    height: 50px;
+    width: 90px;
+  }
+  .sign-in-button::after {
+    width: 90px;
+    height: 30px;
+  }
+}
+
+/* media for table and bigger size screen */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .form-cont{
+    margin: 25px auto;
+    padding: 25px;
+  }
+  .form{
+    width: 400px;
+    height: 540px;
+    font-size: 24px;
+    padding: 15px;
+    margin: 45px auto;
+  }
+  .sign-in{
+    margin-top: 24px;
+  padding-top: 15px;
+  font-size: 20px;
+  }
+  .sign-in-input{
+    width: 270px;
+    margin: 35px auto;
+    font-size: 18px;
+    padding: 20px;
+  }
+  .sign-in-button{
+    width: 120px;
+    height: 50px;
+    padding: 20px;
+    font-size: 18px;
+    margin: 37px auto;
+    
+  }
+  
+  .sign-in-button::before {
+    height: 50px;
+    width: 90px;
+  }
+  .sign-in-button::after {
+    width: 120px;
+    height: 50px;
+  }
+}
