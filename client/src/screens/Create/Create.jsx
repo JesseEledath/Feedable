@@ -80,7 +80,7 @@ const Create = (props) => {
             <option value="sea_food">Seafood</option>
             <option value="dairy">Dairy</option>
             <option value="fruit">Fruit</option>
-            <option value="Produce">Produce</option>
+            <option value="produce">Produce</option>
           </select>
           <label>Quantity</label>
           <input
