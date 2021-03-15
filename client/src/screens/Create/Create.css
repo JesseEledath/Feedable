@@ -19,8 +19,13 @@
   width: 650px;
   transition: 0.2s;
   background: #0b132b;
-  background: -webkit-linear-gradient(360deg,#CBB26A 10%, #051937 120%, #083023 360%); background: linear-gradient(360deg,#224e4d 10%,#051937 120%,#CBB26A 360%);
-  /* background-image: linear-gradient(to right top, #cbb26a, #bd795c, #914c5c, #512f53, #051937); */
+  background: -webkit-linear-gradient(
+    360deg,
+    #cbb26a 10%,
+    #051937 120%,
+    #083023 360%
+  );
+  background: linear-gradient(360deg, #224e4d 10%, #051937 120%, #cbb26a 360%);
   box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -30,7 +35,6 @@
 .create-quantity,
 .create-description,
 .create-category {
-
   margin: 15px auto;
   font-size: 18px;
   padding: 15px auto;
@@ -45,11 +49,10 @@
 }
 
 .create-button {
- 
   width: 150px;
   border: 1px solid rgba(10, 180, 180, 1);
   color: #cbb26a;
-  background: rgba(20, 20, 20, .6);
+  background: rgba(20, 20, 20, 0.6);
   font-size: 20px;
   cursor: pointer;
   display: flex;
@@ -58,6 +61,6 @@
   position: relative;
 }
 .create-button:hover {
-  background: rgba(20, 20, 20, .8);
+  background: rgba(20, 20, 20, 0.8);
   color: #cbb26a;
 }

@@ -35,7 +35,6 @@ const Create = (props) => {
     <Layout user={props.user}>
       <div className="screen">
         <form className="create-form" onSubmit={handleSubmit}>
-        
           <label>Product Name</label>
           <input
             className="create-name"
@@ -106,10 +105,7 @@ const Create = (props) => {
           <button type="submit" className="create-button">
             Submit
           </button>
-          
-          
         </form>
-        
       </div>
     </Layout>
   );

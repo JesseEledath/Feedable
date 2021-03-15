@@ -23,7 +23,6 @@ function Slider({ products }) {
   if (!Array.isArray(products) || products.length <= 0) {
     return null;
   }
-  console.log(imageCounter);
 
   return (
     <div className="slider-container">

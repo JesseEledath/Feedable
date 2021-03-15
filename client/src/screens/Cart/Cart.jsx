@@ -1,6 +1,6 @@
 import Layout from "../../components/shared/Layout/Layout";
 import { useCart } from "react-use-cart";
-import { useParams, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./Cart.css";
 
 export default function Cart(props) {

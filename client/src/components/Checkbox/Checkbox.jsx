@@ -1,18 +1,31 @@
+import { useState } from "react";
 import "./Checkbox.css";
 
 const Checkbox = (props) => {
-  // console.log(props)
+
+  const [isChecked, setIsChecked] = useState(false)
+
+  const handleChange = (event) => {
+    props.onChange(event)
+    setIsChecked(!isChecked)
+  }
+  
+
   return (
-    <>
+    <div>
+      <label for={props.item.name}>{props.item.name}</label>
       <input
+        id={props.item.name}
+        name={props.item.name}
         key={props.index}
-        // onClick={props.handleCheckChildElement}
-        onChange={(e) => props.onChange(e)}
+        onChange={handleChange}
         type="checkbox"
-        // checked={props.isChecked}
-        value={props.item.name} />
-      {props.item.name}
-    </>
+
+        checked={isChecked}
+        value={props.item.case} />
+      
+    </div>
+
   );
 };
 

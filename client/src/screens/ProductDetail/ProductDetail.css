@@ -1,3 +1,65 @@
 .product-detail-image {
-    max-height: 500px;
+  height: 500px;
+  width: 500px;
+  margin: 20px;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  border-radius: 40px;
+}
+.detail {
+  color: #00003d;
+}
+.edit-button, .delete-button, .details-addtocart{
+  margin: 10px;
+  height: 40px;
+  height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	border: none;
+	transition-duration: .5s;
+	transform: rotateX(45deg);
+	box-shadow: 0px 10px 5px rgba(0, 0, 0, .3);
+	cursor: pointer;
+  outline: none;
+}
+.edit-link{
+  text-decoration: none;
+  color: black;
+}
+
+.edit-button:hover{
+  transform: scale(1);
+		box-shadow: none;
+    font-size: 21px;
+		letter-spacing: 1px;
+		color: #fff;
+    background-color: #1da1f2;
+}
+.delete-button:hover{
+  transform: scale(1);
+		box-shadow: none;
+    font-size: 18px;
+		letter-spacing: 1px;
+		color: #fff;
+    background-color: #dd2b75;
+    background: #5c0512;
+}
+.details-addtocart:hover{
+  transform: scale(1);
+		box-shadow: none;
+    font-size: 15px;
+		letter-spacing: 1px;
+		color: #fff;
+    background: lightgreen;
+}
+.detail-name{
+  font-size: 20px;
+  color: #0b132b;
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+.detail-description, .product-quantity, .detail-price{
+  font-size: 18px;
+  color: #0b132b;
+  line-height: 1.6;
 }

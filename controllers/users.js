@@ -10,15 +10,15 @@ const TOKEN_KEY = "a@GzkrA1oB*J1J8eN";
 
 const getUsers = async (req, res) => {
   try {
-    const users = await User.find()
+    const users = await User.find();
     if (users) {
-      return res.json(users)
+      return res.json(users);
     }
-    res.status(404).json({ message: 'Product not found' })
+    res.status(404).json({ message: "Product not found" });
   } catch (error) {
-    res.status(500).json({ error: error.message })
+    res.status(500).json({ error: error.message });
   }
-}
+};
 
 const signUp = async (req, res) => {
   try {
@@ -37,7 +37,7 @@ const signUp = async (req, res) => {
       full_name: user.full_name,
       email: user.email,
       role: user.role,
-      _id: user._id
+      _id: user._id,
     };
 
     const token = jwt.sign(payload, TOKEN_KEY);
@@ -56,7 +56,7 @@ const signIn = async (req, res) => {
         email: user.email,
         full_name: user.full_name,
         role: user.role,
-        _id: user._id
+        _id: user._id,
       };
       const token = jwt.sign(payload, TOKEN_KEY);
       res.status(201).json({ token });
