@@ -45,10 +45,10 @@ const Home = (props) => {
     setSortType(type);
     switch (type) {
       case "name-ascending":
-        setQueriedProducts(AZ(queriedProducts));
+        setQueriedProducts(AZ(allProducts));
         break;
       case "name-descending":
-        setQueriedProducts(ZA(queriedProducts));
+        setQueriedProducts(ZA(allProducts));
         break;
       default:
         break;
