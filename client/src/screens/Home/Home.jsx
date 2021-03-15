@@ -114,6 +114,7 @@ const Home = (props) => {
       <Product
         _id={product._id}
         name={product.name}
+        description={product.description}
         price={product.price}
         imgURL={product.imgURL}
         key={product._id}
@@ -122,7 +123,7 @@ const Home = (props) => {
         className="addtocart"
         onClick={() => addItem({ ...product, id: product._id })}
       >
-        <i className="fas fa-plus-square add-class"></i>
+        +
       </button>
     </div>
   ));
@@ -130,17 +131,20 @@ const Home = (props) => {
   return (
     <Layout user={props.user}>
       <div className="home-screen">
-        <div className="sort-box">
-          <Filter
-            onSubmit={handleSubmit}
-            onChange={handleFilter}
-          />
+        <div className="query-section">
+          <div className="sort-box">
+            <Sort onSubmit={handleSubmit} onChange={handleSort} />
+          </div>
+          <div className="search-box">
+            <Search onSubmit={handleSubmit} onChange={handleSearch} />
+          </div>
         </div>
         <div className="products-box">
-          <div className="search-container">
-            <Search onSubmit={handleSubmit} onChange={handleSearch} />
-            <Sort onSubmit={handleSubmit} onChange={handleSort} />
-
+          <div className="filter-box">
+              <Filter
+                onSubmit={handleSubmit}
+                onChange={handleFilter}
+                />
           </div>
           <div className="products-section">{productsJSX}</div>
         </div>
