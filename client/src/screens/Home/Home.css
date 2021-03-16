@@ -4,7 +4,6 @@
   margin-top: 8vh;
   display: flex;
   flex-flow: column;
-  /* justify-content: center; */
 }
 
 .query-section {
@@ -78,4 +77,24 @@
   font-size: 30px;
   width: 90%;
   border-bottom: 4px gray solid;
+}
+
+/* media query for mobile screen */
+@media (min-width: 320px) and (max-width: 767px){
+  .sort-box {
+    margin-left: 5vw;
+  }
+  .filter-box-title {
+    font-size: 20px;
+  }
+  .filter-box {
+    width: 30%;
+  }
+}
+
+/* media query for ipad size and bigger screen */
+@media (min-width: 768px) and (max-width: 1024px){
+  .sort-box {
+    margin-left: 5vw;
+  }
 }
