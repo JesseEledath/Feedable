@@ -34,11 +34,12 @@ export default function Cart(props) {
           <div className="cart-items-container">
             {items.map((item) => (
               <div className="cart-container" key={item._id}>
+                {/* <div className="cart-contents-info"> */}
                 <div className="img-cart-cont">
                   <img className="cart-img" src={item.imgURL} alt="" />
                 </div>
                 <div className="cart-name">{item.name}</div>
-                <div className="cart-quantity">{item.quantity}</div>
+                <div className="cart-quantity">Qty. {item.quantity}</div>
                 <div className="cart-item-price">Price: ${item.price}</div>
                 <div className="cart-buttons-container">
                   <button
@@ -64,6 +65,7 @@ export default function Cart(props) {
                     <i className="fas fa-times"></i>
                   </button>
                 </div>
+                {/* </div> */}
               </div>
             ))}
           </div>
