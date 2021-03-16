@@ -37,6 +37,10 @@
   border: gray 2px solid;
 }
 
+.category-buttons a {
+  text-decoration: none;
+}
+
 .category-buttons {
   display: flex;
   flex-flow: row wrap;

@@ -5,18 +5,6 @@ function SmallSlider({ products }) {
   const [imageCounter, setImageCounter] = useState(0);
   const length = products.length;
 
-  
-  const nextSlide = () => {
-    clearTimeout();
-    setImageCounter(imageCounter === length - 1 ? 0 : imageCounter + 1);
-    console.log(imageCounter);
-  };
-  
-  const prevSlide = () => {
-    clearTimeout();
-    setImageCounter(imageCounter === 0 ? length - 1 : imageCounter - 1);
-  };
-  
   setTimeout(() => {
     setImageCounter(imageCounter === length - 1 ? 0 : imageCounter + 1);
   }, 3000);

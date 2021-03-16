@@ -6,10 +6,6 @@ function Slider({ products }) {
   const [imageCounter, setImageCounter] = useState(0);
   const length = products.length;
 
-  // setTimeout(() => {
-  //   setImageCounter(imageCounter === length - 1 ? 0 : imageCounter + 1)
-  // }, 3000);
-
   const nextSlide = () => {
     clearTimeout();
     setImageCounter(imageCounter === length - 1 ? 0 : imageCounter + 1);
@@ -27,10 +23,7 @@ function Slider({ products }) {
   return (
     <div className="slider-container">
       <FaArrowAltCircleLeft className="slider-left-arrow" onClick={prevSlide} />
-      <FaArrowAltCircleRight
-        className="slider-right-arrow"
-        onClick={nextSlide}
-      />
+      <FaArrowAltCircleRight className="slider-right-arrow" onClick={nextSlide} />
       {products.map((product, index) => (
         <div
           className={index === imageCounter ? "slider-active" : "slide"}
