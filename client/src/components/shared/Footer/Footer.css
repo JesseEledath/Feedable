@@ -41,46 +41,45 @@ footer a {
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
- footer {
-   font-size: 11px;
-   height: 260px;
+  footer {
+    font-size: 11px;
+    height: 260px;
+  }
+
+  footer a {
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+  .link {
+    margin: 2px;
+    display: flex;
+    flex-direction: column;
+  }
+  .fa-github,
+  .fa-linkedin {
+    margin: 2px auto;
+    font-size: 14px;
+  }
 }
 
-footer a{
-  display: flex;
-  flex-direction: column;
-  letter-spacing: 1px;
-  font-size: 12px;
-}
-.link{
-  margin: 2px;
-  display: flex;
-  flex-direction: column;
-}
-.fa-github,
-.fa-linkedin {
-  margin: 2px auto;
-  font-size: 14px;
-}
-}
-
-@media (min-width: 768px) and (max-width: 1024px){
- footer{
-   font-size: 16px;
-   padding: 2vh;
-   height: 360px;
- }
- footer a {
-   letter-spacing: 2px;
-   font-size: 16px;
-   padding: 3px;
- }
- .link{
-   margin: 3px;
- }
- .fa-github,
-.fa-linkedin {
-  margin: 3px auto;
-}
-
+@media (min-width: 768px) and (max-width: 1024px) {
+  footer {
+    font-size: 16px;
+    padding: 2vh;
+    height: 360px;
+  }
+  footer a {
+    letter-spacing: 2px;
+    font-size: 16px;
+    padding: 3px;
+  }
+  .link {
+    margin: 3px;
+  }
+  .fa-github,
+  .fa-linkedin {
+    margin: 3px auto;
+  }
 }
