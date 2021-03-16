@@ -111,7 +111,6 @@ nav a {
 @media (min-width: 320px) and (max-width: 767px) {
   header {
     font-size: 14px; 
-    width: 100vw;
   }
   .link-welcome {
     display: none;

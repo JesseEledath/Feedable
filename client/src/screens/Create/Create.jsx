@@ -41,8 +41,8 @@ const Create = (props) => {
             type="text"
             value={product.name}
             name="name"
+            placeholder="Product Name"
             required
-            autoFocus
             onChange={handleChange}
           />
           <label>Image Link</label>
@@ -51,8 +51,8 @@ const Create = (props) => {
             type="text"
             value={product.imgURL}
             name="imgURL"
+            placeholder="Image Link"
             required
-            autoFocus
             onChange={handleChange}
           />
           <label>Description</label>
@@ -60,8 +60,8 @@ const Create = (props) => {
             className="create-description"
             value={product.description}
             name="description"
+            placeholder="Description"
             required
-            autoFocus
             onChange={handleChange}
           />
           <label>Category</label>
@@ -71,7 +71,6 @@ const Create = (props) => {
             value={product.category}
             name="category"
             required
-            autoFocus
             onChange={handleChange}
           >
             <option value="choose">Choose Category</option>
@@ -88,8 +87,8 @@ const Create = (props) => {
             type="number"
             value={product.quantity}
             name="quantity"
+            placeholder="Quantity"
             required
-            autoFocus
             onChange={handleChange}
           />
           <label>Price</label>
@@ -98,8 +97,8 @@ const Create = (props) => {
             type="number"
             value={product.price}
             name="price"
+            placeholder="Price"
             required
-            autoFocus
             onChange={handleChange}
           />
           <button type="submit" className="create-button">
