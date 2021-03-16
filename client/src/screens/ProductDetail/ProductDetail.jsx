@@ -31,7 +31,7 @@ const ProductDetail = (props) => {
         className="details-addtocart"
         onClick={() => addItem({ ...product, id: product._id })}
       >
-        Add to cart
+        <i className="fas fa-plus-square"></i>
       </button>
     </>
   );
@@ -44,6 +44,12 @@ const ProductDetail = (props) => {
       </button>
       <button className="delete-button" onClick={handleDelete}>
         Delete
+      </button>
+      <button
+        className="details-addtocart"
+        onClick={() => addItem({ ...product, id: product._id })}
+      >
+        <i className="fas fa-plus-square"></i>
       </button>
     </>
   );

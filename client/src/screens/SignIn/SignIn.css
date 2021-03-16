@@ -24,7 +24,7 @@
   font-size: 28px;
   padding: 20px;
   font-size: 15px;
-  color: #cbb26a;
+  color: #ECEBE9;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 4px;
@@ -45,7 +45,7 @@
   margin-top: 40px;
   padding-top: 20px;
   font-size: 25px;
-  color: #cbb26a;
+  color: #ECEBE9;
   font-family: "Cinzel", serif;
 }
 .sign-in-button {
@@ -53,7 +53,7 @@
   height: 50px;
   margin: 40px auto;
   border: 1px solid #fff;
-  color: #cbb26a;
+  color: #ECEBE9;
   font-family: "Cinzel", serif;
   font-size: 20px;
   cursor: pointer;
