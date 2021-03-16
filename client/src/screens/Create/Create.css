@@ -22,11 +22,11 @@
   background: #0b132b;
   background: -webkit-linear-gradient(
     360deg,
-    #cbb26a 10%,
+    #ECEBE9 10%,
     #051937 120%,
     #083023 360%
   );
-  background: linear-gradient(360deg, #224e4d 10%, #051937 120%, #cbb26a 360%);
+  background: linear-gradient(360deg, #224e4d 10%, #051937 120%, #ECEBE9 360%);
   box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0.5);
 }
 
