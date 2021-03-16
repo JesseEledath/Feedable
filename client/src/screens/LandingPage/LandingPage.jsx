@@ -31,11 +31,13 @@ function LandingPage(props) {
         </div>
         <div className="category-container">
           <h3>Shop by category:</h3>
-          {categoryArr.map((category, i) => (
-            <Link to="/products">
-              <CategoryButton key={i} category={category} />
-            </Link>
-          ))}
+          <div className="category-buttons">
+            {categoryArr.map((category, i) => (
+              <Link to="/products">
+                <CategoryButton key={i} category={category} />
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </Layout>
