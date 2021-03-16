@@ -25,3 +25,17 @@ select {
     margin: 0px;
   }
 }
+
+/* media query for mobile screen */
+@media (min-width: 320px) and (max-width: 767px){
+  label {
+    display: none;
+  }
+}
+
+/* media query for ipad size and bigger screen */
+@media (min-width: 768px) and (max-width: 1024px){
+  label {
+    display: none;
+  }
+}
