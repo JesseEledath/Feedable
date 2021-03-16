@@ -26,3 +26,19 @@
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
+
+/* media query for mobile screen */
+@media (min-width: 320px) and (max-width: 767px){
+  form {
+    width: 45vw;
+    
+  }
+}
+
+/* media query for ipad size and bigger screen */
+@media (min-width: 768px) and (max-width: 1024px){
+  form {
+    width: 45vw;
+    
+  }
+}

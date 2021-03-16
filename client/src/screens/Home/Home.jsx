@@ -13,9 +13,8 @@ const Home = (props) => {
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
-
   const { addItem } = useCart();
-
+// Useeffect to get products ========================================================
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
@@ -24,48 +23,32 @@ const Home = (props) => {
     fetchProducts();
   }, []);
 
-  const handleFilter = (event) => {
-    if (event.target.checked) {
-      const filteredResult = allProducts.filter((product) =>
-        event.target.checked
-          ? product.category.includes(event.target.value)
-          : false
-      );
-      const filteredArr = Array.from(new Set([...filteredResult, ...queriedProducts]))
-      setQueriedProducts(filteredArr);
-    } else {
-      const filteredResult= queriedProducts.filter(product => {
-        return !product.category.includes(event.target.value) 
-      })
-      setQueriedProducts(filteredResult)
-    }
-  };
-
+  // Sort function ======================================================================
   const handleSort = (type) => {
     setSortType(type);
     switch (type) {
       case "name-ascending":
         setQueriedProducts(AZ(allProducts));
         break;
-      case "name-descending":
-        setQueriedProducts(ZA(allProducts));
+        case "name-descending":
+          setQueriedProducts(ZA(allProducts));
+          break;
+          default:
         break;
-      default:
-        break;
-    }
-  };
-
-  const handleSearch = (event) => {
-    const newQueriedProducts = allProducts.filter((product) =>
+      }
+    };
+    // Search function ===================================================================
+    const handleSearch = (event) => {
+      const newQueriedProducts = allProducts.filter((product) =>
       product.name.toLowerCase().includes(event.target.value.toLowerCase())
-    );
-    setQueriedProducts(newQueriedProducts, () => handleSort(sortType));
-  };
-
-  const handleSubmit = (event) => event.preventDefault();
-
-  const productsJSX = queriedProducts.map((product, index) => (
-    <div className="product-cart-container" key={product._id}>
+      );
+      setQueriedProducts(newQueriedProducts, () => handleSort(sortType));
+    };
+    const handleSubmit = (event) => event.preventDefault();
+    
+    // Products card consturctor for search and sort ===================================================
+    const allProductsJSX = allProducts.map((product, index) => (
+      <div className="product-cart-container" key={product._id}>
       <Product
         _id={product._id}
         name={product.name}
@@ -73,35 +56,52 @@ const Home = (props) => {
         price={product.price}
         imgURL={product.imgURL}
         key={product._id}
-      />
+        />
       <button
         className="addtocart"
         onClick={() => addItem({ ...product, id: product._id })}
-      >
+        >
         +
       </button>
     </div>
   ));
-
-  const allProductsJSX = allProducts.map((product, index) => (
-    <div className="product-cart-container" key={product._id}>
-      <Product
-        _id={product._id}
-        name={product.name}
-        description={product.description}
-        price={product.price}
-        imgURL={product.imgURL}
-        key={product._id}
-      />
-      <button
-        className="addtocart"
-        onClick={() => addItem({ ...product, id: product._id })}
-      >
-        +
-      </button>
-    </div>
-  ));
-
+  // filter function =================================================================
+    const handleFilter = (event) => {
+      if (event.target.checked) {
+        const filteredResult = allProducts.filter((product) =>
+          event.target.checked
+            ? product.category.includes(event.target.value)
+            : false
+        );
+        const filteredArr = Array.from(new Set([...filteredResult, ...queriedProducts]))
+        setQueriedProducts(filteredArr);
+      } else {
+        const filteredResult= queriedProducts.filter(product => {
+          return !product.category.includes(event.target.value) 
+        })
+        setQueriedProducts(filteredResult)
+      }
+    };
+  // Products card consturctor for filter ===================================================
+    const productsJSX = queriedProducts.map((product, index) => (
+      <div className="product-cart-container" key={product._id}>
+        <Product
+          _id={product._id}
+          name={product.name}
+          description={product.description}
+          price={product.price}
+          imgURL={product.imgURL}
+          key={product._id}
+        />
+        <button
+          className="addtocart"
+          onClick={() => addItem({ ...product, id: product._id })}
+        >
+          +
+        </button>
+      </div>
+    ));
+// Rendering ==========================================================================
   return (
     <Layout user={props.user}>
       <div className="home-screen">
@@ -115,6 +115,7 @@ const Home = (props) => {
         </div>
         <div className="products-box">
           <div className="filter-box">
+            <div className="filter-box-title">Filter</div>
             <Filter onSubmit={handleSubmit} onChange={handleFilter} />
           </div>
           <div className="products-section">

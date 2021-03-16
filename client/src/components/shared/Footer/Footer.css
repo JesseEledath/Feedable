@@ -2,14 +2,12 @@ footer {
   height: 360px;
   background-color: rgba(35, 39, 46, 1);
   padding: 2vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-size: 24px;
   color: #fff;
-
   bottom: 0;
   width: 100%;
 }
@@ -40,4 +38,46 @@ footer a {
 .fa-github:hover,
 .fa-linkedin:hover {
   color: dodgerblue;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+ footer {
+   width:96%;
+   font-size: 11px;
+   height: 260px;
+}
+
+footer a{
+  
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+.link{
+  margin: 2px;
+}
+.fa-github,
+.fa-linkedin {
+  margin: 2px auto;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+ footer{
+   font-size: 16px;
+   padding: 2vh;
+   height: 360px;
+ }
+ footer a {
+   letter-spacing: 2px;
+   font-size: 16px;
+   padding: 3px;
+ }
+ .link{
+   margin: 3px;
+ }
+ .fa-github,
+.fa-linkedin {
+  margin: 3px auto;
+}
+
 }

@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 5px;
+  padding: 5px auto;
 }
 .create-form {
   display: flex;
@@ -67,4 +67,61 @@
 .create-button:hover {
   background: rgba(20, 20, 20, 0.8);
   color: #cbb26a;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .create-form {
+  padding: 7px auto;
+  margin: 2px auto;
+  font-weight: 150px;
+  height: 410px;
+  width: 270px;
+  }
+  .create-name,
+.create-img,
+.create-price,
+.create-quantity,
+.create-description,
+.create-category{
+    margin: 9px;
+    font-size: 14px;
+    padding: 9px auto;
+  width: 240px;
+  }
+  .create-description{
+    max-width: 450px;
+    max-height: 250px;
+  }
+  .create-button{
+    width: 90px;
+    font-size: 14px;
+  }
+}
+/* media query for Ipad and larger screen*/
+@media (min-width: 768px) and (max-width: 1024px){
+  .create-form {
+  padding: 15px;
+  margin: 7px auto;
+  font-weight: 230px;
+  height: 510px;
+  width: 400px;
+  }
+  .create-name,
+.create-img,
+.create-price,
+.create-quantity,
+.create-description,
+.create-category{
+    margin: 12px;
+    font-size: 16px;
+    padding: 12px auto;
+  width: 340px;
+  }
+  .create-description{
+    max-width: 600px;
+    max-height: 300px;
+  }
+  .create-button{
+    width: 105px;
+    font-size: 16px;
+  }
 }

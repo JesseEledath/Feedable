@@ -1,18 +1,20 @@
 .small-slider-container {
   background-color: lightgreen;
-  border: 3px solid black;
   position: relative;
-  min-height: 47%;
+  border-top: 3px solid black;
+  border-right: 3px solid black;
+  
+  height: 49%;
   width: 40vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px;
 }
 
 .small-slider-image {
   max-width: 40vw;
-  max-height: 230px;
+  height: 230px;
+  align-self: center;
 }
 
 .slider-left-arrow {
