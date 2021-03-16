@@ -1,22 +1,10 @@
 import React, { useState } from "react";
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import "./SmallSlider.css";
 
 function SmallSlider({ products }) {
   const [imageCounter, setImageCounter] = useState(0);
   const length = products.length;
 
-  
-  const nextSlide = () => {
-    clearTimeout();
-    setImageCounter(imageCounter === length - 1 ? 0 : imageCounter + 1);
-  };
-  
-  const prevSlide = () => {
-    clearTimeout();
-    setImageCounter(imageCounter === 0 ? length - 1 : imageCounter - 1);
-  };
-  
   setTimeout(() => {
     setImageCounter(imageCounter === length - 1 ? 0 : imageCounter + 1);
   }, 3000);
@@ -27,11 +15,6 @@ function SmallSlider({ products }) {
 
   return (
     <div className="small-slider-container">
-      <FaArrowAltCircleLeft className="slider-left-arrow" onClick={prevSlide} />
-      <FaArrowAltCircleRight
-        className="slider-right-arrow"
-        onClick={nextSlide}
-      />
       {products.map((product, index) => (
         <div
           className={index === imageCounter ? "slider-active" : "slide"}
