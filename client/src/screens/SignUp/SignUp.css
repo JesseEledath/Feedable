@@ -65,7 +65,7 @@
   z-index: 0;
   transition: 1s;
 }
-label{
+.form-sign-up label{
   font-size: 19px;
   color: #cbb26a;
 }
