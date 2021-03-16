@@ -1,7 +1,11 @@
 .content {
   display: flex;
-  padding: 100px;
-  padding-top: 80px;
+  padding: 60px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* padding-top: 60px; */
 }
 
 .edit-image-container {
@@ -11,9 +15,10 @@
 }
 
 .edit-product-image {
-  width: 500px;
-  padding: 0 40px;
-  padding-bottom: 5px;
+  width: 350px;
+  height: 200px;
+  padding: 20px;
+  padding-bottom: 10px;
 }
 
 .edit-input-image-link {
@@ -26,6 +31,7 @@
   line-height: 1.6;
   display: flex;
   flex-flow: column;
+  width: 600px;
 }
 
 .input-name {
@@ -59,7 +65,7 @@
   font-family: Arial, Helvetica, sans-serif;
   height: 40px;
   width: 200px;
-  margin-top: 40px;
+  margin-top: 20px;
   background-color: black;
   color: white;
   border: none;
