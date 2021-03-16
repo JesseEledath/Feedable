@@ -1,9 +1,13 @@
 .form-sign-up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 550px;
   height: 650px;
   font-family: "Open Sans", sans-serif;
   background: #0b132b;
-  margin-bottom: 85px;
+  margin: 45px;
   border-radius: 15px;
   border: 1px solid #cbb26a;
   padding: 15px;
@@ -13,6 +17,7 @@
 }
 .sign-up-input {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   width: 300px;
   margin: 20px auto;
@@ -21,7 +26,6 @@
   outline: none;
   font-size: 20px;
   padding: 15px;
-  font-size: 15px;
   color: #cbb26a;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -63,6 +67,7 @@
 }
 label{
   font-size: 19px;
+  color: #cbb26a;
 }
 .sign-up-button::before,
 .sign-up-button::after {
@@ -107,19 +112,18 @@ label{
 @media (min-width: 320px) and (max-width: 767px){
   .form-sign-up {
     width: 350px;
-    height: 500px;
-    margin-bottom: 45px;
-    border-radius: 15px;
-    padding: 10px;
+    height: 450px;
+    padding: 15px;
+
   }
   .sign-up-input {
-    width: 250px;
-    margin: 10px auto;
-    padding: 10px;
-    font-size: 13px;
+
+    width: 200px;
+    margin: 20px auto;
+    font-size: 15px;
   }
   label{
-    font-size: 13px;
+    font-size: 14px;
   }
   .sign-up {
     font-size: 18px;
@@ -146,14 +150,14 @@ label{
   
   .form-sign-up{
     width: 450px;
-    height: 650px;
+    height: 550px;
     padding: 15px;
     margin: 65px auto;
   }
   .sign-up-input {
     width: 290px;
-    margin: 15px auto;
-    padding: 13px;
+    margin: 25px auto;
+    padding: 16px;
     font-size: 17px;
     
   }

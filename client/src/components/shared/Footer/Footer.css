@@ -9,7 +9,7 @@ footer {
   font-size: 24px;
   color: #fff;
   bottom: 0;
-  width: 100%;
+  /* width: 100%; */
 }
 footer a {
   display: flex;
@@ -42,22 +42,25 @@ footer a {
 
 @media (min-width: 320px) and (max-width: 767px) {
  footer {
-   width:96%;
    font-size: 11px;
    height: 260px;
 }
 
 footer a{
-  
+  display: flex;
+  flex-direction: column;
   letter-spacing: 1px;
   font-size: 12px;
 }
 .link{
   margin: 2px;
+  display: flex;
+  flex-direction: column;
 }
 .fa-github,
 .fa-linkedin {
   margin: 2px auto;
+  font-size: 14px;
 }
 }
 
