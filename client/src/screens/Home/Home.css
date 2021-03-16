@@ -31,7 +31,11 @@
 
 .filter-box {
   width: 20%;
+  min-height: 92vh;
   background-color: #CFCEC9;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 .products-section {
@@ -67,4 +71,11 @@
   background-color: #23272E;
   color: white;
   outline: none;
+}
+
+.filter-box-title {
+  padding: 20px 0;
+  font-size: 30px;
+  width: 90%;
+  border-bottom: 4px gray solid;
 }
