@@ -11,7 +11,7 @@ const Checkbox = (props) => {
   }
 
   return (
-    <div>
+    <div className="checkbox-container">
       <label htmlFor={props.item.name}>{props.item.name}</label>
       <input
         id={props.item.name}

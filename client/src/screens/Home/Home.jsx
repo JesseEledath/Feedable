@@ -115,6 +115,7 @@ const Home = (props) => {
         </div>
         <div className="products-box">
           <div className="filter-box">
+            <div className="filter-box-title">Filter</div>
             <Filter onSubmit={handleSubmit} onChange={handleFilter} />
           </div>
           <div className="products-section">

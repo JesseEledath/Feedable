@@ -12,11 +12,13 @@ const filterList = [
 
 const Filter = (props) => {
   return (
-    <>
-      {filterList.map((item, index) => {
-        return <Checkbox item={item} key={index} onChange={props.onChange} />;
-      })}
-    </>
+    <div className="checklist-container">
+      <div className="checklist-box">
+        {filterList.map((item, index) => {
+          return <Checkbox item={item} key={index} onChange={props.onChange} />;
+        })}
+      </div>
+    </div>
   );
 };
 

@@ -1,0 +1,13 @@
+.checklist-container {
+    width: 90%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.checklist-box {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-end;
+}

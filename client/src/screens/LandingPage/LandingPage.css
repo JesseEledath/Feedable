@@ -11,8 +11,15 @@
   display: flex;
   margin-top: 100px;
   justify-content: center;
-  flex-flow: row wrap;
+  flex-flow: column;
 }
+
+.sliders-column-container {
+  display: flex;
+  flex-flow: column;
+  height: 65vh;
+}
+
 .slider-container,
 .small-slider-container {
   background-color: #CFCEC9;
@@ -30,4 +37,15 @@
 .category-container a {
   text-decoration: none;
   color: #00003d;
+}
+
+@media all and (min-width: 768px) {
+  .sliders-container {
+    flex-flow: row;
+    margin: 0 auto;
+  }
+  /* .slider-column-container {
+    flex-flow: row wrap;
+    width: 100%;
+  } */
 }
