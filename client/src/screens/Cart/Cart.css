@@ -106,7 +106,7 @@
   background: lightgreen;
 }
 .subtruct-cart-button {
-  color: #ECEBE9;
+  color: rgb(181, 181, 0);
 }
 .subtruct-cart-button:hover {
   background: gold;
