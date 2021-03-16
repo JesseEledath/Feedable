@@ -10,10 +10,10 @@ const Sort = (props) => {
       <label htmlFor="sort">Sort by:</label>
       <select className="sort" onChange={handleChange}>
         <option className="option" value="name-ascending">
-          &nbsp; Alphabetically, A-Z &nbsp;
+          &nbsp; Alpha, A-Z &nbsp;
         </option>
         <option value="name-descending">
-          &nbsp; Alphabetically, Z-A &nbsp;
+          &nbsp; Alpha, Z-A &nbsp;
         </option>
       </select>
     </form>

@@ -111,7 +111,9 @@ nav a {
 @media (min-width: 320px) and (max-width: 767px) {
   header {
     font-size: 14px; 
-    width: 100vw;
+  }
+  .link-welcome {
+    display: none;
   }
   .icon-link {
     display: none;
@@ -143,6 +145,9 @@ nav a {
   header {
     font-size: 18px; 
     width: 100vw;
+  }
+  .link-welcome {
+    display: none;
   }
   .icon-link {
     font-weight: 400;

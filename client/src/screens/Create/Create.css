@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5px auto;
+  padding: 1px auto;
 }
 .create-form {
   display: flex;
@@ -18,7 +18,7 @@
   height: 700px;
   width: 750px;
   transition: 0.2s;
-  color: #cbb26a;
+  color: #CFCEC9;
   background: #0b132b;
   background: -webkit-linear-gradient(
     360deg,
@@ -45,7 +45,7 @@
   border-left: none;
   border-right: none;
   background: rgba(20, 20, 20, 0.2);
-  color: #cbb26a;
+  color: #CFCEC9;
   outline: none;
 }
 .create-description{
@@ -55,7 +55,7 @@
 .create-button {
   width: 150px;
   border: 1px solid rgba(10, 180, 180, 1);
-  color: #cbb26a;
+  color: #CFCEC9;
   background: rgba(20, 20, 20, 0.6);
   font-size: 20px;
   cursor: pointer;
@@ -66,7 +66,7 @@
 }
 .create-button:hover {
   background: rgba(20, 20, 20, 0.8);
-  color: #cbb26a;
+  color: #CFCEC9;
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .create-form {
