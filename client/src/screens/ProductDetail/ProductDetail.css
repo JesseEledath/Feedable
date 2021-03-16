@@ -5,6 +5,7 @@
   width: 550px;
   border: 1px solid black;
   align-items: center;
+  padding: 10px auto;
 }
 .product-detail-image {
   height: 400px;
@@ -74,7 +75,7 @@
 /* media query for mobile screen */
 @media (min-width: 320px) and (max-width: 767px){
  .product-detail{
-   height: 300px;
+   height: 350px;
    width: 300px;
  }
  .product-detail-image{
@@ -84,9 +85,10 @@
    padding: 6px;
  }
  .edit-button, .delete-button, .details-addtocart{
-  margin: 5px;
+  margin: 15px;
   height: 59px;
 	width: 59px;
+  padding: 15px;
  }
  .edit-button:hover{
    font-size: 18px;
@@ -102,7 +104,9 @@
  }
  .detail-description, .product-quantity, .detail-price{
    font-size: 14px;
-   line-height: 1.1;
+   line-height: 1.3;
+   margin: 3px;
+   padding: 8px;
  }
 }
 
@@ -120,6 +124,7 @@
   }
   .edit-button, .delete-button, .details-addtocart{
    margin: 8px;
+
    height: 65px;
    width: 65px;
   }
