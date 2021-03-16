@@ -1,19 +1,19 @@
 .small-slider-container {
   background-color: lightgreen;
   position: relative;
-  border-top: 3px solid black;
-  border-right: 3px solid black;
-  
-  height: 49%;
+  height: 238px;
   width: 40vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px 0;
+  margin-bottom: 5px;
+  margin-left: 10px;
 }
 
 .small-slider-image {
   max-width: 40vw;
-  height: 230px;
+  height: 232.5px;
   align-self: center;
 }
 
@@ -37,4 +37,24 @@
   z-index: 5;
   cursor: pointer;
   user-select: none;
+}
+
+@media all and (max-width: 768px) {
+  .small-slider-container {
+    width: 80vw;
+    margin-top: 10px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .small-slider-container {
+    margin: 0 auto;
+    width: 90vw;
+    height: 200px;
+  }
+  
+  .small-slider-image {
+    max-width: 90vw;
+    max-height: 200px;
+  }
 }
