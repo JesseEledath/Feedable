@@ -113,6 +113,9 @@ nav a {
     font-size: 14px; 
     width: 100vw;
   }
+  .link-welcome {
+    display: none;
+  }
   .icon-link {
     display: none;
     font-weight: 200;
@@ -143,6 +146,9 @@ nav a {
   header {
     font-size: 18px; 
     width: 100vw;
+  }
+  .link-welcome {
+    display: none;
   }
   .icon-link {
     font-weight: 400;
